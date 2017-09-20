@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Popup copy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+	<link rel="stylesheet" href="css/combined.css">
+</head>
+<body class="body">
+	<div class="popup">
+		<div class="popup__container">
+			<div class="popup__inner">
+				<header class="popup__header">
+					<h1 class="popup__heading">Activation</h1>
+					<span class="popup__closer"></span>
+				</header>
+				<div class="popup__status">
+					<div class="popup__status-line popup__status-line_inactive"></div>
+					<div class="popup__status-item popup__status-item_first">
+						<span class="popup__status-point">
+							<img src="img/icons/checked.svg" alt="">
+						</span>
+						<h2 class="popup__status-name popup__status-name_general">General information</h2>
+					</div>
+					<div class="popup__status-item popup__status-item_last">
+						<span class="popup__status-point popup__status-point_inactive"></span>
+						<h2 class="popup__status-name popup__status-name_evaluation">Evaluation</h2>
+					</div>
+				</div>
+				<form class="form form_select" action="javascript:void(0)">
+					<h2 class="form__heading">Quiz time</h2>
+					<div class="form__row">
+						<div class="form__row_inner">
+							<div class="form__select">03<i class="form__select-toggle"></i></div>
+							<ul class="form__select-items" style="display:none">
+								<li class="form__select-item">04</li>
+								<li class="form__select-item">05</li>
+								<li class="form__select-item">06</li>
+							</ul>
+						</div>
+						<span>:</span>
+						<div class="form__row_inner">
+							<div class="form__select">03<i class="form__select-toggle"></i></div>
+						</div>
+					</div>
+					<h2 class="form__heading">Number of participants</h2>
+					<div class="form__row">
+						<div class="form__row_inner">
+							<div class="form__select">03<i class="form__select-toggle"></i></div>
+						</div>
+						<div class="form__row_inner form__row_inlimited">
+							<span>Unlimited Number</span>
+							<label class="switcher">
+								<input type="checkbox" class="switcher__checkbox">
+								<span class="switcher__slider switcher__slider_round"></span>
+							</label>
+						</div>
+					</div>
+					<h2 class="form__heading">Valid to</h2>
+					<div class="form__row">
+						<div class="form__row_inner">
+							<div class="form__select">03<i class="form__select-toggle"></i></div>
+						</div>
+					</div>
+				</form>
+
+				<main class="popup__main popup__main_sel">
+					<div class="popup__links">
+						<a href="#" class="popup__link popup__cancel">Cancel</a>
+						<a href="#" class="popup__link popup__activation">Activate</a>
+					</div>
+				</main>
+			</div>
+		</div>
+	</div>
+	<script src="scripts/combined.js"></script>
+</body>
+</html>

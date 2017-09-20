@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Popup</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+	<link rel="stylesheet" href="css/combined.css">
+</head>
+<body class="body">
+	<div class="popup">
+		<div class="popup__container">
+			<div class="popup__inner">
+				<header class="popup__header">
+					<h1 class="popup__heading">Activation</h1>
+					<span class="popup__closer"></span>
+				</header>
+				<div class="popup__status">
+					<div class="popup__status-line"></div>
+					<div class="popup__status-item popup__status-item_first">
+						<span class="popup__status-point">
+							<img src="img/icons/checked.svg" alt="">
+						</span>
+						<h2 class="popup__status-name popup__status-name_general">General information</h2>
+					</div>
+					<div class="popup__status-item popup__status-item_last">
+						<span class="popup__status-point"></span>
+						<h2 class="popup__status-name popup__status-name_evaluation">Evaluation</h2>
+					</div>
+				</div>
+				<div class="popup__settings">
+					<div class="popup__setting">
+						<div class="popup__setting-items">
+							<h3 class="popup__setting-heading">Mixe up questions</h3>
+							<p class="popup__setting-description">Use 4 random questions from 2</p>
+						</div>
+						<div class="popup__setting-items">
+							<img class="popup__setting-icon" src="img/icons/settings.svg" alt="setting">
+							<label class="switcher">
+								<input type="checkbox" class="switcher__checkbox">
+								<span class="switcher__slider switcher__slider_round"></span>
+							</label>
+						</div>
+					</div>
+					<div class="popup__setting">
+						<div class="popup__setting-items">
+							<h3 class="popup__setting-heading">Show the right answers to the participants</h3>
+							<p class="popup__setting-description">The user will be able to see the correct answers after passing the test</p>
+						</div>
+						<div class="popup__setting-items">
+							<img class="popup__setting-icon" src="img/icons/settings.svg" alt="">
+							<label class="switcher">
+								<input type="checkbox" class="switcher__checkbox">
+								<span class="switcher__slider switcher__slider_round"></span>
+							</label>
+						</div>
+					</div>
+					<div class="popup__setting">
+						<div class="popup__setting-items">
+							<h3 class="popup__setting-heading">Receive letters on e-mail</h3>
+							<p class="popup__setting-description">You will receive an e-mail message when someone passes your test</p>
+						</div>
+						<div class="popup__setting-items">
+							<img class="popup__setting-icon" src="img/icons/settings.svg" alt="">
+							<label class="switcher">
+								<input type="checkbox" class="switcher__checkbox">
+								<span class="switcher__slider switcher__slider_round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<main class="popup__main">
+					<div class="popup__links">
+						<a href="#" class="popup__link popup__cancel">Cancel</a>
+						<a href="#" class="popup__link popup__activation">Activate</a>
+					</div>
+				</main>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
