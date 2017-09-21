@@ -445,3 +445,130 @@ template {
 [hidden] {
     display: none;
 }
+
+body{
+    background-color: #c5c7e0;
+}
+
+div.header {
+    height: 61px;
+    width:100%;
+    background-color: white;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.grey_text {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    text-align: left;
+    color: #d9d9da;
+    display: inline;
+}
+
+.black_text {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    text-align: left;
+    color: black;
+    display: inline-block;
+    margin-right: 53px;
+    margin-left: 53px;
+}
+
+div.texts {
+    margin-right: auto;
+    margin-left: auto;
+    width: 450px;
+    height: 61px;
+}
+
+button.create_new{
+    width: 165.9px;
+    height: 61px;
+    background-color: #8be8a3;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    border:none;
+    text-align: center;
+    display: inline-block;
+    z-index: -1;
+}
+.buttons{
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+.icon-wrap {
+    display: inline-block;
+    vertical-align: middle;
+    width: 92px;
+}
+
+
+
+
+.img {
+    display: block;
+    margin: 0 auto;
+}
+
+.line{
+    width: 2px;
+    height: 45px;
+    background-color: rgba(217, 217, 218, 0.41);
+}
+
+.wrapper{
+    margin-top: 115px;
+    width:999px;
+    margin-left: auto;
+    margin-right:auto;
+}
+.all_activations{
+    margin-bottom: 14px;
+}
+.all_activations_left{
+    width: 334px;
+    height: 40px;
+    font-size: 34px;
+    text-align: left;
+    color: #ffffff;
+    font-weight: 200;
+}
+
+.all_activations_right{
+    width: 128px;
+    height: 24px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    text-align: right;
+    color: #ffffff;
+    font-weight: 100;
+    margin-left: 500px;
+}
+.horizontal_line{
+    width: 999px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.41);
+}
+.short_horizontal_line{
+    width: 35px;
+    height: 2px;
+    background-color: #ffffff;
+    margin-left: 296px ;
+}
+.desc{
+    margin-bottom: 48px;
+}
+.section{
+    margin-left: auto;
+    margin-right: auto;
+    width: 999px;
+    height: 140px;
+    background-color: #ffffff;
+
+}
