@@ -516,6 +516,11 @@ button.create_new{
     margin: 0 auto;
 }
 
+.img_human{
+    display: inline-block;
+    margin-left: 15px;
+}
+
 .line{
     width: 2px;
     height: 45px;
@@ -532,6 +537,7 @@ button.create_new{
     margin-bottom: 14px;
 }
 .all_activations_left{
+    font-family: "Roboto", sans-serif;
     width: 334px;
     height: 40px;
     font-size: 34px;
@@ -559,7 +565,7 @@ button.create_new{
     width: 35px;
     height: 2px;
     background-color: #ffffff;
-    margin-left: 296px ;
+    margin-left: 275px ;
 }
 .desc{
     margin-bottom: 48px;
@@ -568,7 +574,108 @@ button.create_new{
     margin-left: auto;
     margin-right: auto;
     width: 999px;
-    height: 140px;
+    max-height: 140px;
     background-color: #ffffff;
+    margin-bottom: 18px;
+}
+
+.arrow_activations{
+    color: white;
+    margin-left: 5px;
+}
+
+.portrait {
+    display: inline-block;
+    height: 140px;
+    width: 100px;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.created {
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: left;
+    color: rgba(15, 15, 15, 0.41);
+    margin-left: 140px;
+    vertical-align: top;
+    margin-top: 23px;
+    display: inline-block;
+}
+
+span{
+    font-family: "Roboto", sans-serif;
 
 }
+.button_active {
+    width: 76px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    margin-top: 52px;
+    margin-left: -232px;
+    background-color: #f63a7a;
+    font-size: 14px;
+    color: #ffffff;
+}
+.button_not_active{
+    width: 76px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    margin-top: 52px;
+    margin-left: -232px;
+    background-color: rgba(157, 156, 173, 0.1);
+    font-size: 14px;
+    color: rgba(14, 14, 105, 0.19);
+}
+
+.test_title{
+    vertical-align: top;
+    margin-top: 60px;
+    display: inline-block;
+    font-size: 16px;
+    text-align: left;
+    color: #0f0f0f;
+    margin-left: 15px;
+}
+
+.amount_of_participants{
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+    color: rgba(15, 15, 15, 0.41);
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 60px;
+    margin-left: 98px;
+}
+
+.ends_in_days{
+    font-size: 15px;
+    font-weight: 300;
+    text-align: left;
+    color: rgba(15, 15, 15, 0.41);
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 89px;
+    margin-left: -721px;
+}
+.rectangles{
+    height: 22px;
+    width: 3px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 43px;
+    margin-left: 185px;
+}
+
+
+
