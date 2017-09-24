@@ -16,3 +16,9 @@ install:
   - npm install
 script:
   - npm run ci
+deploy:
+  provider: heroku
+    api_key:
+      secure: f04e2d74-d805-4b0c-b731-babcde0ea813
+  app:
+    develop: platform-for-testing-front
