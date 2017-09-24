@@ -6,9 +6,6 @@ deploy:
   app:
     develop: platform-for-testing-front
   strategy: git
-  run:
-    - "ng build"
-    - "npm start"
 dist: trusty
 addons:
   apt:
