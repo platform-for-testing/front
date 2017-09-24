@@ -1,4 +1,10 @@
 sudo: required
+deploy:
+  provider: heroku
+  api_key:
+    develop: "eba7f85a-1a3c-4e5d-b464-644c4074fc55"
+  app:
+    develop: platform-for-testing-front
 dist: trusty
 addons:
   apt:
@@ -16,9 +22,3 @@ install:
   - npm install
 script:
   - npm run ci
-deploy:
-  provider: heroku
-    api_key:
-      secure: "f04e2d74-d805-4b0c-b731-babcde0ea813"
-  app:
-    develop: platform-for-testing-front
