@@ -5,6 +5,10 @@ deploy:
     develop: "eba7f85a-1a3c-4e5d-b464-644c4074fc55"
   app:
     develop: platform-for-testing-front
+  strategy: git
+  run:
+    - "ng build"
+    - "npm start"
 dist: trusty
 addons:
   apt:
@@ -22,6 +26,3 @@ install:
   - npm install
 script:
   - npm run ci
-run:
-  - "ng build"
-  - "npm start"
