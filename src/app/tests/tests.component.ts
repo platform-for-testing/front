@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {SharedService} from '../shared/SharedService';
 
 @Component({
   selector: 'pt-tests',
@@ -7,16 +8,20 @@ import {Component, OnInit} from '@angular/core';
 })
 export class TestsComponent implements OnInit {
 
-  featureSelectedInAllTests = 'allTests';
-
-  constructor() {
+  constructor(public _sharedService: SharedService) {
   }
 
   ngOnInit() {
   }
 
   onFeatureSelectedInAllTests(feature: string) {
-    this.featureSelectedInAllTests = feature;
+    this._sharedService.insertData({
+      tests: true,
+      allTests: feature === 'allTests',
+      activations: feature === 'activations',
+      allRespondents: feature === 'allRespondents',
+    });
+    console.log(this._sharedService.pageObject);
   }
 
 }

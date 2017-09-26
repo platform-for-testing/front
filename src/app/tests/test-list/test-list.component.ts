@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Test} from '../test.model';
+import {SharedService} from '../../shared/SharedService';
 
 @Component({
   selector: 'pt-test-list',
@@ -16,13 +17,19 @@ export class TestListComponent implements OnInit {
 
   @Output() featureSelectedAllTests = new EventEmitter<string>();
 
-  constructor() {
+  constructor(private _sharedService: SharedService) {
   }
 
   ngOnInit() {
   }
 
   onSelectedOnAllTest(feature: string) {
+    this._sharedService.insertData({
+      tests: true,
+      allTests: feature === 'allTests',
+      activations: feature === 'activations',
+      allRespondents: feature === 'allResponders',
+    });
     this.featureSelectedAllTests.emit(feature);
   }
 }

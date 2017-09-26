@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {SharedService} from '../shared/SharedService';
 
 @Component({
   selector: 'pt-activations',
@@ -6,15 +7,19 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./activations.component.scss']
 })
 export class ActivationsComponent implements OnInit {
-  @Output() featureSelectedFromActivation = new EventEmitter<string>();
 
-  constructor() {
+  constructor(private _sharedService: SharedService) {
   }
 
   ngOnInit() {
   }
 
   onSelectedOnAllTest(feature: string) {
-    this.featureSelectedFromActivation.emit(feature);
+    this._sharedService.insertData({
+      tests: true,
+      allTests: feature === 'allTests',
+      activations: feature === 'activations',
+      allRespondents: feature === 'allRespondents',
+    });
   }
 }

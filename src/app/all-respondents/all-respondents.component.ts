@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {SharedService} from '../shared/SharedService';
 
 @Component({
   selector: 'pt-all-respondents',
@@ -7,14 +8,19 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AllRespondentsComponent implements OnInit {
 
-  constructor() {
+  constructor(public _sharedService: SharedService) {
   }
 
   ngOnInit() {
   }
 
-  onSelectedOnAllTest() {
-
+  onSelectedOnAllTest(feature: string) {
+    this._sharedService.insertData({
+      tests: true,
+      allTests: feature === 'allTests',
+      activations: feature === 'activations',
+      allRespondents: feature === 'allRespondents',
+    });
   }
 
 }
