@@ -17,9 +17,9 @@ export class AppComponent {
     this.loadedFeature = feature;
     this._sharedService.insertData({
       tests: true,
-      allTests: true,
-      activations: false,
-      allRespondents: false,
+      allTests: feature === 'allTests',
+      activations: feature === 'activations',
+      allRespondents: feature === 'allResponders',
     });
   }
 
