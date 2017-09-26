@@ -8,6 +8,8 @@ import { TestsComponent } from './tests/tests.component';
 import { TestDetailComponent } from './tests/test-detail/test-detail.component';
 import { TestListComponent } from './tests/test-list/test-list.component';
 import { TestItemComponent } from './tests/test-list/test-item/test-item.component';
+import { ActivationsComponent } from './activations/activations.component';
+import { AllRespondentsComponent } from './all-respondents/all-respondents.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { TestItemComponent } from './tests/test-list/test-item/test-item.compone
     TestsComponent,
     TestDetailComponent,
     TestListComponent,
-    TestItemComponent
+    TestItemComponent,
+    ActivationsComponent,
+    AllRespondentsComponent
   ],
   imports: [
     BrowserModule,

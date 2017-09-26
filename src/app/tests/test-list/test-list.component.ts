@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Test} from '../test.model';
 
 @Component({
   selector: 'pt-test-list',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestListComponent implements OnInit {
 
-  constructor() { }
+  tests: Test[] = [
+    new Test('Test name', 'description', 'last edited', 10),
+    new Test('Test nameTwo', 'descriptionTwo', 'last editedTwo', 121),
+    new Test('my all tests (2)', 'Тест по JS на тему: "Основы. Часть 05', 'Edited 6 days ago', 8)
+  ];
+
+  @Output() featureSelectedAllTests = new EventEmitter<string>();
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  onSelectedOnAllTest(feature: string) {
+    this.featureSelectedAllTests.emit(feature);
+  }
 }

@@ -1,4 +1,11 @@
 <p>
-  tests works!
-  <pt-test-list></pt-test-list>
+  <pt-test-list (featureSelectedAllTests)="onFeatureSelectedInAllTests($event)"
+  *ngIf="featureSelectedInAllTests==='allTests'"
+  ></pt-test-list>
+  <pt-activations
+    *ngIf="featureSelectedInAllTests==='activations'"
+  ></pt-activations>
+  <pt-all-respondents
+    *ngIf="featureSelectedInAllTests==='allRespondents'"
+  ></pt-all-respondents>
 </p>

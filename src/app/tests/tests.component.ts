@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'pt-tests',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestsComponent implements OnInit {
 
-  constructor() { }
+  featureSelectedInAllTests = 'allTests';
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  onFeatureSelectedInAllTests(feature: string) {
+    this.featureSelectedInAllTests = feature;
   }
 
 }
