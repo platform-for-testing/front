@@ -1,6 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ActivationsComponent } from './activations.component';
+import {ActivationsComponent} from './activations.component';
+import {SharedService} from '../shared/SharedService';
 
 describe('ActivationsComponent', () => {
   let component: ActivationsComponent;
@@ -8,9 +9,10 @@ describe('ActivationsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ActivationsComponent ]
+      declarations: [ActivationsComponent],
+      providers: [SharedService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
+import {SharedService} from '../shared/SharedService';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -8,7 +9,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [ HeaderComponent ],
+      providers: [SharedService]
     })
     .compileComponents();
   }));
