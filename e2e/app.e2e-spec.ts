@@ -9,6 +9,6 @@ describe('platform-for-testing App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getHeaderText()).toEqual('Header!');
+    expect(page.getHeaderText()).toEqual('header works! It is a temporary mock.');
   });
 });
