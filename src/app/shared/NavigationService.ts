@@ -3,22 +3,11 @@ import {Page} from './Page';
 
 @Injectable()
 export class NavigationService {
-  pageObject: Page = {
-    tests: false,
-    allTests: false,
-    activations: false,
-    allRespondents: false,
-  };
+  currentPage = '';
 
-  insertData(object: Page) {
-    this.pageObject = object;
-  }
+
   onSelectedFeature(feature: string) {
-    this.insertData({
-      tests: feature === 'tests',
-      allTests: feature === 'allTests',
-      activations: feature === 'activations',
-      allRespondents: feature === 'allRespondents',
-    });
+    this.currentPage = feature;
+    console.log(this.currentPage);
   }
 }

@@ -1,11 +1,11 @@
 <p>
-  <pt-test-list (featureSelectedAllTests)="_sharedService.onSelectedFeature($event)"
-  *ngIf="_sharedService.pageObject.allTests"
+  <pt-test-list
+  *ngIf="_sharedService.currentPage==='allTests'"
   ></pt-test-list>
   <pt-activations
-    *ngIf="_sharedService.pageObject.activations"
+    *ngIf="_sharedService.currentPage==='activations'"
   ></pt-activations>
   <pt-all-respondents
-    *ngIf="_sharedService.pageObject.allRespondents"
+    *ngIf="_sharedService.currentPage==='allRespondents'"
   ></pt-all-respondents>
 </p>
