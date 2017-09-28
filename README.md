@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/platform-for-testing/front.svg?branch=develop)](https://travis-ci.org/platform-for-testing/front)
+
 # PlatformForTesting
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
@@ -13,6 +15,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+## Running lint
+
+Run `ng lint` to check code style with codelizer & tslint
 
 ## Running unit tests
 

@@ -1,4 +1,10 @@
 sudo: required
+deploy:
+  provider: heroku
+  api_key:
+    develop: "eba7f85a-1a3c-4e5d-b464-644c4074fc55"
+  app:
+    develop: platform-for-testing-front
 dist: trusty
 addons:
   apt:
@@ -8,11 +14,9 @@ addons:
       - google-chrome-stable
 language: node_js
 node_js:
-  - "8"
+  - "8.5.0"
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-install:
-  - npm install
 script:
   - npm run ci
