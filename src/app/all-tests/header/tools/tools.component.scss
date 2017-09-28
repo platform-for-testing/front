@@ -1,0 +1,27 @@
+.tools{
+  display: block;
+  right: 0;
+  top: 0;
+  position: absolute;
+  height: 61px;
+  width: 200px;
+}
+
+.img{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.line{
+  width: 2px;
+  height: 45px;
+  background-color: rgba(217, 217, 218, 0.41);
+  display: inline-block;
+}
+
+.icon-wrap {
+  line-height: 61px;
+  display: inline-block;
+  width: 92px;
+  text-align: center;
+}
