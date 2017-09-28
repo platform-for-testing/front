@@ -7,8 +7,8 @@ describe('platform-for-testing App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should show correct title', () => {
     page.navigateTo();
-    expect(page.getHeaderText()).toEqual('Header!');
+      expect(page.getTitleText()).toEqual('PlatformForTesting');
   });
 });

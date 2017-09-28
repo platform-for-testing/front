@@ -5,7 +5,8 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getHeaderText() {
-    return element(by.css('pt-root header')).getText();
+  getTitleText() {
+    return browser.getTitle();
+    // return element(by.css('title')).getText();
   }
 }
