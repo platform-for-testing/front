@@ -15,8 +15,6 @@ export class TestListComponent implements OnInit {
     new Test('my all tests (2)', 'Тест по JS на тему: "Основы. Часть 05', 'Edited 6 days ago', 8)
   ];
 
-  @Output() featureSelectedAllTests = new EventEmitter<string>();
-
   constructor(public _sharedService: NavigationService) {
   }
 
