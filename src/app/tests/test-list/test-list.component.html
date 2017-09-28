@@ -2,14 +2,14 @@
     <div class="Rectangle">
       <div class="menu">
         <div class="gap"></div>
-        <div class="All-tests" (click)="onSelectedOnAllTest('allTests')">
+        <div class="All-tests" (click)="_sharedService.onSelectedFeature('allTests')">
           All tests
         </div>
         <div class="Activations">
-          <a href="#" (click)="onSelectedOnAllTest('activations')">Activations</a>
+          <a href="#" (click)="_sharedService.onSelectedFeature('activations')">Activations</a>
         </div>
         <div class="All-respondents">
-          <a href="#" (click)="onSelectedOnAllTest('allRespondents')">All-respondents</a>
+          <a href="#" (click)="_sharedService.onSelectedFeature('allRespondents')">All-respondents</a>
         </div>
       </div>
       <div class="search">

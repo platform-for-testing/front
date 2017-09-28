@@ -13,4 +13,12 @@ export class SharedService {
   insertData(object: Page) {
     this.pageObject = object;
   }
+  onSelectedFeature(feature: string) {
+    this.insertData({
+      tests: true,
+      allTests: feature === 'allTests',
+      activations: feature === 'activations',
+      allRespondents: feature === 'allRespondents',
+    });
+  }
 }

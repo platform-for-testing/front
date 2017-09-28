@@ -17,13 +17,13 @@ export class TestListComponent implements OnInit {
 
   @Output() featureSelectedAllTests = new EventEmitter<string>();
 
-  constructor(private _sharedService: SharedService) {
+  constructor(public _sharedService: SharedService) {
   }
 
   ngOnInit() {
   }
 
-  onSelectedOnAllTest(feature: string) {
+/*  onSelectedOnAllTest(feature: string) {
     this._sharedService.insertData({
       tests: true,
       allTests: feature === 'allTests',
@@ -31,5 +31,5 @@ export class TestListComponent implements OnInit {
       allRespondents: feature === 'allResponders',
     });
     this.featureSelectedAllTests.emit(feature);
-  }
+  }*/
 }

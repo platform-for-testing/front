@@ -3,13 +3,13 @@
     <div class="menu">
       <div class="gap"></div>
       <div class="All-tests">
-        <a href="#" (click)="onSelectedOnAllTest('allTests')">All Tests</a>
+        <a href="#" (click)="_sharedService.onSelectedFeature('allTests')">All Tests</a>
       </div>
-      <div class="Activations" (click)="onSelectedOnAllTest('activations')">
+      <div class="Activations" (click)="_sharedService.onSelectedFeature('activations')">
         Activations
       </div>
       <div class="All-respondents">
-        <a href="#" (click)="onSelectedOnAllTest('allRespondents')">All-respondents</a>
+        <a href="#" (click)="_sharedService.onSelectedFeature('allRespondents')">All-respondents</a>
       </div>
     </div>
     <div class="search">

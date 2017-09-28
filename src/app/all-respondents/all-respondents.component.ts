@@ -14,13 +14,4 @@ export class AllRespondentsComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelectedOnAllTest(feature: string) {
-    this._sharedService.insertData({
-      tests: true,
-      allTests: feature === 'allTests',
-      activations: feature === 'activations',
-      allRespondents: feature === 'allRespondents',
-    });
-  }
-
 }

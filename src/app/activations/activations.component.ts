@@ -8,18 +8,11 @@ import {SharedService} from '../shared/SharedService';
 })
 export class ActivationsComponent implements OnInit {
 
-  constructor(private _sharedService: SharedService) {
+  constructor(public _sharedService: SharedService) {
   }
 
   ngOnInit() {
   }
 
-  onSelectedOnAllTest(feature: string) {
-    this._sharedService.insertData({
-      tests: true,
-      allTests: feature === 'allTests',
-      activations: feature === 'activations',
-      allRespondents: feature === 'allRespondents',
-    });
-  }
+
 }
