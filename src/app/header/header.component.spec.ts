@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
-import {SharedService} from '../shared/SharedService';
+import {NavigationService} from '../shared/NavigationService';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -10,7 +10,7 @@ describe('HeaderComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HeaderComponent ],
-      providers: [SharedService]
+      providers: [NavigationService]
     })
     .compileComponents();
   }));

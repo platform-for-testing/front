@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AllRespondentsComponent } from './all-respondents.component';
-import {SharedService} from '../shared/SharedService';
+import {NavigationService} from '../shared/NavigationService';
 
 describe('AllRespondentsComponent', () => {
   let component: AllRespondentsComponent;
@@ -10,7 +10,7 @@ describe('AllRespondentsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AllRespondentsComponent ],
-      providers: [SharedService]
+      providers: [NavigationService]
     })
     .compileComponents();
   }));

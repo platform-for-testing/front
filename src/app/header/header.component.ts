@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {SharedService} from '../shared/SharedService';
+import {NavigationService} from '../shared/NavigationService';
 
 @Component({
   selector: 'pt-header',
@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   @Output() featureSelected = new EventEmitter<string>();
 
   constructor(
-    private _sharedService: SharedService) { }
+    private _sharedService: NavigationService) { }
 
   ngOnInit() {
   }

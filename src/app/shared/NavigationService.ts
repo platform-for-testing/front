@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Page} from './Page';
 
 @Injectable()
-export class SharedService {
+export class NavigationService {
   pageObject: Page = {
     tests: false,
     allTests: false,

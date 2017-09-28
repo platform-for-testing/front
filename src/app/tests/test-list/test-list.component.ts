@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Test} from '../test.model';
-import {SharedService} from '../../shared/SharedService';
+import {NavigationService} from '../../shared/NavigationService';
 
 @Component({
   selector: 'pt-test-list',
@@ -17,7 +17,7 @@ export class TestListComponent implements OnInit {
 
   @Output() featureSelectedAllTests = new EventEmitter<string>();
 
-  constructor(public _sharedService: SharedService) {
+  constructor(public _sharedService: NavigationService) {
   }
 
   ngOnInit() {

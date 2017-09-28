@@ -1,16 +1,16 @@
 import {Component} from '@angular/core';
-import {SharedService} from './shared/SharedService';
+import {NavigationService} from './shared/NavigationService';
 
 @Component({
   selector: 'pt-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [SharedService]
+  providers: [NavigationService]
 })
 export class AppComponent {
   loadedFeature = '';
 
-  constructor(private _sharedService: SharedService) {
+  constructor(private _sharedService: NavigationService) {
   }
 
   OnNavigate(feature: string) {

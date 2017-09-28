@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {SharedService} from '../shared/SharedService';
+import {NavigationService} from '../shared/NavigationService';
 
 @Component({
   selector: 'pt-tests',
@@ -8,7 +8,7 @@ import {SharedService} from '../shared/SharedService';
 })
 export class TestsComponent implements OnInit {
 
-  constructor(public _sharedService: SharedService) {
+  constructor(public _sharedService: NavigationService) {
   }
 
   ngOnInit() {
