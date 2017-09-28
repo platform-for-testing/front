@@ -22,14 +22,4 @@ export class TestListComponent implements OnInit {
 
   ngOnInit() {
   }
-
-/*  onSelectedOnAllTest(feature: string) {
-    this._sharedService.insertData({
-      tests: true,
-      allTests: feature === 'allTests',
-      activations: feature === 'activations',
-      allRespondents: feature === 'allResponders',
-    });
-    this.featureSelectedAllTests.emit(feature);
-  }*/
 }

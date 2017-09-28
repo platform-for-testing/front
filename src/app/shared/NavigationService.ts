@@ -15,7 +15,7 @@ export class NavigationService {
   }
   onSelectedFeature(feature: string) {
     this.insertData({
-      tests: true,
+      tests: feature === 'tests',
       allTests: feature === 'allTests',
       activations: feature === 'activations',
       allRespondents: feature === 'allRespondents',
