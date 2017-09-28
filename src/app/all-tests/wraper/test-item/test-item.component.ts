@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test-item.component.scss']
 })
 export class TestItemComponent implements OnInit {
+  testImagePath: string;
 
-  constructor() { }
+  constructor() {
+    this.testImagePath = '/assets/images/image.jpeg'
+  }
 
   ngOnInit() {
   }
