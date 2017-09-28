@@ -1,3 +1,6 @@
+@import "../../shared/colors";
+
+
 $width: 1440px;
 //$height: 1263px;
 $font: Roboto;
@@ -6,7 +9,7 @@ $font-size: 20px;
   font-family: $font;
   font-size: $font-size;
   text-align: left;
-  color: #0f0f0f;
+  color: $black;
   flex: 15%;
 }
 
@@ -15,13 +18,13 @@ $font-size: 20px;
   width: 100%;
   min-width: 800px;
   //height: $height;
-  background-color: #c5c7e0;
+  background-color: $cloudy-blue;
 }
 
 .Rectangle {
   max-width: $width;
   height: 59px;
-  background-color: #ffffff;
+  background-color: $white;
   box-shadow: 0 2px 20px 0 rgba(156, 160, 213, 0.72);
   display: flex;
 }
@@ -34,7 +37,7 @@ $font-size: 20px;
 .Activations {
   height: 24px;
   @extend %menu;
-  color: #d9d9da;
+  color: $silver;
 }
 
 .All-respondents {
@@ -62,7 +65,7 @@ $font-size: 20px;
 .Path-3 {
   max-width: 9.2px;
   height: 4.7px;
-  border: solid 1px #0f0f0f;
+  border: solid 1px $black;
   margin: 25% -10%;
 }
 
@@ -98,13 +101,13 @@ $font-size: 20px;
   font-family: $font;
   font-size: 34px;
   text-align: left;
-  color: #ffffff;
+  color: $white;
 }
 
 .Rectangle-12 {
   width: 170px;
   height: 61px;
-  background-color: #8be8a3;
+  background-color: $hospital-green;
   box-shadow: 0 3px 5px 0 rgba(156, 160, 213, 0.72);
 }
 
@@ -133,14 +136,14 @@ $font-size: 20px;
   font-family: $font;
   font-size: 20px;
   text-align: left;
-  color: #ffffff;
+  color: $white;
 }
 
 .Line-3 {
   width: 1px;
   height: 7px;
   transform: rotate(-270deg);
-  border: solid 2px #ffffff;
+  border: solid 2px $white;
 }
 
 .Line-3-1 {
@@ -148,7 +151,7 @@ $font-size: 20px;
   width: 1px;
   height: 7px;
   transform: rotate(-180deg);
-  border: solid 2px #ffffff;
+  border: solid 2px $white;
 }
 
 .plus {
@@ -181,7 +184,7 @@ $font-size: 20px;
   display: inline-flex;
   max-width: 999px;
   height: 140px;
-  background-color: #ffffff;
+  background-color: $white;
   box-shadow: 0 2px 20px 0 rgba(156, 160, 213, 0.34);
 }
 
@@ -190,7 +193,7 @@ $font-size: 20px;
   display: flex;
   max-width: 779px;
   height: 140px;
-  background-color: #0f0f0f;
+  background-color: $black;
 }
 
 .Rectangle-7 {
@@ -198,7 +201,7 @@ $font-size: 20px;
   display: flex;
   max-width: 779px;
   height: 140px;
-  background-color: #ffffff;
+  background-color: $white;
 }
 
 .Edited-6-days-ago {
@@ -223,7 +226,7 @@ $font-size: 20px;
   font-family: $font;
   font-size: 16px;
   text-align: left;
-  color: #ffffff;
+  color: $white;
 }
 
 .View-Activations {
@@ -235,7 +238,7 @@ $font-size: 20px;
   font-family: $font;
   font-size: 16px;
   text-align: left;
-  color: #ffffff;
+  color: $white;
 }
 
 .Edit {
@@ -248,7 +251,7 @@ $font-size: 20px;
   font-family: $font;
   font-size: 16px;
   text-align: left;
-  color: #ffffff;
+  color: $white;
 }
 
 .Activate {
@@ -261,7 +264,7 @@ $font-size: 20px;
   font-family: $font;
   font-size: 16px;
   text-align: left;
-  color: #ffffff;
+  color: $white;
 }
 
 .Line-5 {
@@ -291,7 +294,7 @@ $font-size: 20px;
   font-family: $font;
   font-size: 22px;
   text-align: left;
-  color: #0f0f0f;
+  color: $black;
 }
 
 .Questions {
@@ -301,7 +304,7 @@ $font-size: 20px;
   font-size: 16px;
   font-max-weight: 300;
   text-align: left;
-  color: #0f0f0f;
+  color: $black;
 }
 
 .Rectangle-17 {
