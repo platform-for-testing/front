@@ -8,19 +8,8 @@ import {NavigationService} from './shared/NavigationService';
   providers: [NavigationService]
 })
 export class AppComponent {
-  loadedFeature = '';
 
-  constructor(private _sharedService: NavigationService) {
-  }
-
-  OnNavigate(feature: string) {
-    this.loadedFeature = feature;
-    this._sharedService.insertData({
-      tests: true,
-      allTests: feature === 'allTests',
-      activations: feature === 'activations',
-      allRespondents: feature === 'allResponders',
-    });
+  constructor(public _sharedService: NavigationService) {
   }
 
 }

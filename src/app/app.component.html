@@ -1,11 +1,11 @@
 <div class="page">
   <div class="header-wrapper">
-    <pt-header (featureSelected)="OnNavigate($event)"></pt-header>
+    <pt-header ></pt-header>
   </div>
   <div class="content">
     <router-outlet></router-outlet>
    <pt-tests
-   *ngIf="loadedFeature==='allTests'"
+     *ngIf="_sharedService.pageObject.tests"
    ></pt-tests>
   </div>
 </div>

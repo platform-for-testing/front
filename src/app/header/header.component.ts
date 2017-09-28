@@ -7,21 +7,9 @@ import {NavigationService} from '../shared/NavigationService';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Output() featureSelected = new EventEmitter<string>();
-
   constructor(
-    private _sharedService: NavigationService) { }
+    public _sharedService: NavigationService) { }
 
   ngOnInit() {
-  }
-
-  onSelect(feature: string) {
-    this._sharedService.insertData({
-      tests: true,
-      allTests: false,
-      activations: false,
-      allRespondents: false,
-    });
-    this.featureSelected.emit(feature);
   }
 }
