@@ -2,7 +2,7 @@ $width: 1440px;
 $height: 1263px;
 $font: Roboto;
 $font-size: 20px;
-@mixin menu {
+%menu {
   font-family: $font;
   font-size: $font-size;
   text-align: left;
@@ -28,18 +28,18 @@ $font-size: 20px;
 
 .All-tests {
   height: 24px;
-  @include menu;
+  @extend %menu;
 }
 
 .Activations {
   height: 24px;
-  @include menu;
+  @extend %menu;
   color: #d9d9da;
 }
 
 .All-respondents {
   height: 24px;
-  @include menu;
+  @extend %menu;
   flex: 25%;
   color: #d9d9db;
 
@@ -321,7 +321,7 @@ $font-size: 20px;
   margin-top: 7%;
 }
 
-.wrapper{
+.wrapper {
   top: 0;
   left: 0;
   display: flex;
@@ -329,7 +329,8 @@ $font-size: 20px;
   justify-content: center;
   overflow: auto;
 }
-.btn{
+
+.btn {
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
