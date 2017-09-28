@@ -1,5 +1,5 @@
 $width: 1440px;
-$height: 1263px;
+//$height: 1263px;
 $font: Roboto;
 $font-size: 20px;
 %menu {
@@ -14,7 +14,7 @@ $font-size: 20px;
   max-width: $width;
   width: 100%;
   min-width: 800px;
-  height: $height;
+  //height: $height;
   background-color: #c5c7e0;
 }
 
@@ -321,7 +321,7 @@ $font-size: 20px;
   margin-top: 7%;
 }
 
-.wrapper{
+.wrapper {
   top: 0;
   left: 0;
   display: flex;
@@ -329,7 +329,8 @@ $font-size: 20px;
   justify-content: center;
   overflow: auto;
 }
-.btn{
+
+.btn {
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
