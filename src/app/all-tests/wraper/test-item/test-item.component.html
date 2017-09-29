@@ -3,7 +3,7 @@
     <span class="edited">Edited in {{test.lastEdited}} days ago</span>
     <span class="test-title">{{test.name}}<br></span>
     <span class="amount-of-questions">{{test.numberOfQuestions}} вопросов</span>
-    <div class="rectangles" (click)="">&#9633;<br>&#9633;<br>&#9633;</div>
+    <div class="rectangles">&#9633;<br>&#9633;<br>&#9633;</div>
     <div class="test-options">
         <span>View Questions</span>
         <span>View Activations</span>
@@ -13,11 +13,11 @@
     <script>
         function hideMainElements()
         {
-            console.log('logg')
-            document.getElementsByClassName('test-title').setAttribute("display", "none");
-            document.getElementsByClassName('test-title').setAttribute("display", "none");
-            document.getElementsByClassName('amount-of-questions').setAttribute("display", "none");
-            document.getElementsByClassName('rectangles').setAttribute("display", "none");
+            console.log('logg');
+            document.getElementsByClassName('test-title').setAttribute("display", "inline-block");
+            document.getElementsByClassName('test-title').setAttribute("display", "inline-block");
+            document.getElementsByClassName('amount-of-questions').setAttribute("display", "inline-block");
+            document.getElementsByClassName('rectangles').setAttribute("display", "inline-block");
         }
     </script>
 </div>

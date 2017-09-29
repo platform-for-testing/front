@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Test} from "./test";
+import {Test} from './test';
 
 @Component({
   selector: 'pt-test-item',
@@ -17,7 +17,7 @@ export class TestItemComponent implements OnInit {
   ];
 
   constructor() {
-    this.testImagePath = '/assets/images/image.jpeg'
+    this.testImagePath = '/assets/images/image.jpeg';
   }
 
   ngOnInit() {
