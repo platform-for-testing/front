@@ -1,8 +1,14 @@
 <div class="page">
   <div class="header-wrapper">
-    <header>Header!</header>
+    <pt-header></pt-header>
   </div>
   <div class="content">
     <router-outlet></router-outlet>
+    <pt-tests
+      *ngIf="_sharedService.currentPage==='allTests'
+     || _sharedService.currentPage==='activations'
+      || _sharedService.currentPage==='allRespondents'"
+
+    ></pt-tests>
   </div>
 </div>

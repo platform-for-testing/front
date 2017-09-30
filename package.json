@@ -1,6 +1,5 @@
 {
   "name": "platform-for-testing",
-  "main": "server.js",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {

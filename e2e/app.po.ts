@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getHeaderText() {
-    return element(by.css('pt-root header')).getText();
+    return element(by.css('pt-root  p')).getText();
   }
 }
