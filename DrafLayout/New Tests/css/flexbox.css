@@ -1,0 +1,121 @@
+.flex-container {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap:  wrap;
+    justify-content: flex-start;
+}
+.flex-element:first-child {
+ margin-right: auto;
+}
+.flex-element:last-child {
+    margin-left: 20px;
+}
+.flex-element:nth-child(2) {
+    margin-right: 680px;
+}
+.flex-element:nth-child(3) {
+    margin-right: 50px;
+}
+.flex-element:nth-child(4) {
+    margin-right: 200px;
+}
+.flex-element:nth-child(5) {
+    margin-right: 20px;
+}
+.flex-element:nth-child(6) {
+      margin-left: 20px;
+  }
+.flex-element:nth-child(7) {
+    margin-left: 20px;
+}
+.flex-container-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:  wrap;
+    justify-content: flex-start;
+}
+.flex-element-1:first-child {
+    margin-right: 1px;././
+}
+.flex-element-1:last-child {
+    margin-right: 85%;
+}
+.flex-container-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap:  wrap;
+    justify-content: flex-end;
+}
+.flex-container-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap:  wrap;
+    justify-content: flex-start;
+}
+
+.rectangle-4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap:  wrap;
+    justify-content: center;
+}
+.rectangle-6 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap:  wrap;
+    justify-content: flex-start;
+}
+.rectangle-7 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap:  wrap;
+    justify-content: center;
+}
+.flex-element-4 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap:  wrap;
+    justify-content: flex-start;
+}
+.flex-element-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap:  wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+.flex-element-6 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap:  wrap;
+    justify-content: flex-end;
+    align-content: flex-start;
+}
+.flex-element-6:last-child {
+    margin-left: auto;
+}
+.flex-element:nth-child(3) {
+    margin-left: 40px;
+}
+.switch {
+    display: flex;
+    justify-content: flex-end;
+}
+.flex-element-7 {
+    display: flex;
+    margin-top: 300px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap:  wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+}
