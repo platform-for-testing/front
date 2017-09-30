@@ -1,8 +1,10 @@
+@import "../../../../shared/colors";
+
 .grey_text {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   text-align: left;
-  color: #d9d9da;
+  color: $silver;
 }
 
 .black_text {

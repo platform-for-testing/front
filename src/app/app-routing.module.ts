@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {AllTestsComponent} from './all-tests/all-tests.component';
-import {AllActivationsComponent} from './all-activations/all-activations.component';
-import {AllRespondersComponent} from './all-responders/all-responders.component';
-import {CreateNewTestComponent} from './create-new-test/create-new-test.component';
+import {AllTestsComponent} from './pages/all-tests/all-tests.component';
+import {AllActivationsComponent} from './pages/all-activations/all-activations.component';
+import {AllRespondersComponent} from './pages/all-responders/all-responders.component';
+import {CreateNewTestComponent} from './pages/create-new-test/create-new-test.component';
 
 const routes: Routes = [
     {path: 'all-tests', component: AllTestsComponent},

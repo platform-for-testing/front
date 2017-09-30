@@ -1,3 +1,7 @@
+@import "../../../shared/colors";
+
+
+
 .my_tests{
   display: inline-block;
   width: 999px;
@@ -13,7 +17,7 @@ form{
   line-height: 34px;
   font-size: 34px;
   text-align: left;
-  color: #ffffff;
+  color: $white;
   font-weight: 200;
   margin-right: 702px;
 }
@@ -34,10 +38,10 @@ form{
 .create_new{
   width: 165.9px;
   height: 61px;
-  background-color: #8be8a3;
+  background-color: $hospital-green;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
-  color: #ffffff;
+  color: $white;
   border:none;
   text-align: center;
   display: inline-block;

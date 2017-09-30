@@ -1,10 +1,13 @@
+@import "../../../../shared/colors";
+
+
 span{
   font-family: "Roboto", sans-serif;
 }
 .test-item{
   width: 999px;
   height: 140px;
-  background-color: #ffffff;
+  background-color: $white;
   margin-bottom: 18px;
   display: inline-block;
   text-align: left;
@@ -33,13 +36,14 @@ img {
   width: 250px;
 }
 
+
 .test-title{
   vertical-align: top;
   margin-top: 45px;
   display: inline-block;
   font-size: 16px;
   text-align: left;
-  color: #0f0f0f;
+  color: $black;
   width: 450px;
 
 }
@@ -49,7 +53,7 @@ img {
   font-weight: 300;
   text-align: left;
   vertical-align: top;
-  color: #0f0f0f;
+  color: $black;
   margin-top: 77px;
   display: inline-block;
   width: 101px;
@@ -68,7 +72,7 @@ img {
   display: none;
   width: 680px;
   height: 140px;
-  background-color: black;
+  background-color: $black;
   margin-left: -1px;
   margin-bottom: 18px;
   text-align: left;
@@ -76,7 +80,7 @@ img {
 .test-options span{
   font-size: 16px;
   text-align: left;
-  color: #ffffff;
+  color: $white;
   opacity: 0.5;
 
 }

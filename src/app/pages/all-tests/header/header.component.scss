@@ -1,7 +1,10 @@
+@import "../../../shared/colors";
+
+
 div{
   height: 61px;
   width:100%;
-  background-color: white;
+  background-color: $white;
   top: 0;
   left:0;
   position: absolute;
