@@ -34,8 +34,11 @@ form {
 }
 
 .create-new {
+  text-decoration: none;
+  vertical-align: middle;
   width: 165.9px;
-  height: 61px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   background-color: $hospital-green;
   font-family: "Roboto", sans-serif;
   font-size: 20px;

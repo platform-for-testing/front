@@ -9,9 +9,9 @@ import { HeaderComponent } from './pages/all-tests/header/header.component';
 import { NavigationButtonsComponent } from './pages/all-tests/header/navigation-buttons/navigation-buttons.component';
 import { ToolsComponent } from './pages/all-tests/header/tools/tools.component';
 import { CreateNewTestComponent } from './pages/create-new-test/create-new-test.component';
-import { WraperComponent } from './pages/all-tests/wraper/wraper.component';
+import { WraperComponent } from './pages/all-tests/tests-list/tests-list.component';
 import { CreateNewBlockComponent } from './pages/all-tests/create-new-block/create-new-block.component';
-import { TestItemComponent } from './pages/all-tests/wraper/test-item/test-item.component';
+import { TestItemComponent } from './pages/all-tests/tests-list/test-item/test-item.component';
 
 @NgModule({
   declarations: [
