@@ -1,0 +1,49 @@
+@import "../../../shared/colors";
+
+.my-tests {
+  display: inline-block;
+  width: 999px;
+}
+
+form {
+  display: inline-block;
+}
+
+.my-tests-description {
+  font-family: "Roboto", sans-serif;
+  width: 334px;
+  line-height: 34px;
+  font-size: 34px;
+  text-align: left;
+  color: $white;
+  font-weight: 200;
+  margin-right: 702px;
+}
+
+.horizontal-line {
+  width: 999px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.41);
+  display: inline-block;
+}
+
+.block {
+  margin-top: 145px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.create-new {
+  text-decoration: none;
+  vertical-align: middle;
+  width: 165.9px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: $hospital-green;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: $white;
+  border: none;
+  text-align: center;
+  display: inline-block;
+}
