@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-new-question-controls',
+  selector: 'pt-app-new-question-controls',
   templateUrl: './new-question-controls.component.html',
   styleUrls: ['./new-question-controls.component.css']
 })
