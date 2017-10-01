@@ -1,0 +1,50 @@
+@import "../../../../shared/colors";
+
+.menu-item {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  text-align: left;
+  color: $silver;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &.active {
+    color: $black;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.black-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  text-align: left;
+  color: black;
+}
+
+form {
+  display: inline-block;
+  line-height: 61px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+input {
+  background: none;
+  border: none;
+}
+
+div {
+  margin-right: auto;
+  margin-left: auto;
+  width: 450px;
+  height: 61px;
+}
