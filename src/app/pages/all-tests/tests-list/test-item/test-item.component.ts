@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Test} from "./test";
+import {Test} from './test';
 
 @Component({
   selector: 'pt-test-item',
