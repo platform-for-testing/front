@@ -1,4 +1,7 @@
-.tools{
+div.tools-wrapper {
+  display: inline-block;
+}
+.tools {
   display: block;
   right: 0;
   top: 0;
@@ -7,12 +10,12 @@
   width: 200px;
 }
 
-.img{
+.img {
   margin-left: 5px;
   margin-right: 5px;
 }
 
-.line{
+.line {
   width: 2px;
   height: 45px;
   background-color: rgba(217, 217, 218, 0.41);
@@ -24,4 +27,8 @@
   display: inline-block;
   width: 92px;
   text-align: center;
+}
+
+i.fa-angle-down {
+  font-size:24px;
 }

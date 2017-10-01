@@ -1,17 +1,15 @@
 @import "../../../shared/colors";
 
-
-
-.my_tests{
+.my-tests {
   display: inline-block;
   width: 999px;
 }
 
-form{
+form {
   display: inline-block;
 }
 
-.text_my_tests{
+.my-tests-description {
   font-family: "Roboto", sans-serif;
   width: 334px;
   line-height: 34px;
@@ -22,27 +20,27 @@ form{
   margin-right: 702px;
 }
 
-.horizontal_line{
+.horizontal-line {
   width: 999px;
   height: 2px;
   background-color: rgba(255, 255, 255, 0.41);
   display: inline-block;
 }
 
-.block{
+.block {
   margin-top: 145px;
   margin-bottom: 48px;
   text-align: center;
 }
 
-.create_new{
+.create-new {
   width: 165.9px;
   height: 61px;
   background-color: $hospital-green;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   color: $white;
-  border:none;
+  border: none;
   text-align: center;
   display: inline-block;
 }
