@@ -12,6 +12,10 @@ import { CreateNewTestComponent } from './pages/create-new-test/create-new-test.
 import { WraperComponent } from './pages/all-tests/tests-list/tests-list.component';
 import { CreateNewBlockComponent } from './pages/all-tests/create-new-block/create-new-block.component';
 import { TestItemComponent } from './pages/all-tests/tests-list/test-item/test-item.component';
+import { CreateNewTestHeaderComponent } from './pages/create-new-test/create-new-test-header/create-new-test-header.component';
+import { CreateNewTestMainComponent } from './pages/create-new-test/create-new-test-main/create-new-test-main.component';
+import { CreateNewTestControlsComponent } from './pages/create-new-test/create-new-test-controls/create-new-test-controls.component';
+import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-new-test-uploader/create-new-test-uploader.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { TestItemComponent } from './pages/all-tests/tests-list/test-item/test-i
     CreateNewTestComponent,
     WraperComponent,
     CreateNewBlockComponent,
-    TestItemComponent
+    TestItemComponent,
+    CreateNewTestHeaderComponent,
+    CreateNewTestMainComponent,
+    CreateNewTestControlsComponent,
+    CreateNewTestUploaderComponent,
   ],
   imports: [
     BrowserModule,
