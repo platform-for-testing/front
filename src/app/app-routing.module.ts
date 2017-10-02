@@ -9,8 +9,7 @@ const routes: Routes = [
     {path: 'all-tests', component: AllTestsComponent},
     {path: 'all-activations', component: AllActivationsComponent},
     {path: 'all-responders', component: AllRespondersComponent},
-    {path: 'create-new-test', component: CreateNewTestComponent},
-
+    {path: 'create-new-test', component: CreateNewTestComponent}
 ];
 
 @NgModule({

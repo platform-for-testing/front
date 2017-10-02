@@ -26,14 +26,14 @@ import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-n
     HeaderComponent,
     NavigationButtonsComponent,
     ToolsComponent,
-    CreateNewTestComponent,
     WraperComponent,
     CreateNewBlockComponent,
     TestItemComponent,
+    CreateNewTestComponent,
     CreateNewTestHeaderComponent,
     CreateNewTestMainComponent,
     CreateNewTestControlsComponent,
-    CreateNewTestUploaderComponent,
+    CreateNewTestUploaderComponent
   ],
   imports: [
     BrowserModule,
