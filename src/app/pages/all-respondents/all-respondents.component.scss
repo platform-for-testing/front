@@ -1,6 +1,5 @@
 @import "../../shared/colors";
 
-
 $width: 1440px;
 //$height: 1263px;
 $font: Roboto;
@@ -29,20 +28,20 @@ $font-size: 20px;
   display: flex;
 }
 
-.menu-item{
+.menu-item {
   height: 24px;
   @extend %menu;
   color: $silver;
   text-decoration: none;
 }
 
-.menu-item-active{
+.menu-item-active {
   color: $black;
   text-decoration: none;
 }
 
 i.fa-angle-down {
-  font-size:24px;
+  font-size: 24px;
   margin-top: 10px;
 }
 
@@ -185,7 +184,7 @@ i.fa-angle-down {
   border: solid 2px rgba(255, 255, 255, 0.41);
 }
 
-.Screen-Shot-2017-08-08-at-103556-PM {
+.photo {
   width: 100%;
   max-width: 100px;
   height: 140px;
@@ -217,7 +216,7 @@ i.fa-angle-down {
   background-color: $white;
 }
 
-.Edited-6-days-ago {
+.description-summary {
   width: 100%;
   margin: 6% 0%;
   max-width: 124px;
@@ -226,6 +225,29 @@ i.fa-angle-down {
   font-size: 16px;
   font-max-weight: 300;
   text-align: left;
+  color: rgba(15, 15, 15, 0.41);
+}
+
+.last-tested {
+  height: 15px;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(15, 15, 15, 0.41);
+}
+
+.user-name-sescription {
+  height: 19px;
+  font-family: Roboto;
+  font-size: 16px;
+  color: $black;
+}
+
+.last-visited {
+  height: 15px;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
   color: rgba(15, 15, 15, 0.41);
 }
 
@@ -301,7 +323,7 @@ i.fa-angle-down {
   margin: 7.5% 5%;
 }
 
-.JS- {
+.test-description {
   width: 450px;
   height: 25px;
   font-family: $font;
@@ -328,10 +350,34 @@ i.fa-angle-down {
 }
 
 .description {
-  margin: 5% 5%;
+  margin: 7% 5%;
+  flex: 8;
+}
+
+.user-stats {
+  display: flex;
+  margin: 7% 2%;
+  flex: 8;
+}
+
+.try {
+  flex: 2;
+}
+
+.time {
+  flex: 2;
+}
+
+.points {
+  flex: 2;
+}
+
+.diagram {
+  flex: 2;
 }
 
 .minirect {
+
   margin-left: auto;
   margin-right: 2%;
   margin-top: 7%;
