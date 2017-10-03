@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AllRespondersComponent } from './all-responders.component';
+import { AllRespondersComponent } from './all-respondents.component';
 
 describe('AllRespondersComponent', () => {
   let component: AllRespondersComponent;

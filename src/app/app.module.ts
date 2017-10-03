@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AllTestsComponent } from './pages/all-tests/all-tests.component';
 import { AllActivationsComponent } from './pages/all-activations/all-activations.component';
-import { AllRespondersComponent } from './pages/all-responders/all-responders.component';
+import {AllRespondentsComponent} from './pages/all-respondents/all-respondents.component';
 import { HeaderComponent } from './pages/all-tests/header/header.component';
 import { NavigationButtonsComponent } from './pages/all-tests/header/navigation-buttons/navigation-buttons.component';
 import { ToolsComponent } from './pages/all-tests/header/tools/tools.component';
@@ -18,7 +18,7 @@ import { TestItemComponent } from './pages/all-tests/tests-list/test-item/test-i
     AppComponent,
     AllTestsComponent,
     AllActivationsComponent,
-    AllRespondersComponent,
+    AllRespondentsComponent,
     HeaderComponent,
     NavigationButtonsComponent,
     ToolsComponent,
