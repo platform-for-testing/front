@@ -1,7 +1,6 @@
 @import "../../shared/colors";
 
 $width: 1440px;
-//$height: 1263px;
 $font: Roboto;
 $font-size: 20px;
 %menu {
@@ -16,7 +15,6 @@ $font-size: 20px;
   max-width: $width;
   width: 100%;
   min-width: 800px;
-  //height: $height;
   background-color: $cloudy-blue;
 }
 
@@ -50,21 +48,7 @@ i.fa-angle-down {
   margin-left: 2px;
 }
 
-/*.Activations {
-  height: 24px;
-  @extend %menu;
-  color: $silver;
-}
-
-.All-respondents {
-  height: 24px;
-  @extend %menu;
-  flex: 25%;
-  color: #d9d9db;
-
-}*/
-
-.Group-2 {
+.image-group {
   max-width: 25px;
   height: 25px;
   object-fit: contain;
@@ -76,13 +60,6 @@ i.fa-angle-down {
   height: 45px;
   border: solid 2px rgba(217, 217, 218, 0.41);
   margin: -15.5% 100%;
-}
-
-.Path-3 {
-  max-width: 9.2px;
-  height: 4.7px;
-  border: solid 1px $black;
-  margin: 25% -10%;
 }
 
 .menu {
@@ -118,13 +95,6 @@ i.fa-angle-down {
   color: $white;
 }
 
-.Rectangle-12 {
-  width: 170px;
-  height: 61px;
-  background-color: $hospital-green;
-  box-shadow: 0 3px 5px 0 rgba(156, 160, 213, 0.72);
-}
-
 .title-left {
   flex: 1;
 }
@@ -142,30 +112,6 @@ i.fa-angle-down {
   display: flex;
 }
 
-.Create-New {
-  margin-top: 11%;
-  width: 104px;
-  height: 24px;
-  font-family: $font;
-  font-size: 20px;
-  color: $white;
-}
-
-.Line-3 {
-  width: 1px;
-  height: 7px;
-  transform: rotate(-270deg);
-  border: solid 2px $white;
-}
-
-.Line-3-1 {
-  margin-top: -11px;
-  width: 1px;
-  height: 7px;
-  transform: rotate(-180deg);
-  border: solid 2px $white;
-}
-
 .plus {
   margin: 15% 5%;
 }
@@ -177,7 +123,6 @@ i.fa-angle-down {
 }
 
 .Line-4 {
-  //margin-left: 15%;
   width: 100%;
   max-width: 999px;
   height: 2px;
@@ -198,14 +143,6 @@ i.fa-angle-down {
   height: 140px;
   background-color: $white;
   box-shadow: 0 2px 20px 0 rgba(156, 160, 213, 0.34);
-}
-
-.Rectangle-6 {
-  width: 100%;
-  display: flex;
-  max-width: 779px;
-  height: 140px;
-  background-color: $black;
 }
 
 .description-and-stats {
@@ -251,74 +188,6 @@ i.fa-angle-down {
   color: rgba(15, 15, 15, 0.41);
 }
 
-.View-Questions {
-  width: 100%;
-  margin: 7.5% 5%;
-  flex: 1;
-  max-width: 111px;
-  height: 19px;
-  opacity: 0.5;
-  font-family: $font;
-  font-size: 16px;
-  text-align: left;
-  color: $white;
-}
-
-.View-Activations {
-  width: 100%;
-  margin: 7.5% 5%;
-  flex: 1;
-  max-width: 119px;
-  height: 19px;
-  font-family: $font;
-  font-size: 16px;
-  text-align: left;
-  color: $white;
-}
-
-.Edit {
-  width: 100%;
-  margin: 7.5% 5%;
-  flex: 1;
-  max-width: 28px;
-  height: 19px;
-  opacity: 0.5;
-  font-family: $font;
-  font-size: 16px;
-  text-align: left;
-  color: $white;
-}
-
-.Activate {
-  width: 100%;
-  margin: 7.5% 5%;
-  flex: 1;
-  max-width: 59px;
-  height: 19px;
-  opacity: 0.5;
-  font-family: $font;
-  font-size: 16px;
-  text-align: left;
-  color: $white;
-}
-
-.Line-5 {
-  max-width: 7.1px;
-  height: 26.7px;
-  transform: rotate(-585deg);
-  opacity: 0.5;
-  border: solid 0.5px rgba(255, 255, 255, 0.5);
-}
-
-.Line-5-1 {
-  margin-top: -27px;
-  max-width: 7.1px;
-  height: 26.7px;
-  transform: rotate(585deg);
-  opacity: 0.5;
-  border: solid 0.5px rgba(255, 255, 255, 0.5);
-}
-
 .close {
   margin: 7.5% 5%;
 }
@@ -330,23 +199,6 @@ i.fa-angle-down {
   font-size: 22px;
   text-align: left;
   color: $black;
-}
-
-.Questions {
-  max-width: 84px;
-  height: 19px;
-  font-family: $font;
-  font-size: 16px;
-  font-max-weight: 300;
-  text-align: left;
-  color: $black;
-}
-
-.Rectangle-17 {
-  margin: 30%;
-  width: 8px;
-  height: 8px;
-  border: solid 1px rgba(15, 15, 15, 0.66);
 }
 
 .description {
