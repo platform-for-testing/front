@@ -1,0 +1,16 @@
+@import "../../../../assets/styles/colors";
+
+.create-new {
+  text-decoration: none;
+  vertical-align: top;
+  width: 165.9px;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  background-color: $hospital-green;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: $white;
+  border: none;
+  text-align: center;
+  display: inline-block;
+}

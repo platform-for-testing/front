@@ -1,4 +1,4 @@
-@import "../../../../shared/colors";
+@import "../../../../../assets/styles/colors";
 
 .menu-item {
   text-decoration: none;
@@ -21,13 +21,6 @@
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-}
-
-.black-text {
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-  text-align: left;
-  color: black;
 }
 
 form {

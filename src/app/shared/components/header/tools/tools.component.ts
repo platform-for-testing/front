@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'pt-tools',
@@ -8,10 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class ToolsComponent implements OnInit {
     imageGlassPath: string;
     imageHumanPath: string;
+    route: string;
 
-    constructor() {
+
+    constructor(_route: Router) {
     this.imageGlassPath = '/assets/images/search.svg';
     this.imageHumanPath = '/assets/images/profile.svg';
+    this.route = _route.url;
   }
 
   ngOnInit() {

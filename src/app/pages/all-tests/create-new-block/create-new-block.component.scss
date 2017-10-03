@@ -1,4 +1,4 @@
-@import "../../../shared/colors";
+@import "../../../../assets/styles/colors";
 
 .my-tests {
   display: inline-block;
@@ -31,19 +31,4 @@ form {
   margin-top: 145px;
   margin-bottom: 48px;
   text-align: center;
-}
-
-.create-new {
-  text-decoration: none;
-  vertical-align: middle;
-  width: 165.9px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background-color: $hospital-green;
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-  color: $white;
-  border: none;
-  text-align: center;
-  display: inline-block;
 }
