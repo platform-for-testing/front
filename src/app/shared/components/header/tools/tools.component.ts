@@ -13,10 +13,10 @@ export class ToolsComponent implements OnInit {
     route: string;
 
 
-    constructor(_route: Router) {
+    constructor(private router: Router) {
     this.imageGlassPath = '/assets/images/search.svg';
     this.imageHumanPath = '/assets/images/profile.svg';
-    this.route = _route.url;
+    this.route = router.url;
   }
 
   ngOnInit() {
