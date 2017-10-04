@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AllTestsComponent } from './pages/all-tests/all-tests.component';
@@ -12,6 +12,8 @@ import { CreateNewTestComponent } from './pages/create-new-test/create-new-test.
 import { WraperComponent } from './pages/all-tests/tests-list/tests-list.component';
 import { CreateNewBlockComponent } from './pages/all-tests/create-new-block/create-new-block.component';
 import { TestItemComponent } from './pages/all-tests/tests-list/test-item/test-item.component';
+import { AllRespondentsListComponent } from './pages/all-respondents/all-respondents-list/all-respondents-list.component';
+import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { TestItemComponent } from './pages/all-tests/tests-list/test-item/test-i
     CreateNewTestComponent,
     WraperComponent,
     CreateNewBlockComponent,
-    TestItemComponent
+    TestItemComponent,
+    AllRespondentsListComponent,
+    RespondentItemComponent
   ],
   imports: [
     BrowserModule,

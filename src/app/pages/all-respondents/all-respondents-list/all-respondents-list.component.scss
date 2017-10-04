@@ -1,0 +1,58 @@
+@import "../../../shared/colors";
+
+$width: 1440px;
+$font: Roboto;
+$font-size: 20px;
+
+.testTitle {
+  display: flex;
+  margin-top: 60px;
+}
+
+.title-left {
+  flex: 1;
+}
+.title-for-list {
+  margin: 7% 50%;
+  width: 277px;
+  height: 40px;
+  font-family: $font;
+  font-size: 34px;
+  color: $white;
+}
+.title-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  color: $white;
+}
+
+
+.angle-down-respondents {
+  margin-top: -10PX;
+  margin-left: 2px;
+}
+
+
+i.fa-angle-down {
+  font-size: 24px;
+  n-top: 10px;
+}
+
+.wrapper {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.horizontal-line {
+  width: 100%;
+  max-width: 999px;
+  height: 2px;
+  border: solid 2px rgba(255, 255, 255, 0.41);
+}
