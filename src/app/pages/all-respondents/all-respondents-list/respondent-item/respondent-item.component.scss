@@ -1,0 +1,109 @@
+@import 'src/assets/styles/colors';
+
+$width: 1440px;
+$font: Roboto;
+$font-size: 20px;
+
+.wrapper {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+.description{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.test-item {
+  width: 100%;
+  margin: 1%;
+  display: inline-flex;
+  max-width: 999px;
+  height: 140px;
+  background-color: $white;
+  box-shadow: 0 2px 20px 0 rgba(156, 160, 213, 0.34);
+}
+.photo {
+  width: 100%;
+  max-width: 100px;
+  height: 140px;
+}
+.description-summary {
+  width: 100%;
+  margin: 6% 0%;
+  max-width: 124px;
+  height: 19px;
+  font-family: $font;
+  font-size: 16px;
+  font-max-weight: 300;
+  color: rgba(15, 15, 15, 0.41);
+}
+.last-visited {
+  height: 15px;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(15, 15, 15, 0.41);
+}
+.user-name-sescription {
+  height: 19px;
+  font-family: Roboto;
+  font-size: 16px;
+  color: $black;
+}
+.last-tested {
+  height: 15px;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(15, 15, 15, 0.41);
+}
+.description-and-stats {
+  width: 100%;
+  display: flex;
+  max-width: 779px;
+  height: 140px;
+  background-color: $white;
+}
+.description-summary {
+  width: 100%;
+  margin: 6% 0%;
+  max-width: 124px;
+  height: 19px;
+  font-family: $font;
+  font-size: 16px;
+  font-max-weight: 300;
+  color: rgba(15, 15, 15, 0.41);
+}
+
+.test-description {
+  width: 450px;
+  height: 25px;
+  font-family: $font;
+  font-size: 22px;
+  color: $black;
+}
+.user-stats {
+  display: flex;
+  margin: 7% 2%;
+  flex: 8;
+}
+
+.try {
+  flex: 2;
+}
+
+.time {
+  flex: 2;
+}
+
+.points {
+  flex: 2;
+}
+
+.diagram {
+  flex: 2;
+}
