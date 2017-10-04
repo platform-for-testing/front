@@ -13,6 +13,10 @@ import { WraperComponent } from './pages/all-tests/tests-list/tests-list.compone
 import { CreateNewBlockComponent } from './pages/all-tests/create-new-block/create-new-block.component';
 import { TestItemComponent } from './pages/all-tests/tests-list/test-item/test-item.component';
 import { CreateNewComponent } from './shared/components/create-new/create-new.component';
+import { ActivationsListWrapperComponent } from './pages/all-activations/activations-list-wrapper/activations-list-wrapper.component';
+import { ActivationItemComponent } from './pages/all-activations/activations-list-wrapper/activation-item/activation-item.component';
+import { PageInformationComponent } from './pages/all-activations/page-information/page-information.component';
+import { HorizontalLineComponent } from './shared/components/horizontal-line/horizontal-line.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { CreateNewComponent } from './shared/components/create-new/create-new.co
     WraperComponent,
     CreateNewBlockComponent,
     TestItemComponent,
-    CreateNewComponent
+    CreateNewComponent,
+    ActivationsListWrapperComponent,
+    ActivationItemComponent,
+    PageInformationComponent,
+    HorizontalLineComponent
   ],
   imports: [
     BrowserModule,

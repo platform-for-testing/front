@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AllActivationsComponent } from './all-activations.component';
+import { HorizontalLineComponent } from './horizontal-line.component';
 
-describe('AllActivationsComponent', () => {
-  let component: AllActivationsComponent;
-  let fixture: ComponentFixture<AllActivationsComponent>;
+describe('HorizontalLineComponent', () => {
+  let component: HorizontalLineComponent;
+  let fixture: ComponentFixture<HorizontalLineComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AllActivationsComponent ]
+      declarations: [ HorizontalLineComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AllActivationsComponent);
+    fixture = TestBed.createComponent(HorizontalLineComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
