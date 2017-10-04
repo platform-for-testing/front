@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {RespondentModel} from '../../../models/respondent.model';
 
 @Component({
   selector: 'pt-respondent-item',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RespondentItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() respondent: RespondentModel;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
