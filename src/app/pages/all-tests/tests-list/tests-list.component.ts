@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Test} from './test-item/test';
+import {Test} from '../../models/test';
 
 @Component({
   selector: 'pt-tests-list',
