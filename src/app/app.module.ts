@@ -20,7 +20,7 @@ import { AllRespondentsListComponent } from './pages/all-respondents/all-respond
 import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
 import { CreateNewComponent } from './shared/components/create-new/create-new.component';
 import {HttpModule} from '@angular/http';
-import {HttpService} from "./shared/services/http.service";
+import {HttpService} from './shared/services/http.service';
 
 @NgModule({
   declarations: [
