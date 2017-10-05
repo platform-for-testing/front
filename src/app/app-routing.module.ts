@@ -8,9 +8,8 @@ import {CreateNewTestComponent} from './pages/create-new-test/create-new-test.co
 const routes: Routes = [
     {path: 'all-tests', component: AllTestsComponent},
     {path: 'all-activations', component: AllActivationsComponent},
-    {path: 'all-respondents', component: AllRespondentsComponent},
     {path: 'create-new-test', component: CreateNewTestComponent},
-
+    {path: 'all-respondents', component: AllRespondentsComponent}
 ];
 
 @NgModule({
