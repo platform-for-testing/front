@@ -14,7 +14,7 @@ export class AllRespondentsListComponent implements OnInit {
   public respondentsList: RespondentModel[];
   private request: HttpService;
   promiseRespondents: Promise<RespondentModel[]>;
-  errorMessage: String
+  errorMessage: String;
 
   constructor(request: HttpService) {
     this.request = request;
