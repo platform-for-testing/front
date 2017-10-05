@@ -19,6 +19,8 @@ import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-n
 import { AllRespondentsListComponent } from './pages/all-respondents/all-respondents-list/all-respondents-list.component';
 import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
 import { CreateNewComponent } from './shared/components/create-new/create-new.component';
+import {HttpModule} from '@angular/http';
+import {HttpService} from "./shared/services/http.service";
 
 @NgModule({
   declarations: [
@@ -44,9 +46,10 @@ import { CreateNewComponent } from './shared/components/create-new/create-new.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule,
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
