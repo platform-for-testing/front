@@ -1,20 +1,39 @@
 /* File Uploader Styles  */
 
+$c-white: #ffffff;
+$c-black: rgb(0, 0, 0);
+$c-gray: #ccc;
+$c-button-grey: #efefef;
+$c-uploader-bg: rgba(0, 0, 0, 0.02);
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
 .uploader input {
-    display: none;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: $c-white;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-image: url(/assets/images/pencil.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-top: 40px;
 }
 
 .uploader {
-    align-items: center;
-    background-color: #efefef;
-    background-color: rgba(0, 0, 0, 0.02);
+    @extend .flex-center;
+    background-color: $c-uploader-bg;
     cursor: pointer;
-    display: -webkit-flex;
-    display: flex;
     height: 300px;
-    justify-content: center;
-    outline: 3px dashed #ccc;
-    outline-offset: 5px;
     position: relative;
     width: 300px;
 }
@@ -25,7 +44,7 @@
     right: 40px;
     width: 40px;
     height: 40px;
-    background-color: #ffffff;
+    background-color: $c-white;
     border-radius: 50%;
     border: none;
     background-image: url('/assets/images/pencil.svg');
@@ -48,7 +67,7 @@
     color: #eee;
     color: rgba(0, 0, 0, 0.2);
     font-size: 5em;
-    background: #fff;
+    background: $c-white;
 }
 
 .uploader img {
