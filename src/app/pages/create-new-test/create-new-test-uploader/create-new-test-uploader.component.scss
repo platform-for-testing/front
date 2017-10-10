@@ -1,10 +1,88 @@
-// temporary stylesheets
+/* File Uploader Styles  */
 
-p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    padding: 30px 0;
-    background: #fff;
-    display: flex;
-    justify-content: center;
+$c-white: #ffffff;
+$c-black: rgb(0, 0, 0);
+$c-gray: #ccc;
+$c-button-grey: #efefef;
+$c-uploader-bg: rgba(0, 0, 0, 0.02);
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.uploader input {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: $c-white;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-image: url(/assets/images/pencil.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-top: 40px;
+}
+
+.uploader {
+    @extend .flex-center;
+    background-color: $c-uploader-bg;
+    cursor: pointer;
+    height: 300px;
+    position: relative;
+    width: 300px;
+}
+
+.load-img {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    background-color: $c-white;
+    border-radius: 50%;
+    border: none;
+    background-image: url('/assets/images/pencil.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.uploader img,
+.uploader .icon {
+    pointer-events: none;
+}
+
+.uploader,
+.uploader .icon {
+    transition: all 100ms ease-in;
+    width: 100%;
+}
+
+.uploader .icon {
+    color: #eee;
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 5em;
+    background: $c-white;
+}
+
+.uploader img {
+    left: 50%;
+    opacity: 0;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    transition: all 300ms ease-in;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 100%;
+}
+
+.uploader img.loaded {
+    opacity: 1;
 }
