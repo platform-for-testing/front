@@ -1,3 +1,10 @@
 <p>
-  create-new-test-header works!
+  {{testTitle}}
+ <input type="text"
+ (input)="onUpdateTestTitle($event)">
+
+  {{formDescription}}
+  <input type="text"
+         (input)="onUpdateFormDescription($event)"
+  placeholder="Form description(optional)">
 </p>
