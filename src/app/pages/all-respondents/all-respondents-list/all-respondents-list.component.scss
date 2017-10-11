@@ -1,56 +1,51 @@
 @import 'src/assets/styles/colors';
 
 $width: 1440px;
-$font: Roboto;
 $font-size: 20px;
 
 .testTitle {
-	display: flex;
-	justify-content: space-between;
-	width: 1000px;
-	    padding-top: 135px;
-    padding-bottom: 15px;
-	margin: 0 auto;
-	border-bottom: solid 2px rgba(255, 255, 255, 0.41);
+  display: flex;
+  justify-content: space-between;
+  padding-top: 135px;
+  padding-bottom: 15px;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.41);
 }
 
 .title-for-list {
-    font-family: Roboto;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-    font-size: 36px;
-    color: #ffffff;
+  text-transform: uppercase;
+  font-size: 34px;
+  color: #ffffff;
 
-	&__quantity {
-		padding-bottom: 15px;
-		border-bottom: 2px solid #fff;
-	}
+  &__quantity {
+    padding-bottom: 15px;
+    border-bottom: 2px solid #fff;
+  }
 }
 
 .title-right {
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: auto;
-	color: $white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  color: $white;
 }
 
 .close-menu {
-	    font-size: 20px;
-    font-weight: 300;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .angle-down-respondents {
-	margin-left: 10px;
+  margin-left: 10px;
 }
 
 .fa-angle-down {
-	    font-size: 26px;
+  font-size: 26px;
 }
 
 .respondent {
-	&__items {
-		    margin-top: 50px;
-	}
+  &__items {
+    margin-top: 35px;
+  }
 }
