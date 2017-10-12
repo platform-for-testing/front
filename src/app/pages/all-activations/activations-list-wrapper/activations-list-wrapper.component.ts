@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Activation} from "../../models/activation";
+
 
 @Component({
   selector: 'pt-activations-list-wrapper',
@@ -6,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./activations-list-wrapper.component.scss']
 })
 export class ActivationsListWrapperComponent implements OnInit {
+
+  activations: Activation[] = [
+      new Activation('activation name', 2, 1, 3, '/assets/images/image.jpeg'),
+      new Activation('another name', 2, 1, 3, '/assets/images/image.jpeg'),
+  ];
 
   constructor() { }
 

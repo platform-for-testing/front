@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Activation} from "../../../models/activation";
 
 @Component({
   selector: 'pt-activation-item',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActivationItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() activation: Activation;
+
+
+  constructor() {}
 
   ngOnInit() {
   }

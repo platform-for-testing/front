@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-activations.component.scss']
 })
 export class AllActivationsComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
