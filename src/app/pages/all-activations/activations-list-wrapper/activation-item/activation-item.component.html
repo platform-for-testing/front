@@ -1,8 +1,8 @@
 <div class="activation-item">
-  <span class="activation-image"><img [src]="testImagePath" alt="test image"></span>
-  <span class="created_days_ago">created 4 days ago</span>
-  <span class="activation-title">the titile<br></span>
-  <span class="end-in">End in 2 days ago</span>
-  <span class="amount-of-partisipants">23 вопросов</span>
+  <span class="activation-image"><img [src]="activation.imagePath" alt="test image"></span>
+  <span class="created_days_ago">created {{activation.created}} days ago</span>
+  <span class="activation-title">{{activation.name}}<br></span>
+  <span class="end-in">End in {{activation.endIn}} days</span>
+  <span class="amount-of-partisipants">{{activation.numberOfParticipants}} participants</span>
   <div class="rectangles">&#9633;<br>&#9633;<br>&#9633;</div>
 </div>
