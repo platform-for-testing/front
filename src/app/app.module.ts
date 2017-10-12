@@ -19,6 +19,7 @@ import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-n
 import { AllRespondentsListComponent } from './pages/all-respondents/all-respondents-list/all-respondents-list.component';
 import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
 import { CreateNewComponent } from './shared/components/create-new/create-new.component';
+import { CreateNewTestMultiselectComponent } from './pages/create-new-test/create-new-test-multiselect/create-new-test-multiselect.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CreateNewComponent } from './shared/components/create-new/create-new.co
     AllRespondentsListComponent,
     RespondentItemComponent,
     TestItemComponent,
-    CreateNewComponent
+    CreateNewComponent,
+    CreateNewTestMultiselectComponent
   ],
   imports: [
     BrowserModule,
