@@ -1,0 +1,85 @@
+.bread-crumbs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:  wrap;
+    justify-content: flex-start;
+}
+.test-title-background {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap:  wrap;
+    justify-content: flex-end;
+}
+.main-form-background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap:  wrap;
+    justify-content: flex-start;
+}
+
+.first-drop-down-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap:  wrap;
+    justify-content: center;
+}
+.main-form-up-part {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap:  wrap;
+    justify-content: flex-start;
+}
+.second-drop-down-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap:  wrap;
+    justify-content: center;
+}
+.first-question-field {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap:  wrap;
+    justify-content: flex-start;
+}
+.second-question-forms {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap:  wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+.third-question-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap:  wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+.third-question-form:last-child {
+    margin-left: auto;
+}
+.switch {
+    display: flex;
+    justify-content: flex-end;
+}
+.bottom-menu {
+    display: flex;
+    margin-top: 1%;
+    margin-left: 4%;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap:  wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+.third-question-form:last-child {
+    margin-right: 20px;
+}
