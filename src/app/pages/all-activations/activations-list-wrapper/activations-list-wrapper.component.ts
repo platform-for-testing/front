@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Activation} from "../../models/activation";
+import {Activation} from '../../models/activation';
 
 
 @Component({
