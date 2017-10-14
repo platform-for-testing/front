@@ -16,9 +16,10 @@ export class QuestionListComponent implements OnInit {
 
   questions: Question[] = [];
 
-  addQuestion() {
-    this.questions.push(new Question(this.questions.length + 1, 'Question', '', false));
+  addQuestion(question: Question) {
+    this.questions.push(new Question(this.questions.length + 1, 'Question', '', false, true));
     console.log(this.questions);
+    this.editQuestion(this.questions[this.questions.length - 1]);
   }
 
   addText() {
@@ -37,17 +38,26 @@ export class QuestionListComponent implements OnInit {
     alert('add section');
   }
 
-  removeQuestion(id) {
+  removeQuestion(id: number) {
     this.questions.splice(id - 1, 1);
     this.questions.forEach((question, index) => {
       question.id = index + 1;
     })
   }
 
-  cloneQuestion(id, title, description, required) {
-    this.questions.splice(id, 0, new Question(this.questions.length + 1, title, description, required));
+  cloneQuestion(id: number, title: string, description: string, required: boolean) {
+    this.questions.splice(id, 0, new Question(this.questions.length + 1, title, description, required, true));
     this.questions.forEach((question, index) => {
       question.id = index + 1;
     })
+    this.editQuestion(this.questions[id]);
   } 
+
+  editQuestion(question: Question) {
+    this.questions.forEach((question) => {
+      question.editable = false;
+    });
+    question.editable = true;
+  }
+
 }

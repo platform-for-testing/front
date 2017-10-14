@@ -1,31 +1,25 @@
-<p>
-  question works!
-</p>
-<div *ngIf="question">
+<div *ngIf="question.editable" class="pt-question pt-question--editable">
   <div>
-    <div>
-      <select name="" id="">
-        <option value="1">1</option>
-        <option value="1">1</option>
-      </select>
-      <select name="" id="">
-        <option value="1">1</option>
-        <option value="1">1</option>
-      </select>
-    </div>  
-  
-    <div>
-      <span>{{question.id}}. </span>
-  
-      <input type="text" [(ngModel)]="question.title">
-      
-      <input type="text" [(ngModel)]="question.description" placeholder="Description (optional)">
-    </div>
-    
-    <ng-content></ng-content>
+    <select name="" id="">
+      <option value="1">1</option>
+      <option value="1">1</option>
+    </select>
+    <select name="" id="">
+      <option value="1">1</option>
+      <option value="1">1</option>
+    </select>
+  </div>  
+
+  <div class="pt-question_input">
+    <input type="text" class="pt-question_title-input" [(ngModel)]="question.title">
   </div>
-  <div>
-    <h2>{{question.id}}. {{question.title}}</h2>
-    <h4 *ngIf="question.description">{{question.description}}</h4>
+  <div class="pt-question_input">    
+    <input type="text" class="pt-description-input" [(ngModel)]="question.description" placeholder="Description (optional)">
   </div>
+  
+  <ng-content></ng-content>
+</div>
+<div *ngIf="!question.editable" (click)="editQuestion(question)" class="pt-question pt-question--static">
+  <h2 class="pt-question_title">{{question.id}}. {{question.title}}</h2>
+  <p class="pt-question_description" *ngIf="question.description">{{question.description}}</p>
 </div>
