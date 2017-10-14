@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
-const mulselItems = [
-  {
+const mulselItems = [{
     value: 'Multiple choices',
     icon: 'icon'
-  },{
+}, {
     value: 'Checkboxes',
     icon: 'icon icon_checkbox'
-  },{
+}, {
     value: 'Yes/No',
     icon: 'icon icon_truefalse'
-  },{
+}, {
     value: 'Ordering',
     icon: 'icon icon_ordering'
 }];
@@ -22,26 +21,25 @@ const mulselItems = [
 })
 
 export class CreateNewTestMultiselectComponent implements OnInit {
-
   mulselItems = mulselItems;
   mulsel = true;
   mulselContent = false;
-
   currentInner = this.currentInner = 'Multiple choices';
   currentClass = this.currentClass = 'icon';
 
   mulselOpen() {
-    this.mulselContent = !this.mulselContent
-  };
-
-  click(value, icon) {
-      this.currentInner = value;
-      this.currentClass = icon;
-      this.mulselOpen();
-      console.log('current value is ' + value + ',' + ' current icon class is ' + icon)
+    this.mulselContent = !this.mulselContent;
   }
 
-  constructor() { }
+  click(value, icon) {
+    this.currentInner = value;
+    this.currentClass = icon;
+    this.mulselOpen();
+  }
 
-  ngOnInit() { }
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
 }
