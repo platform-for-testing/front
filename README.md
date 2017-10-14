@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/platform-for-testing/front.svg?branch=develop)](https://travis-ci.org/platform-for-testing/front)
+g[![Build Status](https://travis-ci.org/platform-for-testing/front.svg?branch=develop)](https://travis-ci.org/platform-for-testing/front)
 
 # PlatformForTesting
 

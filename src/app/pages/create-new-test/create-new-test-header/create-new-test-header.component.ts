@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-new-test-header.component.scss']
 })
 export class CreateNewTestHeaderComponent implements OnInit {
+testTitle = 'Test Title';
+formDescription = '';
 
   constructor() { }
 
   ngOnInit() {
   }
-
+onUpdateTestTitle(event: Event) {
+  this.testTitle = (<HTMLInputElement>event.target).value;
+}
+  onUpdateFormDescription(event: Event) {
+    this.formDescription = (<HTMLInputElement>event.target).value;
+  }
 }
