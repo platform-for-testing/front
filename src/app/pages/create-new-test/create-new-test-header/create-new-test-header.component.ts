@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-new-test-header.component.scss']
 })
 export class CreateNewTestHeaderComponent implements OnInit {
-testTitle = 'Test Title';
+testTitle = '';
 formDescription = '';
 
   constructor() { }
