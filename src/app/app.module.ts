@@ -1,6 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { AllTestsComponent } from './pages/all-tests/all-tests.component';
 import { AllActivationsComponent } from './pages/all-activations/all-activations.component';
@@ -20,6 +23,8 @@ import { AllRespondentsListComponent } from './pages/all-respondents/all-respond
 import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
 import { CreateNewComponent } from './shared/components/create-new/create-new.component';
 import { CreateNewTestMultiselectComponent } from './pages/create-new-test/create-new-test-multiselect/create-new-test-multiselect.component';
+import { QuestionListComponent } from './pages/create-new-test/question-list/question-list.component';
+import { QuestionComponent } from './pages/create-new-test/question-list/question/question.component';
 
 @NgModule({
   declarations: [
@@ -42,11 +47,14 @@ import { CreateNewTestMultiselectComponent } from './pages/create-new-test/creat
     RespondentItemComponent,
     TestItemComponent,
     CreateNewComponent,
-    CreateNewTestMultiselectComponent
+    CreateNewTestMultiselectComponent,
+    QuestionListComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

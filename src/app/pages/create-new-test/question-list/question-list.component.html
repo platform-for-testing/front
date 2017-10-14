@@ -1,0 +1,24 @@
+<pt-question *ngFor="let q of questions" [question]="q">
+  <button type="button" (click)="removeQuestion(q.id)">X</button>
+  <button type="button" (click)="cloneQuestion(q.id, q.title, q.description, q.required)">Clone</button>
+</pt-question>
+
+<button type="button"
+      (click)="addQuestion()">New
+</button>
+
+<button type="button"
+      (click)="addText()">Text
+</button>
+
+<button type="button"
+      (click)="addPicture()">Picture
+</button>
+
+<button type="button"
+      (click)="addVideo()">Video
+</button>
+
+<button type="button"
+      (click)="addSection()">Section
+</button>
