@@ -1,13 +1,20 @@
 <div class="test-item">
-    <span class="test-image"><img [src]="testImagePath" alt="test image"></span>
-    <span class="edited">Edited in {{test.lastEdited}} days ago</span>
+  <span class="test-image"><img [src]="testImagePath" alt="test image"></span>
+  <span class="edited">Edited in {{test.lastEdited}} days ago</span>
+  <div class="div">
     <span class="test-title">{{test.name}}<br></span>
     <span class="amount-of-questions">{{test.numberOfQuestions}} вопросов</span>
-    <div class="rectangles">&#9633;<br>&#9633;<br>&#9633;</div>
-    <div class="test-options">
-        <span>View Questions</span>
-        <span>View Activations</span>
-        <span>Edit</span>
-        <span>Activate</span>
-    </div>
+  </div>
+  
+  <div class="rectangles">
+    <div class="rectangles__item"></div>
+    <div class="rectangles__item"></div>
+    <div class="rectangles__item"></div>
+  </div>
+  <div class="test-options">
+    <span>View Questions</span>
+    <span>View Activations</span>
+    <span>Edit</span>
+    <span>Activate</span>
+  </div>
 </div>

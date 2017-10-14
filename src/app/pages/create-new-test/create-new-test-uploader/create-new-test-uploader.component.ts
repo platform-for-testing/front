@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'pt-app-create-new-test-uploader',
+  selector: 'pt-create-new-test-uploader',
   templateUrl: './create-new-test-uploader.component.html',
   styleUrls: ['./create-new-test-uploader.component.scss']
 })

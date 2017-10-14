@@ -1,12 +1,8 @@
 @import 'src/assets/styles/colors';
 
-
-div{
+div {
+  position: relative;
   height: 61px;
-  width:100%;
+  width: 100%;
   background-color: $white;
-  top: 0;
-  left:0;
-  position: absolute;
-  z-index: -1;
 }
