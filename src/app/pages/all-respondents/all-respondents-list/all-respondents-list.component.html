@@ -1,15 +1,15 @@
-  <div class="testTitle">
-    <div class="title-left">
-      <div class="title-for-list">All Respondents (2)</div>
-    </div>
-    <div class="title-right">
-      <div class="close-menu">All Respondents</div>
-      <div class="angle-down-respondents">
-        <i class="fa fa-angle-down"></i>
-      </div>
-    </div>
-  </div>
-  <div class="wrapper">
-    <div class="horizontal-line"></div>
-  </div>
-<pt-respondent-item *ngFor="let respondent of respondentsList" [respondent]="respondent"></pt-respondent-item>
+<div class="testTitle">
+	<div class="title-left">
+		<div class="title-for-list">All Respondents <span class="title-for-list__quantity">(2)</span></div>
+	</div>
+	<div class="title-right">
+		<div class="close-menu">All Respondents</div>
+		<div class="angle-down-respondents">
+			<i class="fa fa-angle-down"></i>
+		</div>
+	</div>
+</div>
+<div class="respondent__items">
+	<pt-respondent-item *ngFor="let respondent of respondentsList" [respondent]="respondent"></pt-respondent-item>
+</div>
+

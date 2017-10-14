@@ -1,5 +1,6 @@
-div.body{
-  height: 100vh;
-  width: 100%;
-  padding: 0px;
+.app {
+	&__container {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
 }
