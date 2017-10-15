@@ -11,17 +11,16 @@ import {HttpService} from '../../../shared/services/http.service';
 })
 export class AllRespondentsListComponent implements OnInit {
 
-  public respondentsList: RespondentModel[];
-  private request: HttpService;
+  private respondentsList: RespondentModel[];
   promiseRespondents: Promise<RespondentModel[]>;
   errorMessage: String;
 
-  constructor(request: HttpService) {
+  constructor(private request: HttpService) {
     this.request = request;
   }
 
   ngOnInit() {
-    let userOne: UserModel;
+    /*let userOne: UserModel;
     let userTwo: UserModel;
     let testOne: Test;
     let testTwo: Test;
@@ -30,7 +29,7 @@ export class AllRespondentsListComponent implements OnInit {
     testOne = new Test('Тест по HTML. Средний уровень', 5, 12);
     testTwo = new Test('Тест по Git. Начальный уровень', 4, 10);
 
-    /* this.respondentsList = [
+     this.respondentsList = [
        new RespondentModel(userOne, testOne, 1, 5, 'time'),
        new RespondentModel(userTwo, testTwo, 2, 10, 'time')
      ];*/
