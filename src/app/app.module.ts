@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +19,8 @@ import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-n
 import { AllRespondentsListComponent } from './pages/all-respondents/all-respondents-list/all-respondents-list.component';
 import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
 import { CreateNewComponent } from './shared/components/create-new/create-new.component';
+import {HttpModule} from '@angular/http';
+import {GetRespondentsService} from './shared/services/getRespondents.service';
 import { CreateNewTestMultiselectComponent } from './pages/create-new-test/create-new-test-multiselect/create-new-test-multiselect.component';
 
 @NgModule({
@@ -47,9 +48,10 @@ import { CreateNewTestMultiselectComponent } from './pages/create-new-test/creat
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule,
   ],
-  providers: [],
+  providers: [GetRespondentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
