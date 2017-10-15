@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RespondentModel} from '../../models/respondent.model';
 import {UserModel} from '../../models/user.model';
 import {Test} from '../../models/test';
-import {HttpService} from '../../../shared/services/http.service';
+import {GetRespondentsService} from '../../../shared/services/getRespondents.service';
 
 @Component({
   selector: 'pt-all-respondents-list',
@@ -15,7 +15,7 @@ export class AllRespondentsListComponent implements OnInit {
   promiseRespondents: Promise<RespondentModel[]>;
   errorMessage: String;
 
-  constructor(private request: HttpService) {
+  constructor(private request: GetRespondentsService) {
     this.request = request;
   }
 
