@@ -8,6 +8,7 @@ import { QuestionListComponent } from '../question-list.component';
   styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit {
+  @Input() quest: Question;
   @Input() question: Question;
   @Input() questions: Question[];
 
