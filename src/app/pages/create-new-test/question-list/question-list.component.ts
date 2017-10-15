@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Output } from '@angular/core';
 import { QuestionComponent } from './question/question.component';
 import { Question } from './question/question';
 
@@ -8,14 +8,14 @@ import { Question } from './question/question';
   styleUrls: ['./question-list.component.scss']
 })
 export class QuestionListComponent implements OnInit {
-  questions: Question[] = [];
+  @Output() questions: Question[] = [];
+  @Output() question: Question;
 
   constructor(private elementRef: ElementRef) {
   }
 
   ngOnInit() {
   }
-
 
   addQuestion(question: Question) {
     this.questions.push(new Question(this.questions.length + 1, 'Question', '', false, true));

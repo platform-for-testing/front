@@ -1,7 +1,6 @@
 <div class="pt-question-list">
   <pt-question *ngFor="let q of questions" 
-               [question]="q" 
-               [questions]="questions">
+               [question]="q">
     <div class="pt-question_controls">
       <span class="pt-question_button pt-question_remove" 
             (click)="removeQuestion(q.id)"><i class="fa fa-times" aria-hidden="true"></i>

@@ -18,7 +18,9 @@ export class QuestionComponent implements OnInit {
   }
 
   editQuestion(question: Question) {
+    console.log(question)
     this.questions.forEach((qstn) => {
+      console.log('a',qstn)
       qstn.editable = false;
     });
     question.editable = true;
