@@ -8,8 +8,7 @@ import { Question } from './question/question';
   styleUrls: ['./question-list.component.scss']
 })
 export class QuestionListComponent implements OnInit {
-  @Output() questions: Question[] = [];
-  @Output() question: Question;
+  questions: Question[] = [];
 
   constructor(private elementRef: ElementRef) {
   }

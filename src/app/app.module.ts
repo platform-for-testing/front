@@ -1,10 +1,10 @@
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from './app.component';
 import { AllTestsComponent } from './pages/all-tests/all-tests.component';
 import { AllActivationsComponent } from './pages/all-activations/all-activations.component';
 import { AllRespondentsComponent } from './pages/all-respondents/all-respondents.component';
