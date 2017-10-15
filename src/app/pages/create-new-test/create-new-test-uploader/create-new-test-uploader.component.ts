@@ -6,11 +6,11 @@ import {Component} from '@angular/core';
   styleUrls: ['./create-new-test-uploader.component.scss']
 })
 export class CreateNewTestUploaderComponent {
-  imageSrc = 'https://upload.wikimedia.org/wikipedia/commons/c/cd/View_from_connors_hill_panorama.jpg'; //: string
+  imageSrc = 'https://upload.wikimedia.org/wikipedia/commons/c/cd/View_from_connors_hill_panorama.jpg'; // : string
 
-  dragging = false; //: boolean
-  loaded = false; //: boolean
-  imageLoaded = false; //: boolean
+  dragging = false; // : boolean
+  loaded = false; // : boolean
+  imageLoaded = false; // : boolean
 
   handleDragEnter() {
     this.dragging = true;
