@@ -19,7 +19,6 @@ export class ToolsComponent implements OnInit {
     this.route = router.url;
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
