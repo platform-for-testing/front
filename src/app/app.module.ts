@@ -57,6 +57,10 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
     HttpModule
   ],
   providers: [GetRespondentsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { }

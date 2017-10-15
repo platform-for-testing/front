@@ -10,9 +10,9 @@ import { QuestionListComponent } from '../question-list.component';
 export class QuestionComponent implements OnInit {
   @Input() question: Question;
   @Input() questions: Question[];
-  
+
   constructor() { }
-  
+
   ngOnInit() {
   }
 
