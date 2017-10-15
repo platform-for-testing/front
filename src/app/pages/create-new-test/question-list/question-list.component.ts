@@ -10,7 +10,7 @@ import { Question } from './question/question';
 export class QuestionListComponent implements OnInit {
   questions: Question[] = [];
 
-  constructor(private elementRef: ElementRef) { 
+  constructor(private elementRef: ElementRef) {
   }
 
   ngOnInit() {
@@ -45,20 +45,20 @@ export class QuestionListComponent implements OnInit {
     this.questions.splice(id - 1, 1);
     this.questions.forEach((question, index) => {
       question.id = index + 1;
-    })
+    });
   }
 
   cloneQuestion(id: number, title: string, description: string, required: boolean) {
     this.questions.splice(id, 0, new Question(this.questions.length + 1, title, description, required, true));
     this.questions.forEach((question, index) => {
       question.id = index + 1;
-    })
+    });
     this.editQuestion(this.questions[id]);
-  } 
+  }
 
   editQuestion(question: Question) {
-    this.questions.forEach((question) => {
-      question.editable = false;
+    this.questions.forEach((qstn) => {
+      qstn.editable = false;
     });
     question.editable = true;
   }
