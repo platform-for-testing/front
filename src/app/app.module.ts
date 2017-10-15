@@ -20,7 +20,8 @@ import { AllRespondentsListComponent } from './pages/all-respondents/all-respond
 import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
 import { CreateNewComponent } from './shared/components/create-new/create-new.component';
 import {HttpModule} from '@angular/http';
-import {HttpService} from './shared/services/http.service';
+import {GetRespondentsService} from './shared/services/getRespondents.service';
+import { CreateNewTestMultiselectComponent } from './pages/create-new-test/create-new-test-multiselect/create-new-test-multiselect.component';
 
 @NgModule({
   declarations: [
@@ -42,14 +43,15 @@ import {HttpService} from './shared/services/http.service';
     AllRespondentsListComponent,
     RespondentItemComponent,
     TestItemComponent,
-    CreateNewComponent
+    CreateNewComponent,
+    CreateNewTestMultiselectComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
   ],
-  providers: [HttpService],
+  providers: [GetRespondentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

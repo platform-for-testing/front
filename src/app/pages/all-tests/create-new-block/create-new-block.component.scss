@@ -1,34 +1,36 @@
 @import 'src/assets/styles/colors';
 
-.my-tests {
-  display: inline-block;
-  width: 999px;
-}
-
 form {
   display: inline-block;
 }
 
-.my-tests-description {
-  font-family: "Roboto", sans-serif;
-  width: 334px;
-  line-height: 34px;
-  font-size: 34px;
-  text-align: left;
-  color: $white;
-  font-weight: 200;
-  margin-right: 702px;
+.new {
+  position: relative;
+  bottom: 10px;
 }
 
-.horizontal-line {
-  width: 999px;
-  height: 2px;
-  background-color: rgba(255, 255, 255, 0.41);
-  display: inline-block;
+.my-tests {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-description {
+    font-family: "Roboto", sans-serif;
+    line-height: 34px;
+    text-transform: uppercase;
+    font-size: 36px;
+    color: $white;
+    font-weight: 400;
+
+    & span {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 9px;
+    }
+  }
 }
 
 .block {
-  margin-top: 145px;
-  margin-bottom: 48px;
-  text-align: center;
+  padding-top: 130px;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 50px;
 }

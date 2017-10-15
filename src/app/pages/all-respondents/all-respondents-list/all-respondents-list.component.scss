@@ -1,27 +1,29 @@
 @import 'src/assets/styles/colors';
 
 $width: 1440px;
-$font: Roboto;
 $font-size: 20px;
 
 .testTitle {
   display: flex;
-  margin-top: 60px;
+  justify-content: space-between;
+  padding-top: 135px;
+  padding-bottom: 15px;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.41);
 }
 
-.title-left {
-  flex: 1;
-}
 .title-for-list {
-  margin: 7% 50%;
-  width: 277px;
-  height: 40px;
-  font-family: $font;
+  text-transform: uppercase;
   font-size: 34px;
-  color: $white;
+  color: #ffffff;
+
+  &__quantity {
+    padding-bottom: 15px;
+    border-bottom: 2px solid #fff;
+  }
 }
+
 .title-right {
-  flex: 1;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,30 +31,21 @@ $font-size: 20px;
   color: $white;
 }
 
+.close-menu {
+  font-size: 20px;
+  font-weight: 300;
+}
 
 .angle-down-respondents {
-  margin-top: -10PX;
-  margin-left: 2px;
+  margin-left: 10px;
 }
 
-
-i.fa-angle-down {
-  font-size: 24px;
-  n-top: 10px;
+.fa-angle-down {
+  font-size: 26px;
 }
 
-.wrapper {
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: auto;
-}
-
-.horizontal-line {
-  width: 100%;
-  max-width: 999px;
-  height: 2px;
-  border: solid 2px rgba(255, 255, 255, 0.41);
+.respondent {
+  &__items {
+    margin-top: 35px;
+  }
 }

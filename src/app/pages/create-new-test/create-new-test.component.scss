@@ -1,11 +1,14 @@
 // temporary stylesheets
+@import 'src/assets/styles/fonts';
 
 h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 28px;
-    padding: 40px 0;
-    background: #21C90E;
-    color: #fff;
-    display: flex;
-    justify-content: center;
+  font-family: $font-main;
+  font-size: 24px;
+  padding: 20px 0;
+  margin: 100px auto 10px;
+  max-width: 1000px;
+  background: #8be8a3;
+  color: #fff;
+  display: flex;
+  justify-content: center;
 }

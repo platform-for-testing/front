@@ -1,33 +1,36 @@
-div.tools-wrapper {
-  display: inline-block;
+.tools-wrapper {
+	display: inline-block;
 }
+
 .tools {
-  height: 61px;
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.img {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.line {
-  width: 2px;
-  height: 45px;
-  background-color: rgba(217, 217, 218, 0.41);
-  display: inline-block;
+	display: flex;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 0;
 }
 
 .icon-wrap {
-  line-height: 61px;
-  display: inline-block;
-  width: 92px;
-  text-align: center;
+	cursor: pointer;
+	position: relative;
+	align-items: center;
+	display: flex;
+	padding: 0 30px;
+
+	&_search {
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			right: 0px;
+			height: 80%;
+			width: 2px;
+			background: #eee;
+		}
+	}
 }
 
-i.fa-angle-down {
-  font-size:24px;
+.fa-angle-down {
+	font-size:24px;
+	margin-left: 4px;
 }
