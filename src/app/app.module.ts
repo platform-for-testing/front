@@ -20,6 +20,8 @@ import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-n
 import { AllRespondentsListComponent } from './pages/all-respondents/all-respondents-list/all-respondents-list.component';
 import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
 import { CreateNewComponent } from './shared/components/create-new/create-new.component';
+import {HttpModule} from '@angular/http';
+import {GetRespondentsService} from './shared/services/getRespondents.service';
 import { CreateNewTestMultiselectComponent } from './pages/create-new-test/create-new-test-multiselect/create-new-test-multiselect.component';
 import { QuestionListComponent } from './pages/create-new-test/question-list/question-list.component';
 import { QuestionComponent } from './pages/create-new-test/question-list/question/question.component';
@@ -51,9 +53,10 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [GetRespondentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
