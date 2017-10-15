@@ -50,6 +50,7 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
     CreateNewTestMultiselectComponent,
     QuestionListComponent,
     QuestionComponent
+
   ],
   imports: [
     BrowserModule,
