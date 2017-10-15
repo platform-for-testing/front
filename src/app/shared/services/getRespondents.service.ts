@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class HttpService {
+export class GetRespondentsService {
   url = 'http://localhost:3000/respondents';
 
   constructor(private http: Http) {
