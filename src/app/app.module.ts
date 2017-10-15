@@ -1,6 +1,6 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,8 +16,6 @@ import { CreateNewBlockComponent } from './pages/all-tests/create-new-block/crea
 import { TestItemComponent } from './pages/all-tests/tests-list/test-item/test-item.component';
 import { CreateNewTestComponent } from './pages/create-new-test/create-new-test.component';
 import { CreateNewTestHeaderComponent } from './pages/create-new-test/create-new-test-header/create-new-test-header.component';
-import { CreateNewTestMainComponent } from './pages/create-new-test/create-new-test-main/create-new-test-main.component';
-import { CreateNewTestControlsComponent } from './pages/create-new-test/create-new-test-controls/create-new-test-controls.component';
 import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-new-test-uploader/create-new-test-uploader.component';
 import { AllRespondentsListComponent } from './pages/all-respondents/all-respondents-list/all-respondents-list.component';
 import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
@@ -40,8 +38,6 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
     TestItemComponent,
     CreateNewTestComponent,
     CreateNewTestHeaderComponent,
-    CreateNewTestMainComponent,
-    CreateNewTestControlsComponent,
     CreateNewTestUploaderComponent,
     AllRespondentsListComponent,
     RespondentItemComponent,
