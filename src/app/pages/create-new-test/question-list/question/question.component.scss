@@ -64,8 +64,15 @@
   }
 }
 
-.pt-description-input {
-  font-size: 14px;
+.pt-description {
+  &-input {
+    font-size: 14px;
     font-weight: 300;
+  }
 }
 
+.pt-multiselect {
+  &_shift {
+    margin-left: 20px;
+  }
+}
