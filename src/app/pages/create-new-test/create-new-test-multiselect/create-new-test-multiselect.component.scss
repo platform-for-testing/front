@@ -22,6 +22,20 @@ h2 {
   box-sizing: border-box;
   width: 262px;
 
+  &__container {
+    z-index: 999;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 6px auto 0;
+    box-shadow: 0 29px 47px 0 rgba(156, 160, 213, 0.74);
+    padding: 20px 40px;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
   &__content {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -67,7 +81,6 @@ h2 {
     right: 2px;
     display: block;
     width: 100%;
-    height: 120%;
     animation-name: slidein;
     animation-duration: .3s;
     background: #fff;
@@ -197,14 +210,4 @@ h2 {
   transform: rotate(132deg);
   border-radius: 4px;
   background: #6c6c6c;
-}
-
-.container {
-  max-width: 1000px;
-  display: flex;
-  min-height: 200px;
-  margin: 0 auto 10px;
-  padding: 40px 0 80px;
-  background: #fff;
-  justify-content: center;
 }

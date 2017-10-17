@@ -1,14 +1,22 @@
 // temporary stylesheets
 @import 'src/assets/styles/fonts';
 
-h1 {
-  font-family: $font-main;
-  font-size: 24px;
-  padding: 20px 0;
-  margin: 100px auto 10px;
-  max-width: 1000px;
-  background: #8be8a3;
-  color: #fff;
-  display: flex;
-  justify-content: center;
+.create {
+	&__container {
+		max-width: 820px;
+		margin: 0 auto;
+
+		&_test {
+		margin: 320px auto 0;
+		}
+		
+		&_full {
+			max-width: 100%;
+		}
+	}
+}
+
+p {
+	color: #fff;
+	padding: 0 20px;
 }

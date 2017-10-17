@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Question } from './question';
 import { QuestionListComponent } from '../question-list.component';
+import { CreateNewTestMultiselectComponent } from '../../create-new-test-multiselect/create-new-test-multiselect.component';
 
 @Component({
   selector: 'pt-question',

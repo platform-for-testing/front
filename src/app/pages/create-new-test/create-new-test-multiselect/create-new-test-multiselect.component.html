@@ -1,20 +1,18 @@
-<h2>Multiselect component(needs refactoring)</h2>
+<div id="select__container">
+    <div class="select" *ngIf="mulsel">
+      <div class="select__item select__item_main" #select id="mainSel" (click)="mulselOpen()">
+        <i class="{{ currentClass }}"></i>
+        <div class='select__content'>{{ currentInner }}</div>
+        <i class="arrow down opener"></i>
+      </div>
+      <div class="select__items" id="items" *ngIf="mulselContent">
+        <div class="select__item inner"
+          (click)="click(mulselItem.value, mulselItem.icon, select, $event)"
+          *ngFor="let mulselItem of mulselItems">
 
-<div class="container" id="container">
-  <div class="select" #select *ngIf="mulsel">
-    <div class="select__item select__item_main" id="mainSel">
-      <i class="{{ currentClass }}"></i>
-      <div class='select__content'>{{ currentInner }}</div>
-      <i class="arrow down opener" (click)="mulselOpen()"></i>
-    </div>
-    <div class="select__items" id="items" *ngIf="mulselContent">
-      <div class="select__item inner"
-      (click)="click(mulselItem.value, mulselItem.icon)"
-      *ngFor="let mulselItem of mulselItems">
-
-      <i class="{{ mulselItem.icon }}"></i>
-      <div class='select__content'>{{ mulselItem.value }}</div>
+        <i class="{{ mulselItem.icon }}"></i>
+        <div class='select__content'>{{ mulselItem.value }}</div>
+      </div>
     </div>
   </div>
-</div>
 </div>

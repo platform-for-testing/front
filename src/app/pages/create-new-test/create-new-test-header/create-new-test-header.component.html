@@ -1,28 +1,8 @@
-<p>
-  {{testTitle}}
- <input type="text"
- (input)="onUpdateTestTitle($event)">
-
-  {{formDescription}}
-  <input type="text"
-         (input)="onUpdateFormDescription($event)"
-  placeholder="Form description(optional)">
-</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="create__header">
+	<input class="create__header-input create__header-heading test" type="text"(input)="onUpdateTestTitle($event)" placeholder="{{testTitle}}">
+	<input class="create__header-input" placeholder="form description(optional)" type="text"
+	(input)="onUpdateFormDescription($event)"
+	placeholder="Form description(optional)">
+</div>
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 const mulselItems = [{
     value: 'Multiple choices',
@@ -22,18 +22,30 @@ const mulselItems = [{
 
 export class CreateNewTestMultiselectComponent implements OnInit {
   mulselItems = mulselItems;
-  mulsel = true;
-  mulselContent = false;
-  currentInner = this.currentInner = 'Multiple choices';
-  currentClass = this.currentClass = 'icon';
+  mulsel:boolean = true;
+  mulselContent:boolean = false;
+  currentInner:string = this.currentInner = 'Multiple choices';
+  currentClass:string = this.currentClass = 'icon';
+  event = this.event;
+  select = this.select;
 
   mulselOpen() {
-    this.mulselContent = !this.mulselContent;
+    this.event = event;
+    
+    if (!this.mulselItems) {
+      this.mulselContent = !this.mulselContent;
+    }
+
+    else if (this.mulselItems && event.target != this.select) {
+      this.mulselContent = !this.mulselContent;
+    }
   }
 
-  click(value, icon) {
+  click(value, icon, select, $event: Event) {
     this.currentInner = value;
     this.currentClass = icon;
+    this.select = select;
+    this.event = event;
     this.mulselOpen();
   }
 

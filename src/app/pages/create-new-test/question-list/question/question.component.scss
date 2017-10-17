@@ -1,18 +1,25 @@
 @import 'src/assets/styles/colors';
 
 .pt-question {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 35px;
+      margin: 0 auto;
+    padding: 46px 38px;
   background-color: $white;
   box-shadow: 0 2px 20px 0 #9ca0d5;
+
+  &__selects {
+    margin-bottom: 20px;
+    display: flex;
+  }
 
   &--static {
     color: $black;
   }
 
   &--editable {
+        margin-top: 12px;
     position: relative;
+    box-shadow: 0 29px 47px 0 rgba(156, 160, 213, 0.74);
+    z-index: 999;
 
     &:before {
       content: '';
@@ -36,7 +43,7 @@
   }
 
   &_input {
-    padding: 10px 0;
+    padding: 20px 0 10px;
 
     input {
       width: 100%;
@@ -52,12 +59,13 @@
     font-size: 22px;
   }
 
-  &_description-input {
-    font-size: 14px;
-    font-weight: 300;
-  }
-
   &_controls {
     background-color: red;
   }
 }
+
+.pt-description-input {
+  font-size: 14px;
+    font-weight: 300;
+}
+
