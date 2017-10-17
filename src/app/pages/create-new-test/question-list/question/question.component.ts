@@ -9,7 +9,6 @@ import { CreateNewTestMultiselectComponent } from '../../create-new-test-multise
   styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit {
-
   @Input() question: Question;
   @Input() questions: Question[];
 
@@ -19,8 +18,8 @@ export class QuestionComponent implements OnInit {
   }
 
   editQuestion(question: Question) {
-    this.questions.forEach((question) => {
-      question.editable = false;
+    this.questions.forEach((qstn) => {
+      qstn.editable = false;
     });
     question.editable = true;
   }
