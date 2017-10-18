@@ -46,13 +46,22 @@
 }
 
 .pt-question {
+
+  &__checkbox {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    & > span {
+      margin-right: 10px;
+    }
+  }
   
   &_controls {
     position: relative;
     display: flex;
     margin-top: 40px;
     padding-top: 15px;
-        align-items: center;
+    align-items: center;
     color: #6c6c6c;
     font-size: 18px;
 
@@ -86,71 +95,62 @@
 }
 
 .switcher {
-    position: relative;
-    display: inline-block;
-    width: 35px;
-    height: 16px;
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 16px;
 
-    &__checkbox {
-        display: none;
+  &__checkbox {
+    display: none;
+  }
+
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #eef3f7;
+    transition: .4s;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: -4px;
+      box-shadow: 0 2px 3px 0 rgba(158, 158, 193, 0.23);
+      bottom: -3px;
+      background-color: #a7edb9;
+      transition: .4s;
     }
 
-    &__slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #eef3f7;
-        transition: .4s;
+    &_round {
+      border-radius: 34px;
 
-        &:before {
-            position: absolute;
-            content: "";
-            height: 22px;
-            width: 22px;
-            left: -4px;
-            box-shadow: 0 2px 3px 0 rgba(158, 158, 193, 0.23);
-            bottom: -3px;
-            background-color: #a7edb9;
-            transition: .4s;
-        }
+      &:before {
+        border-radius: 50%;
+      }
+    }
+  }
 
-        &_round {
-            border-radius: 34px;
+  &__checkbox {
 
-            &:before {
-                border-radius: 50%;
-            }
-        }
+    &:checked {
+      & + .switcher__slider {
+        background-color: #8be8a3;
+      }
     }
 
-    &__checkbox {
-
-        &:checked {
-            & + .switcher__slider {
-                background-color: #8be8a3;
-            }
-        }
-
-        &:focus + .switcher__slider {
-            box-shadow: 0 0 1px #8be8a3;
-        }
-        
-        &:checked + .switcher__slider {
-            &:before {
-                transform: translateX(22px);
-            }
-        }
+    &:focus + .switcher__slider {
+      box-shadow: 0 0 1px #8be8a3;
     }
-}
-
-.test {
-  margin-left: auto;
-  display: flex;
-    align-items: center;
-    & > span {
-      margin-right: 10px;
+    
+    &:checked + .switcher__slider {
+      &:before {
+        transform: translateX(22px);
+      }
     }
+  }
 }

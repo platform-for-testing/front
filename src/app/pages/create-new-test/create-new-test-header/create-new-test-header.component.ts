@@ -13,9 +13,11 @@ export class CreateNewTestHeaderComponent implements OnInit {
 
   ngOnInit() {
   }
+
   onUpdateTestTitle(event: Event) {
     this.testTitle = (<HTMLInputElement>event.target).value;
   }
+  
   onUpdateFormDescription(event: Event) {
     this.formDescription = (<HTMLInputElement>event.target).value;
   }

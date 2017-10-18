@@ -1,18 +1,4 @@
-import { HostListener, Component, OnInit } from '@angular/core';
-
-const mulselItems = [{
-  value: 'Multiple choices',
-  icon: 'icon'
-}, {
-  value: 'Checkboxes',
-  icon: 'icon icon_checkbox'
-}, {
-  value: 'Yes/No',
-  icon: 'icon icon_truefalse'
-}, {
-  value: 'Ordering',
-  icon: 'icon icon_ordering'
-}];
+import { HostListener, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'pt-create-new-test-multiselect',
@@ -21,18 +7,19 @@ const mulselItems = [{
 })
 
 export class CreateNewTestMultiselectComponent implements OnInit {
-  mulselItems = mulselItems;
+  @Input() selectContent: any;
+
   mulsel:boolean = true;
   mulselContent:boolean = false;
-  currentInner:string = this.currentInner = 'Multiple choices';
-  currentClass:string = this.currentClass = 'icon';
+
+  currentInner:any;
+  currentClass:string;
 
   mulselOpen() {
     this.mulselContent = !this.mulselContent;
   }
 
   click(value, icon, select, $event: Event) {
-    console.log('inside');
     this.currentInner = value;
     this.currentClass = icon;
     this.mulselOpen()
@@ -40,14 +27,11 @@ export class CreateNewTestMultiselectComponent implements OnInit {
 
   clickedInside($event: Event){
     $event.preventDefault();
-    $event.stopPropagation();  // <- that will stop propagation on lower layers
-    console.log("CLICKED INSIDE, MENU WON'T HIDE");
+    $event.stopPropagation();
   }
 
   @HostListener('document:click', ['$event']) 
   clickedOutside($event){
-    console.log('outside');
-
     if (this.mulselContent) {
       this.mulselContent = false
     }

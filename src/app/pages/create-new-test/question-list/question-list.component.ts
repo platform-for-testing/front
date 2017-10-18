@@ -17,7 +17,7 @@ export class QuestionListComponent implements OnInit {
   }
 
   addQuestion(question: Question) {
-    this.questions.push(new Question(this.questions.length + 1, 'Question', '', false, true));
+    this.questions.push(new Question(this.questions.length + 1, 'Question', '', false, true, 'default test type', 'default test quantity'));
     console.log(this.questions);
     this.editQuestion(this.questions[this.questions.length - 1]);
     console.log(this.elementRef.nativeElement.querySelector('.pt-question-list_controls'));
@@ -48,7 +48,7 @@ export class QuestionListComponent implements OnInit {
   }
 
   cloneQuestion(id: number, title: string, description: string, required: boolean) {
-    this.questions.splice(id, 0, new Question(this.questions.length + 1, title, description, required, true));
+    this.questions.splice(id, 0, new Question(this.questions.length + 1, title, description, required, true, 'default test type', 'default test quantity'));
     this.questions.forEach((question, index) => {
       question.id = index + 1;
     });

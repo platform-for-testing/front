@@ -1,16 +1,23 @@
 <div id="select__container">
-    <div class="select" *ngIf="mulsel" #select>
-        <div class="select__item select__item_main" id="mainSel" (click)="clickedInside($event)" (click)="mulselOpen()">
-            <i class="{{ currentClass }}"></i>
-            <div class='select__content'>{{ currentInner }}</div>
-            <i class="arrow down opener"></i>
-        </div>
-        <div class="select__items" id="items" *ngIf="mulselContent">
-            <div class="select__item inner" (click)="clickedInside($event)" (click)="click(mulselItem.value, mulselItem.icon, $event)" *ngFor="let mulselItem of mulselItems">
+  <div class="select" *ngIf="mulsel" #select>
 
-                <i class="{{ mulselItem.icon }}"></i>
-                <div class='select__content'>{{ mulselItem.value }}</div>
-            </div>
-        </div>
+    <div class="select__item select__item_main" id="mainSel" 
+        (click)="clickedInside($event)" 
+        (click)="mulselOpen()">
+      <i class="{{ currentClass != undefined ? currentClass : selectContent[0].icon }}"></i>
+      <div class='select__content'>{{ currentInner != undefined ? currentInner : selectContent[0].value }}</div>
+      <i class="arrow down opener"></i>
     </div>
+
+    <div class="select__items" id="items" *ngIf="mulselContent">
+      <div class="select__item inner" 
+          (click)="clickedInside($event)" 
+          (click)="click(mulselItem.value, mulselItem.icon, $event)" 
+          *ngFor="let mulselItem of selectContent">
+
+        <i class="{{ mulselItem.icon }}"></i>
+        <div class='select__content'>{{ mulselItem.value }}</div>
+      </div>
+    </div>
+  </div>
 </div>
