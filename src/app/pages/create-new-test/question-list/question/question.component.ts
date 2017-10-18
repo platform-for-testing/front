@@ -9,7 +9,6 @@ import { CreateNewTestMultiselectComponent } from '../../create-new-test-multise
   styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit {
-  
   mulselItems = [{
     value: 'Multiple choices',
     icon: 'icon'

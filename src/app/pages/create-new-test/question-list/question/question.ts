@@ -14,6 +14,6 @@ export class Question {
     this.required = required;
     this.editable = editable;
     this.mulselItems = mulselItems;
-    this.mulselNumbers = mulselNumbers
+    this.mulselNumbers = mulselNumbers;
   }
 }

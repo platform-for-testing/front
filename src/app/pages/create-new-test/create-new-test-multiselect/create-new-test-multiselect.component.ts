@@ -8,12 +8,10 @@ import { HostListener, Component, Input, OnInit } from '@angular/core';
 
 export class CreateNewTestMultiselectComponent implements OnInit {
   @Input() selectContent: any;
-
-  mulsel:boolean = true;
-  mulselContent:boolean = false;
-
-  currentInner:any;
-  currentClass:string;
+  mulsel = true;
+  mulselContent = false;
+  currentInner: any;
+  currentClass: string;
 
   mulselOpen() {
     this.mulselContent = !this.mulselContent;
@@ -22,18 +20,17 @@ export class CreateNewTestMultiselectComponent implements OnInit {
   click(value, icon, select, $event: Event) {
     this.currentInner = value;
     this.currentClass = icon;
-    this.mulselOpen()
+    this.mulselOpen();
   }
 
-  clickedInside($event: Event){
+  clickedInside($event: Event) {
     $event.preventDefault();
     $event.stopPropagation();
   }
 
-  @HostListener('document:click', ['$event']) 
-  clickedOutside($event){
+  @HostListener('document:click', ['$event']) clickedOutside($event) {
     if (this.mulselContent) {
-      this.mulselContent = false
+      this.mulselContent = false;
     }
   }
 
