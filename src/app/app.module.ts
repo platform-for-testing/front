@@ -19,6 +19,10 @@ import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-n
 import { AllRespondentsListComponent } from './pages/all-respondents/all-respondents-list/all-respondents-list.component';
 import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
 import { CreateNewComponent } from './shared/components/create-new/create-new.component';
+import { ActivationsListWrapperComponent } from './pages/all-activations/activations-list-wrapper/activations-list-wrapper.component';
+import { ActivationItemComponent } from './pages/all-activations/activations-list-wrapper/activation-item/activation-item.component';
+import { PageInformationComponent } from './pages/all-activations/page-information/page-information.component';
+import { HorizontalLineComponent } from './shared/components/horizontal-line/horizontal-line.component';
 import {HttpModule} from '@angular/http';
 import {GetRespondentsService} from './shared/services/getRespondents.service';
 import { CreateNewTestMultiselectComponent } from './pages/create-new-test/create-new-test-multiselect/create-new-test-multiselect.component';
@@ -43,6 +47,11 @@ import { CreateNewTestMultiselectComponent } from './pages/create-new-test/creat
     AllRespondentsListComponent,
     RespondentItemComponent,
     TestItemComponent,
+    CreateNewComponent,
+    ActivationsListWrapperComponent,
+    ActivationItemComponent,
+    PageInformationComponent,
+    HorizontalLineComponent,
     CreateNewComponent,
     CreateNewTestMultiselectComponent,
   ],
