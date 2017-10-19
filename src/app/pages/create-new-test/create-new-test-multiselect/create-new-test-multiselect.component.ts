@@ -1,18 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-const mulselItems = [{
-    value: 'Multiple choices',
-    icon: 'icon'
-}, {
-    value: 'Checkboxes',
-    icon: 'icon icon_checkbox'
-}, {
-    value: 'Yes/No',
-    icon: 'icon icon_truefalse'
-}, {
-    value: 'Ordering',
-    icon: 'icon icon_ordering'
-}];
+import { HostListener, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'pt-create-new-test-multiselect',
@@ -21,20 +7,31 @@ const mulselItems = [{
 })
 
 export class CreateNewTestMultiselectComponent implements OnInit {
-  mulselItems = mulselItems;
+  @Input() selectContent: any;
   mulsel = true;
   mulselContent = false;
-  currentInner = this.currentInner = 'Multiple choices';
-  currentClass = this.currentClass = 'icon';
+  currentInner: any;
+  currentClass: string;
 
   mulselOpen() {
     this.mulselContent = !this.mulselContent;
   }
 
-  click(value, icon) {
+  click(value, icon, select, $event: Event) {
     this.currentInner = value;
     this.currentClass = icon;
     this.mulselOpen();
+  }
+
+  clickedInside($event: Event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+  }
+
+  @HostListener('document:click', ['$event']) clickedOutside($event) {
+    if (this.mulselContent) {
+      this.mulselContent = false;
+    }
   }
 
   constructor() {

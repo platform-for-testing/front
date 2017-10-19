@@ -16,6 +16,13 @@ describe('CreateNewTestMultiselectComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CreateNewTestMultiselectComponent);
     component = fixture.componentInstance;
+    component.selectContent  = [{
+      value: 'test',
+      icon: 'test'
+    }, {
+      value: 'test',
+      icon: 'test'
+    }];
     fixture.detectChanges();
   });
 
