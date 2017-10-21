@@ -8,7 +8,7 @@ import { Question } from './question/question';
   styleUrls: ['./question-list.component.scss']
 })
 export class QuestionListComponent implements OnInit {
-  questions: Question[] = [];
+  questions: Question[] = [];yield
 
   constructor(private elementRef: ElementRef) {
   }
@@ -16,12 +16,15 @@ export class QuestionListComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngAfterViewChecked() {
+    
+  }
+
   addQuestion(question: Question) {
     this.questions.push(new Question(this.questions.length + 1, 'Question', '', false, true));
     console.log(this.questions);
-    this.editQuestion(this.questions[this.questions.length - 1]);
-    console.log(this.elementRef.nativeElement.querySelector('.pt-question-list_controls'));
-    this.elementRef.nativeElement.scrollIntoView(false);
+    this.startEditing(this.questions.length);
+    //this.elementRef.nativeElement.querySelector('.pt-question-list_controls').scrollIntoView();
   }
 
   addText() {
@@ -52,14 +55,13 @@ export class QuestionListComponent implements OnInit {
     this.questions.forEach((question, index) => {
       question.id = index + 1;
     });
-    this.editQuestion(this.questions[id]);
+    this.startEditing(id + 1);
   }
 
-  editQuestion(question: Question) {
+  startEditing(id: number) {
     this.questions.forEach((qstn) => {
       qstn.editable = false;
     });
-    question.editable = true;
+    this.questions[id - 1].editable = true;
   }
-
 }

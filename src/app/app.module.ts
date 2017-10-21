@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { HttpModule} from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -20,7 +21,6 @@ import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-n
 import { AllRespondentsListComponent } from './pages/all-respondents/all-respondents-list/all-respondents-list.component';
 import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
 import { CreateNewComponent } from './shared/components/create-new/create-new.component';
-import {HttpModule} from '@angular/http';
 import {GetRespondentsService} from './shared/services/getRespondents.service';
 import { CreateNewTestMultiselectComponent } from './pages/create-new-test/create-new-test-multiselect/create-new-test-multiselect.component';
 import { QuestionListComponent } from './pages/create-new-test/question-list/question-list.component';
@@ -48,7 +48,6 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
     CreateNewTestMultiselectComponent,
     QuestionListComponent,
     QuestionComponent
-
   ],
   imports: [
     BrowserModule,

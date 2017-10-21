@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Question } from './question';
 import { QuestionListComponent } from '../question-list.component';
 
@@ -9,7 +9,10 @@ import { QuestionListComponent } from '../question-list.component';
 })
 export class QuestionComponent implements OnInit {
   @Input() question: Question;
-  @Input() questions: Question[];
+
+  @Output() startEditing: EventEmitter<number> = new EventEmitter();
+
+  private editable: boolean = false;
 
   constructor() { }
 
@@ -17,9 +20,7 @@ export class QuestionComponent implements OnInit {
   }
 
   editQuestion(question: Question) {
-    this.questions.forEach((qstn) => {
-      qstn.editable = false;
-    });
-    question.editable = true;
+    this.editable = true;
+    this.startEditing.emit(question.id);
   }
 }

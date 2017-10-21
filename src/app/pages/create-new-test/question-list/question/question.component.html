@@ -11,10 +11,21 @@
   </div>  
 
   <div class="pt-question_input">
-    <input type="text" class="pt-question_title-input" [(ngModel)]="question.title">
+    <input type="text" 
+           class="pt-question_title-input" 
+           [(ngModel)]="question.title"
+           [ngClass]="{'input--focused': titleFocus === true}"
+           (focus)="titleFocus = true" 
+           (blur)="titleFocus = false">
   </div>
   <div class="pt-question_input">    
-    <input type="text" class="pt-description-input" [(ngModel)]="question.description" placeholder="Description (optional)">
+    <input type="text"
+           class="pt-description-input"
+           [(ngModel)]="question.description"
+           [ngClass]="{'input--focused': descriptionFocus === true}"
+           (focus)="descriptionFocus = true" 
+           (blur)="descriptionFocus = false" 
+           placeholder="Description (optional)">
   </div>
   
   <ng-content></ng-content>
