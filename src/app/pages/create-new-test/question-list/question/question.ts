@@ -4,12 +4,16 @@ export class Question {
   public description: string;
   public required: boolean;
   public editable: boolean;
+  public mulselItems: any;
+  public mulselNumbers: any;
 
-  constructor(id: number, title: string, description: string, required: boolean, editable: boolean) {
+  constructor(id: number, title: string, description: string, required: boolean, editable: boolean, mulselItems: any, mulselNumbers: any) {
     this.id = id;
     this.title = title;
     this.description = description;
     this.required = required;
     this.editable = editable;
+    this.mulselItems = mulselItems;
+    this.mulselNumbers = mulselNumbers;
   }
 }

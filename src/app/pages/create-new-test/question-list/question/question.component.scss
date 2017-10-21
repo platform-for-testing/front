@@ -1,21 +1,38 @@
 @import 'src/assets/styles/colors';
 
 .pt-question {
+<<<<<<< HEAD
   position: relative;
   max-width: 820px;
   margin: 0 auto;
   padding: 35px;
+=======
+      margin: 0 auto;
+    padding: 46px 38px;
+>>>>>>> 898643461270cbab691c2a97b771604e5b5e08de
   background-color: $white;
   box-shadow: 0px 4px 10px 0px rgba(156, 160, 213, 0.65);
   border-bottom: 1px solid #ccc;
   z-index: 1;
+
+  &__selects {
+    margin-bottom: 20px;
+    display: flex;
+  }
 
   &--static {
     color: $black;
   }
 
   &--editable {
+<<<<<<< HEAD
     z-index: 0;
+=======
+        margin-top: 12px;
+    position: relative;
+    box-shadow: 0 29px 47px 0 rgba(156, 160, 213, 0.74);
+    z-index: 999;
+>>>>>>> 898643461270cbab691c2a97b771604e5b5e08de
 
     &:before {
       content: '';
@@ -39,7 +56,7 @@
   }
 
   &_input {
-    padding: 10px 0;
+    padding: 20px 0 10px;
 
     input {
       width: 100%;
@@ -59,8 +76,24 @@
     font-size: 22px;
   }
 
-  &_description-input {
+  &_controls {
+    background-color: red;
+  }
+}
+
+.pt-description {
+  &-input {
     font-size: 14px;
     font-weight: 300;
   }
+<<<<<<< HEAD
 }
+=======
+}
+
+.pt-multiselect {
+  &_shift {
+    margin-left: 20px;
+  }
+}
+>>>>>>> 898643461270cbab691c2a97b771604e5b5e08de

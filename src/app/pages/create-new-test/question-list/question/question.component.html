@@ -1,15 +1,8 @@
 <div *ngIf="question.editable" class="pt-question pt-question--editable">
-  <div>
-    <select name="" id="">
-      <option value="1">1</option>
-      <option value="1">1</option>
-    </select>
-    <select name="" id="">
-      <option value="1">1</option>
-      <option value="1">1</option>
-    </select>
+  <div class="pt-question__selects">
+    <pt-create-new-test-multiselect [selectContent]="mulselItems"></pt-create-new-test-multiselect>
+    <pt-create-new-test-multiselect [selectContent]="mulselNumbers" class="pt-multiselect_shift"></pt-create-new-test-multiselect>
   </div>  
-
   <div class="pt-question_input">
     <input type="text" 
            class="pt-question_title-input" 
@@ -27,7 +20,6 @@
            (blur)="descriptionFocus = false" 
            placeholder="Description (optional)">
   </div>
-  
   <ng-content></ng-content>
 </div>
 <div *ngIf="!question.editable" (click)="editQuestion(question)" class="pt-question pt-question--static">
