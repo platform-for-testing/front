@@ -16,6 +16,9 @@ export class QuestionListComponent implements OnInit {
   ngOnInit() {
   }
 
+  // ngAfterViewChecked() {
+  // }
+
   addQuestion(question: Question) {
     this.questions.push(new Question(this.questions.length + 1, 'Question', '', false, true, 'default test type', 'default test quantity'));
     console.log(this.questions);
