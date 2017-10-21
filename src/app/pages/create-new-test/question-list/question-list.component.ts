@@ -8,7 +8,7 @@ import { Question } from './question/question';
   styleUrls: ['./question-list.component.scss']
 })
 export class QuestionListComponent implements OnInit {
-  questions: Question[] = [];yield
+  questions: Question[] = []; yield
 
   constructor(private elementRef: ElementRef) {
   }
@@ -17,14 +17,13 @@ export class QuestionListComponent implements OnInit {
   }
 
   ngAfterViewChecked() {
-    
   }
 
   addQuestion(question: Question) {
     this.questions.push(new Question(this.questions.length + 1, 'Question', '', false, true, 'default test type', 'default test quantity'));
     console.log(this.questions);
     this.startEditing(this.questions.length);
-    //this.elementRef.nativeElement.querySelector('.pt-question-list_controls').scrollIntoView();
+    // this.elementRef.nativeElement.querySelector('.pt-question-list_controls').scrollIntoView();
   }
 
   addText() {

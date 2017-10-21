@@ -38,10 +38,10 @@ export class QuestionComponent implements OnInit {
   }];
 
   @Input() question: Question;
-
   @Output() startEditing: EventEmitter<number> = new EventEmitter();
 
-  private editable: boolean = false;
+  titleFocus: boolean;
+  descriptionFocus: boolean;
 
   constructor() { }
 
@@ -49,7 +49,6 @@ export class QuestionComponent implements OnInit {
   }
 
   editQuestion(question: Question) {
-    this.editable = true;
     this.startEditing.emit(question.id);
   }
 }

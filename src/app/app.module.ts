@@ -45,11 +45,6 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
     RespondentItemComponent,
     TestItemComponent,
     CreateNewComponent,
-    ActivationsListWrapperComponent,
-    ActivationItemComponent,
-    PageInformationComponent,
-    HorizontalLineComponent,
-    CreateNewComponent,
     CreateNewTestMultiselectComponent,
     QuestionListComponent,
     QuestionComponent
