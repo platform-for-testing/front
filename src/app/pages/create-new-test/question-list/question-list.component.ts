@@ -1,4 +1,6 @@
 import { Component, OnInit, ElementRef, Output } from '@angular/core';
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+
 import { QuestionComponent } from './question/question.component';
 import { Question } from './question/question';
 
@@ -9,21 +11,36 @@ import { Question } from './question/question';
 })
 export class QuestionListComponent implements OnInit {
   questions: Question[] = []; yield;
+  form: FormGroup;
+  editedQuestion: number;
 
-  constructor(private elementRef: ElementRef) {
+  constructor(private elementRef: ElementRef, private fb: FormBuilder) {
+
   }
 
   ngOnInit() {
+    this.form = this.fb.group({
+      questions: this.fb.array(this.questions.map(this.createQuestion))
+    });
+    this.form.valueChanges.subscribe(value => {
+      this.questions = value.questions;
+    })
   }
 
   // ngAfterViewChecked() {
   // }
 
-  addQuestion(question: Question) {
-    this.questions.push(new Question(this.questions.length + 1, 'Question', '', false, true, 'default test type', 'default test quantity'));
-    console.log(this.questions);
-    this.startEditing(this.questions.length);
-    // this.elementRef.nativeElement.querySelector('.pt-question-list_controls').scrollIntoView();
+  createQuestion = (question: Question) => {
+    return this.fb.control(question);
+  }
+
+  addQuestion() {
+    const newQuestion: Question = new Question();
+    const questionsArray = this.form.get('questions') as FormArray;
+
+    questionsArray.push(this.fb.control(newQuestion));
+    // this.form.updateValueAndValidity();
+    this.editedQuestion = questionsArray.length - 1;
   }
 
   addText() {
@@ -42,25 +59,22 @@ export class QuestionListComponent implements OnInit {
     alert('add section');
   }
 
-  removeQuestion(id: number) {
-    this.questions.splice(id - 1, 1);
-    this.questions.forEach((question, index) => {
-      question.id = index + 1;
-    });
+  removeQuestion(index: number) {
+    const questionsArray = this.form.get('questions') as FormArray;
+
+    questionsArray.removeAt(index);
   }
 
-  cloneQuestion(id: number, title: string, description: string, required: boolean) {
-    this.questions.splice(id, 0, new Question(this.questions.length + 1, title, description, required, true, 'default test type', 'default test quantity'));
-    this.questions.forEach((question, index) => {
-      question.id = index + 1;
-    });
-    this.startEditing(id + 1);
+  cloneQuestion(index: number) {
+    const questionsArray = this.form.get('questions') as FormArray;
+    const qValue = questionsArray.value[index];
+    const newQuestion: Question = new Question(qValue.title, qValue.description, qValue.required, qValue.type, qValue.points);
+
+    questionsArray.insert(index + 1, this.fb.control(newQuestion));
+    this.editQuestion(index + 1);
   }
 
-  startEditing(id: number) {
-    this.questions.forEach((qstn) => {
-      qstn.editable = false;
-    });
-    this.questions[id - 1].editable = true;
+  editQuestion(index: number) {
+    this.editedQuestion = index;
   }
 }

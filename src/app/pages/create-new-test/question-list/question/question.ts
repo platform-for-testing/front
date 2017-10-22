@@ -1,19 +1,15 @@
 export class Question {
-  public id: number;
   public title: string;
   public description: string;
   public required: boolean;
-  public editable: boolean;
-  public mulselItems: any;
-  public mulselNumbers: any;
+  public type: any;
+  public points: any;
 
-  constructor(id: number, title: string, description: string, required: boolean, editable: boolean, mulselItems: any, mulselNumbers: any) {
-    this.id = id;
+  constructor(title: string = 'Question', description: string = '', required: boolean = false, type: any = 0, points: any = 1) {
     this.title = title;
     this.description = description;
     this.required = required;
-    this.editable = editable;
-    this.mulselItems = mulselItems;
-    this.mulselNumbers = mulselNumbers;
+    this.type = type;
+    this.points = points;
   }
 }

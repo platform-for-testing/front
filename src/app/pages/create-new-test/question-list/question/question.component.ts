@@ -1,29 +1,51 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, forwardRef } from '@angular/core';
+import { FormBuilder, FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { Question } from './question';
 import { QuestionListComponent } from '../question-list.component';
 import { CreateNewTestMultiselectComponent } from '../../create-new-test-multiselect/create-new-test-multiselect.component';
 
+enum Types {
+  Checkboxes, 
+  Radio,
+  YesNo,
+  Order,
+  Open 
+}
+
 @Component({
   selector: 'pt-question',
   templateUrl: './question.component.html',
-  styleUrls: ['./question.component.scss']
+  styleUrls: ['./question.component.scss'],
+  providers: [{ provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => QuestionComponent),
+                multi: true }]
 })
-export class QuestionComponent implements OnInit {
-  mulselItems = [{
-    value: 'Multiple choices',
-    icon: 'icon'
+export class QuestionComponent implements ControlValueAccessor, OnInit {
+  form: FormGroup;
+
+  types = [{
+    value: Types.Radio,
+    icon: 'icon',
+    label: 'One choice'
   }, {
-    value: 'Checkboxes',
-    icon: 'icon icon_checkbox'
+    value: Types.Checkboxes,
+    icon: 'icon icon_checkbox',
+    label: 'Multiple choices'
   }, {
-    value: 'Yes/No',
-    icon: 'icon icon_truefalse'
+    value: Types.YesNo,
+    icon: 'icon icon_truefalse',
+    label: 'Yes/No'
   }, {
-    value: 'Ordering',
-    icon: 'icon icon_ordering'
+    value: Types.Order,
+    icon: 'icon icon_ordering',
+    label: 'Ordering'
+  }, {
+    value: Types.Open,
+    icon: 'icon',
+    label: 'Open answer'
   }];
 
-  mulselNumbers = [{
+  points = [{
     value: 1,
     icon: 'icon'
   }, {
@@ -37,18 +59,61 @@ export class QuestionComponent implements OnInit {
     icon: 'icon'
   }];
 
-  @Input() question: Question;
-  @Output() startEditing: EventEmitter<number> = new EventEmitter();
+  @Input() isEditing: boolean = true;
+  @Input() index: number;
+  @Output() edit: EventEmitter<any> = new EventEmitter();
+  @Output() remove: EventEmitter<any> = new EventEmitter();
+  @Output() clone: EventEmitter<any> = new EventEmitter();
 
   titleFocus: boolean;
   descriptionFocus: boolean;
+  question: Question;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
 
-  ngOnInit() {
   }
 
-  editQuestion(question: Question) {
-    this.startEditing.emit(question.id);
+  ngOnInit() {
+    this.form = this.fb.group({
+      title: ['Question', [Validators.required]],
+      description: '',
+      required: false,
+      type: Types.Radio,
+      points: [1, [Validators.min(1), Validators.max(10)]]
+    });
+
+    this.form.valueChanges.subscribe((value: Question) => {
+      this.propagateChange(value);
+      this.question = value;
+    });
+  }
+
+  propagateChange(value: Question) {
+  }
+
+  writeValue(value: Question) {
+    console.log(value);
+    if(value !== void(0)) {
+      this.form.setValue(value);
+    }
+  }
+
+  registerOnChange(fn) {
+    this.propagateChange = fn;
+  }   
+
+  registerOnTouched(fn) {
+  }
+
+  editQuestion() {
+    this.edit.emit();
+  }
+
+  removeQuestion() {
+    this.remove.emit();
+  }
+
+  cloneQuestion() {
+    this.clone.emit();
   }
 }
