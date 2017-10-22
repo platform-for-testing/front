@@ -33,17 +33,17 @@
     }
   }
 
-  &_title {
+  &__title {
     font-size: 22px;
     margin: 20px 0;
     font-weight: normal;
   }
 
-  &_description {
+  &__description {
     font-size: 14px;
   }
 
-  &_input {
+  &__input {
     padding: 20px 0 10px;
 
     input {
@@ -53,14 +53,25 @@
       border: 0;
       outline: 0;
       border-bottom: 2px solid #edeef0;
-    }
-
-    .input--focused {
-      border-bottom-color: $black;
+      
+      &:focus {
+        border-bottom-color: $black;
+      }
     }
   }
 
-  &_title-input {
+  .ng-invalid {
+    &[type=text],
+    &[type=text]:focus {
+      border-bottom-color: $red;
+    }
+
+    &[type=number] {
+      outline-color: $red;
+    }
+  }
+
+  &__title-input {
     font-size: 22px;
   }
 
@@ -73,7 +84,7 @@
     }
   }
   
-  &_controls {
+  &__controls {
     position: relative;
     display: flex;
     margin-top: 40px;
@@ -92,7 +103,7 @@
     }
   }
 
-  &_button {
+  &__button {
     cursor: pointer;
     font-size: 26px;
     transition: .4s;
@@ -106,8 +117,17 @@
     }
   }
 
-  &_required {
+  &__required {
     margin-left: auto;
+  }
+  
+  .alert {
+    padding-left: 5px;
+    font-size: 75%;
+
+    &-danger {
+      color: $red;
+    }
   }
 }
 

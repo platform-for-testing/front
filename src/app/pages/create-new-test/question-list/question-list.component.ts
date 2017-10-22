@@ -24,7 +24,7 @@ export class QuestionListComponent implements OnInit {
     });
     this.form.valueChanges.subscribe(value => {
       this.questions = value.questions;
-    })
+    });
   }
 
   // ngAfterViewChecked() {
@@ -40,7 +40,7 @@ export class QuestionListComponent implements OnInit {
 
     questionsArray.push(this.fb.control(newQuestion));
     // this.form.updateValueAndValidity();
-    this.editedQuestion = questionsArray.length - 1;
+    this.editQuestion(questionsArray.length - 1);
   }
 
   addText() {
@@ -63,15 +63,17 @@ export class QuestionListComponent implements OnInit {
     const questionsArray = this.form.get('questions') as FormArray;
 
     questionsArray.removeAt(index);
+    this.editQuestion(index);
   }
 
   cloneQuestion(index: number) {
     const questionsArray = this.form.get('questions') as FormArray;
-    const qValue = questionsArray.value[index];
-    const newQuestion: Question = new Question(qValue.title, qValue.description, qValue.required, qValue.type, qValue.points);
+    const questionValue = questionsArray.value[index];
+
+    const newQuestion: Question = questionValue;
 
     questionsArray.insert(index + 1, this.fb.control(newQuestion));
-    this.editQuestion(index + 1);
+    this.editQuestion(index);
   }
 
   editQuestion(index: number) {

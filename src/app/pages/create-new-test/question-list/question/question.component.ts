@@ -5,11 +5,11 @@ import { QuestionListComponent } from '../question-list.component';
 import { CreateNewTestMultiselectComponent } from '../../create-new-test-multiselect/create-new-test-multiselect.component';
 
 enum Types {
-  Checkboxes, 
+  Checkboxes,
   Radio,
   YesNo,
   Order,
-  Open 
+  Open
 }
 
 @Component({
@@ -23,27 +23,21 @@ enum Types {
 export class QuestionComponent implements ControlValueAccessor, OnInit {
   form: FormGroup;
 
-  types = [{
-    value: Types.Radio,
-    icon: 'icon',
-    label: 'One choice'
-  }, {
-    value: Types.Checkboxes,
-    icon: 'icon icon_checkbox',
-    label: 'Multiple choices'
-  }, {
-    value: Types.YesNo,
-    icon: 'icon icon_truefalse',
-    label: 'Yes/No'
-  }, {
-    value: Types.Order,
-    icon: 'icon icon_ordering',
-    label: 'Ordering'
-  }, {
-    value: Types.Open,
-    icon: 'icon',
-    label: 'Open answer'
-  }];
+  types = [{ value: Types.Radio,
+             icon: 'icon',
+             label: 'One choice' },
+           { value: Types.Checkboxes,
+             icon: 'icon icon_checkbox',
+             label: 'Multiple choices' },
+           { value: Types.YesNo,
+             icon: 'icon icon_truefalse',
+             label: 'Yes/No' },
+           { value: Types.Order,
+             icon: 'icon icon_ordering',
+             label: 'Ordering' },
+           { value: Types.Open,
+             icon: 'icon',
+             label: 'Open answer' }];
 
   points = [{
     value: 1,
@@ -59,14 +53,12 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
     icon: 'icon'
   }];
 
-  @Input() isEditing: boolean = true;
+  @Input() isEditing: boolean;
   @Input() index: number;
   @Output() edit: EventEmitter<any> = new EventEmitter();
   @Output() remove: EventEmitter<any> = new EventEmitter();
   @Output() clone: EventEmitter<any> = new EventEmitter();
 
-  titleFocus: boolean;
-  descriptionFocus: boolean;
   question: Question;
 
   constructor(private fb: FormBuilder) {
@@ -93,14 +85,14 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
 
   writeValue(value: Question) {
     console.log(value);
-    if(value !== void(0)) {
+    if (value !== void(0)) {
       this.form.setValue(value);
     }
   }
 
   registerOnChange(fn) {
     this.propagateChange = fn;
-  }   
+  }
 
   registerOnTouched(fn) {
   }

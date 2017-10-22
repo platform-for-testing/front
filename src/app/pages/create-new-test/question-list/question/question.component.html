@@ -4,31 +4,35 @@
   <div class="pt-question__selects">
     <!-- <pt-create-new-test-multiselect [selectContent]="mulselItems"></pt-create-new-test-multiselect>
     <pt-create-new-test-multiselect [selectContent]="mulselNumbers" class="pt-multiselect_shift"></pt-create-new-test-multiselect> -->
-    <select formControlName="type" name="" id="">
-      <option *ngFor="let type of types" value="type.value">{{ type.label }}</option>
+    <select formControlName="type">
+      <option *ngFor="let type of types" 
+              value="type.value">{{ type.label }}</option>
     </select>
     <input type="number"
            formControlName="points">
   </div>  
-  <div class="pt-question_input">
+  <div class="pt-question__input">
     <input type="text" 
-           class="pt-question_title-input"
+           class="pt-question__title-input"
            formControlName="title">
   </div>
-  <div class="pt-question_input">    
+  <div *ngIf="!question.title"
+       class="alert alert-danger">Title required
+  </div>
+  <div class="pt-question__input">    
     <input type="text"
            class="pt-description-input"
           formControlName="description"
            placeholder="Description (optional)">
   </div>
-  <div class="pt-question_controls">
-      <span class="pt-question_button pt-question_remove" 
+  <div class="pt-question__controls">
+      <span class="pt-question__button pt-question__remove" 
             (click)="removeQuestion(index)"><i class="fa fa-times" aria-hidden="true"></i>
       </span>
-      <span class="pt-question_button pt-question_clone" 
+      <span class="pt-question__button pt-question__clone" 
             (click)="cloneQuestion(index)"><i class="fa fa-clone" aria-hidden="true"></i>
       </span>
-      <label class="pt-question_required">Required
+      <label class="pt-question__required">Required
           <input type="checkbox" 
                  name="question-required"
                  formControlName="required">
@@ -36,6 +40,6 @@
   </div>
 </form>
 <div *ngIf="!isEditing" (click)="editQuestion(question)" class="pt-question pt-question--static">
-  <h2 class="pt-question_title">{{index + 1}}. {{question.title}}</h2>
-  <p class="pt-question_description" *ngIf="question.description">{{question.description}}</p>
+  <h2 class="pt-question__title">{{index + 1}}. {{question.title}}</h2>
+  <p class="pt-question__description" *ngIf="question.description">{{question.description}}</p>
 </div>

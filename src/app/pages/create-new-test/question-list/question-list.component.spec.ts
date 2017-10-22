@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormBuilder, FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 
 import { QuestionListComponent } from './question-list.component';
 
@@ -10,7 +11,8 @@ describe('QuestionListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ QuestionListComponent ],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [ NO_ERRORS_SCHEMA ],
+      providers: [ FormBuilder ]
     })
     .compileComponents();
   }));

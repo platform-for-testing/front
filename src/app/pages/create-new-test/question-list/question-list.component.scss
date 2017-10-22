@@ -5,7 +5,7 @@
   margin: 0 auto 65px;
   font-family: $font-main;
 
-  &_controls {
+  &__controls {
     display: flex;
     max-width: 90%;
     margin: 5px auto 0;
@@ -13,7 +13,7 @@
     box-shadow: 0 3px 6px 0 #535dcb;
   }
 
-  &_button {
+  &__button {
     position: relative;
     width: 20%;
     flex-grow: 1;
@@ -43,11 +43,6 @@
       color: darken(#6c6c6c, 30%);
     }
   }
-}
-
-.pt-question {
-
-  
 }
 
 .switcher {
