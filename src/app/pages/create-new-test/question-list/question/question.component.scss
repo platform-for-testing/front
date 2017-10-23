@@ -137,3 +137,13 @@
     font-weight: 300;
   }
 }
+
+.select {
+  &__input {
+    border: 2px solid #eee;
+    padding: 11px 16px;
+    margin-left: 20px;
+    box-sizing: border-box;
+    width: 262px;
+  }
+}

@@ -1,4 +1,4 @@
-import { HostListener, Component, Input, OnInit } from '@angular/core';
+import { HostListener, Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'pt-create-new-test-multiselect',
@@ -17,9 +17,12 @@ export class CreateNewTestMultiselectComponent implements OnInit {
     this.mulselContent = !this.mulselContent;
   }
 
+  @Output() currentType: EventEmitter<any> = new EventEmitter();
+
   click(value, icon, select, $event: Event) {
     this.currentInner = value;
     this.currentClass = icon;
+    this.currentType.emit(value);
     this.mulselOpen();
   }
 
@@ -33,6 +36,7 @@ export class CreateNewTestMultiselectComponent implements OnInit {
       this.mulselContent = false;
     }
   }
+
 
   constructor() {
   }

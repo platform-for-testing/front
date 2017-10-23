@@ -2,14 +2,18 @@
       *ngIf="isEditing" 
       class="pt-question pt-question--editable">
   <div class="pt-question__selects">
-    <!-- <pt-create-new-test-multiselect [selectContent]="mulselItems"></pt-create-new-test-multiselect>
-    <pt-create-new-test-multiselect [selectContent]="mulselNumbers" class="pt-multiselect_shift"></pt-create-new-test-multiselect> -->
-    <select formControlName="type">
-      <option *ngFor="let type of types" 
-              value="type.value">{{ type.label }}</option>
+
+    <select formControlName="type" [(ngModel)]='valueChange' hidden>
+      <option *ngFor="let type of types">{{ type.label }}</option>
     </select>
+
+    <pt-create-new-test-multiselect 
+      (currentType)="currentType($event)" 
+      [selectContent]="types"></pt-create-new-test-multiselect>
+
     <input type="number"
-           formControlName="points">
+           formControlName="points"
+           class="select__input">
   </div>  
   <div class="pt-question__input">
     <input type="text" 
