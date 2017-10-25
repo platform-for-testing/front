@@ -1,7 +1,8 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule} from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -24,7 +25,6 @@ import { ActivationsListWrapperComponent } from './pages/all-activations/activat
 import { ActivationItemComponent } from './pages/all-activations/activations-list-wrapper/activation-item/activation-item.component';
 import { PageInformationComponent } from './pages/all-activations/page-information/page-information.component';
 import { HorizontalLineComponent } from './shared/components/horizontal-line/horizontal-line.component';
-import {HttpModule} from '@angular/http';
 import {GetRespondentsService} from './shared/services/getRespondents.service';
 import { CreateNewTestMultiselectComponent } from './pages/create-new-test/create-new-test-multiselect/create-new-test-multiselect.component';
 import { QuestionListComponent } from './pages/create-new-test/question-list/question-list.component';
@@ -57,12 +57,12 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
     CreateNewTestMultiselectComponent,
     QuestionListComponent,
     QuestionComponent
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule
   ],
   providers: [GetRespondentsService],

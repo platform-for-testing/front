@@ -1,10 +1,14 @@
 @import 'src/assets/styles/colors';
 
 .pt-question {
-      margin: 0 auto;
-    padding: 46px 38px;
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 35px;
   background-color: $white;
-  box-shadow: 0 2px 20px 0 #9ca0d5;
+  box-shadow: 0px 4px 10px 0px rgba(156, 160, 213, 0.65);
+  border-bottom: 1px solid #ccc;
+  z-index: 1;
 
   &__selects {
     margin-bottom: 20px;
@@ -16,10 +20,7 @@
   }
 
   &--editable {
-        margin-top: 12px;
-    position: relative;
-    box-shadow: 0 29px 47px 0 rgba(156, 160, 213, 0.74);
-    z-index: 999;
+    z-index: 0;
 
     &:before {
       content: '';
@@ -32,35 +33,101 @@
     }
   }
 
-  &_title {
+  &__title {
     font-size: 22px;
     margin: 20px 0;
     font-weight: normal;
   }
 
-  &_description {
+  &__description {
     font-size: 14px;
   }
 
-  &_input {
+  &__input {
     padding: 20px 0 10px;
 
     input {
       width: 100%;
       padding: 5px 0;
-      color: #7d7d7d;
+      color: $black;
       border: 0;
       outline: 0;
       border-bottom: 2px solid #edeef0;
+      
+      &:focus {
+        border-bottom-color: $black;
+      }
     }
   }
 
-  &_title-input {
+  .ng-invalid {
+    &[type=text],
+    &[type=text]:focus {
+      border-bottom-color: $red;
+    }
+
+    &[type=number] {
+      outline-color: $red;
+    }
+  }
+
+  &__title-input {
     font-size: 22px;
   }
 
-  &_controls {
-    background-color: red;
+  &__checkbox {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    & > span {
+      margin-right: 10px;
+    }
+  }
+  
+  &__controls {
+    position: relative;
+    display: flex;
+    margin-top: 40px;
+    padding-top: 15px;
+    align-items: center;
+    color: #6c6c6c;
+    font-size: 18px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #edeef0;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    font-size: 26px;
+    transition: .4s;
+
+    &:hover {
+      color: darken(#6c6c6c, 30%);
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px; 
+    }
+  }
+
+  &__required {
+    margin-left: auto;
+  }
+  
+  .alert {
+    padding-left: 5px;
+    font-size: 75%;
+
+    &-danger {
+      color: $red;
+    }
   }
 }
 
@@ -68,11 +135,5 @@
   &-input {
     font-size: 14px;
     font-weight: 300;
-  }
-}
-
-.pt-multiselect {
-  &_shift {
-    margin-left: 20px;
   }
 }

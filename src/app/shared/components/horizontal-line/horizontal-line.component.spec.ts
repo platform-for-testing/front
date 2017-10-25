@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { HorizontalLineComponent } from './horizontal-line.component';
 
@@ -16,10 +17,10 @@ describe('HorizontalLineComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HorizontalLineComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });

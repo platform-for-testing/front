@@ -5,7 +5,7 @@
   margin: 0 auto 65px;
   font-family: $font-main;
 
-  &_controls {
+  &__controls {
     display: flex;
     max-width: 90%;
     margin: 5px auto 0;
@@ -13,7 +13,7 @@
     box-shadow: 0 3px 6px 0 #535dcb;
   }
 
-  &_button {
+  &__button {
     position: relative;
     width: 20%;
     flex-grow: 1;
@@ -42,55 +42,6 @@
     &:hover {
       color: darken(#6c6c6c, 30%);
     }
-  }
-}
-
-.pt-question {
-
-  &__checkbox {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    & > span {
-      margin-right: 10px;
-    }
-  }
-  
-  &_controls {
-    position: relative;
-    display: flex;
-    margin-top: 40px;
-    padding-top: 15px;
-    align-items: center;
-    color: #6c6c6c;
-    font-size: 18px;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      height: 2px;
-      width: 100%;
-      background-color: #edeef0;
-    }
-  }
-
-  &_button {
-    cursor: pointer;
-    font-size: 26px;
-    transition: .4s;
-
-    &:hover {
-      color: darken(#6c6c6c, 30%);
-    }
-
-    &:not(:last-child) {
-      margin-right: 20px; 
-    }
-  }
-
-  &_required {
-    margin-left: auto;
   }
 }
 
