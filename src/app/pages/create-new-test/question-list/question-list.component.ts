@@ -13,6 +13,7 @@ export class QuestionListComponent implements OnInit {
   questions: Question[] = []; yield;
   form: FormGroup;
   editedQuestion: number;
+  showPicture = false;
 
   constructor(private elementRef: ElementRef, private fb: FormBuilder) {
 
@@ -46,8 +47,6 @@ export class QuestionListComponent implements OnInit {
   addText() {
     alert('add text');
   }
-
-  showPicture = false;
 
   addPicture() {
     this.showPicture = !this.showPicture;

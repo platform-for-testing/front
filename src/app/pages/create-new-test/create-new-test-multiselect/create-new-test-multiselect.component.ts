@@ -15,6 +15,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/fo
 
 export class CreateNewTestMultiselectComponent implements ControlValueAccessor, OnInit {
   @Input() selectContent: any;
+  @Output() currentType: EventEmitter<any> = new EventEmitter();
   mulsel = true;
   mulselContent = false;
   currentInner: any;
@@ -34,8 +35,6 @@ export class CreateNewTestMultiselectComponent implements ControlValueAccessor, 
   mulselOpen() {
     this.mulselContent = !this.mulselContent;
   }
-
-  @Output() currentType: EventEmitter<any> = new EventEmitter();
 
   click(value, icon, select, $event: Event) {
     this.currentInner = value;

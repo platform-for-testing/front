@@ -22,7 +22,7 @@ enum Types {
 })
 export class QuestionComponent implements ControlValueAccessor, OnInit {
   form: FormGroup;
-
+  valueChange: any;
   types = [{ value: Types.Radio,
              icon: 'icon',
              label: 'One choice' },
@@ -79,8 +79,6 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
       this.question = value;
     });
   }
-
-  valueChange:any;
 
   currentType(value) {
     this.valueChange = value;
