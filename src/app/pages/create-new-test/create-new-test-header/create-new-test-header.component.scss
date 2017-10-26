@@ -15,7 +15,7 @@
     border: none;
     width: 100%;
     border-bottom: 2px solid #edeef0;
-    padding: 26px 0 6px;
+    padding: 28px 0 6px;
 
     &:focus {
       outline: none;
@@ -24,6 +24,7 @@
 
   &__header-heading {
     font-size: 30px;
+    text-transform: capitalize;
     padding-top: 75px;
     margin: 0;
     font-weight: 400;

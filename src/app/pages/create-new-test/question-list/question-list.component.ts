@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Output } from '@angular/core';
+import { Component, OnInit, ElementRef, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { QuestionComponent } from './question/question.component';
@@ -47,8 +47,10 @@ export class QuestionListComponent implements OnInit {
     alert('add text');
   }
 
+  showPicture = false;
+
   addPicture() {
-    alert('add picture');
+    this.showPicture = !this.showPicture;
   }
 
   addVideo() {

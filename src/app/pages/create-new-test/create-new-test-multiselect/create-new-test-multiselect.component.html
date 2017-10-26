@@ -6,7 +6,7 @@
         (click)="mulselOpen()">
       <i class="{{ currentClass != undefined ? currentClass : selectContent[0].icon }}"></i>
       <div class='select__content'>
-        {{ currentInner != undefined ? currentInner : selectContent[0].label }}
+        {{ currentInner != '' ? currentInner : selectContent[0].label }}
       </div>
       <i class="arrow down opener"></i>
     </div>
@@ -14,7 +14,8 @@
     <div class="select__items" id="items" *ngIf="mulselContent">
       <div class="select__item inner" 
           (click)="clickedInside($event)" 
-          (click)="click(mulselItem.label, mulselItem.icon, $event)" 
+          (click)="click(mulselItem.label, mulselItem.icon, $event)"
+          (click)="writeValue(mulselItem.label)" 
           *ngFor="let mulselItem of selectContent">
 
         <i class="{{ mulselItem.icon }}"></i>

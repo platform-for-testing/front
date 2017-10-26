@@ -1,35 +1,41 @@
 <form [formGroup]="form" 
-      class="pt-question-list">
-    <div formArrayName="questions">
-        <pt-question *ngFor="let question of form.get('questions').controls; let i = index"
-                    [formControlName]="i" 
-                    (remove)="removeQuestion(i)"
-                    (edit)="editQuestion(i)"
-                    (clone)="cloneQuestion(i)"
-                    [isEditing]="editedQuestion === i"
-                    [index]="i">
-        </pt-question>
+  class="pt-question-list">
+  <div formArrayName="questions" class="questions">
+    <pt-question *ngFor="let question of form.get('questions').controls; let i = index"
+    [formControlName]="i" 
+    (remove)="removeQuestion(i)"
+    (edit)="editQuestion(i)"
+    (clone)="cloneQuestion(i)"
+    [isEditing]="editedQuestion === i"
+    [index]="i">
+    </pt-question>
+  </div>
+  <pt-fileuploader *ngIf="showPicture"></pt-fileuploader>
+  <div class="pt-question-list__controls">
+    <div class="pt-question-list__button"
+      (click)="addQuestion()">
+      <i class="pt-question-list__icon pt-question-list__icon_new"></i>New
     </div>
-
-    <div class="pt-question-list__controls">
-        <div class="pt-question-list__button"
-            (click)="addQuestion()">New
-        </div>
-        
-        <div class="pt-question-list__button"
-            (click)="addText()">Text
-        </div>
-        
-        <div class="pt-question-list__button"
-            (click)="addPicture()">Picture
-        </div>
-        
-        <div class="pt-question-list__button"
-            (click)="addVideo()">Video
-        </div>
-        
-        <div class="pt-question-list__button"
-            (click)="addSection()">Section
-        </div>
+    <div class="pt-question-list__button"
+      (click)="addText()">
+      <i class="pt-question-list__icon pt-question-list__icon_text"></i>Text
     </div>
+    <div class="pt-question-list__button"
+      (click)="addPicture()">
+      <i class="pt-question-list__icon pt-question-list__icon_picture">
+        <img src="../assets/images/picture.svg" alt="picture">
+      </i>
+      Picture
+    </div>
+    <div class="pt-question-list__button"
+      (click)="addVideo()">
+      <i class="pt-question-list__icon pt-question-list__icon_video">
+          <img src="../assets/images/video.svg" alt="video">
+      </i>Video
+    </div>
+    <div class="pt-question-list__button"
+      (click)="addSection()">
+      <i class="pt-question-list__icon pt-question-list__icon_section"></i>Section
+    </div>
+  </div>
 </form>

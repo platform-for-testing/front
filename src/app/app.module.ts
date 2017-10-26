@@ -29,6 +29,7 @@ import {GetRespondentsService} from './shared/services/getRespondents.service';
 import { CreateNewTestMultiselectComponent } from './pages/create-new-test/create-new-test-multiselect/create-new-test-multiselect.component';
 import { QuestionListComponent } from './pages/create-new-test/question-list/question-list.component';
 import { QuestionComponent } from './pages/create-new-test/question-list/question/question.component';
+import { FileuploaderComponent } from './pages/create-new-test/question-list/fileuploader/fileuploader.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
     CreateNewComponent,
     CreateNewTestMultiselectComponent,
     QuestionListComponent,
-    QuestionComponent
+    QuestionComponent,
+    FileuploaderComponent
   ],
   imports: [
     BrowserModule,

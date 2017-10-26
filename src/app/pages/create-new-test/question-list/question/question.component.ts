@@ -70,7 +70,7 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
       title: ['Question', [Validators.required]],
       description: '',
       required: false,
-      type: 0,
+      type: '',
       points: [1, [Validators.min(1), Validators.max(10)]]
     });
 
@@ -80,11 +80,10 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
     });
   }
 
-  valueChange:string;
+  valueChange:any;
 
   currentType(value) {
     this.valueChange = value;
-    console.log(value);
   }
 
   propagateChange(value: Question) {
