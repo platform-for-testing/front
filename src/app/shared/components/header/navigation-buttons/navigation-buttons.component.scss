@@ -1,22 +1,21 @@
 @import 'src/assets/styles/colors';
 
-.menu-item {
-	text-decoration: none;
-	font-family: "Roboto", sans-serif;
-	font-size: 20px;
-	line-height: 61px;
-	margin: 0 30px;
-	text-align: left;
-	color: $silver;
-
-	&.active {
-		color: $black;
-	}
-}
-
 .menu {
 	display: flex;
 	justify-content: center;
+	&__item {
+		text-decoration: none;
+		font-family: "Roboto", sans-serif;
+		font-size: 20px;
+		line-height: 61px;
+		margin: 0 30px;
+		text-align: left;
+		color: $silver;
+	
+		&.active {
+			color: $black;
+		}
+	}
 }
 
 form {
