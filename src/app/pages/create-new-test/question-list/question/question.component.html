@@ -5,10 +5,10 @@
             <option *ngFor="let type of types">{{ type.label }}</option>
         </select> -->
 
-        <pt-create-new-test-multiselect 
+        <pt-multiselect 
         (currentType)="currentType($event)" 
         [selectContent]="types"
-        formControlName="type"></pt-create-new-test-multiselect>
+        formControlName="type"></pt-multiselect>
 
         <input type="number" placeholder="Number of points" formControlName="points" class="select__input">
     </div>

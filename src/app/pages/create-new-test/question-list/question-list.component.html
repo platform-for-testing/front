@@ -2,13 +2,13 @@
   class="pt-question-list">
   <div formArrayName="questions" class="questions">
     <pt-question *ngFor="let question of form.get('questions').controls; let i = index"
-    [formControlName]="i" 
-    (remove)="removeQuestion(i)"
-    (edit)="editQuestion(i)"
-    (clone)="cloneQuestion(i)"
-    [isEditing]="editedQuestion === i"
-    [index]="i">
-    </pt-question>
+                    [formControlName]="i" 
+                    (remove)="removeQuestion(i)"
+                    (edit)="editQuestion(i)"
+                    (clone)="cloneQuestion(i)"
+                    [isEditing]="editedQuestion === i"
+                    [index]="i">
+        </pt-question>
   </div>
   <pt-fileuploader *ngIf="showPicture"></pt-fileuploader>
   <div class="pt-question-list__controls">

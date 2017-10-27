@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, forwardRef } from '@ang
 import { FormBuilder, FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { Question } from './question';
 import { QuestionListComponent } from '../question-list.component';
-import { CreateNewTestMultiselectComponent } from '../../create-new-test-multiselect/create-new-test-multiselect.component';
+import { MultiselectComponent } from '../../../../shared/components/multiselect/multiselect.component';
 
 enum Types {
   Checkboxes,

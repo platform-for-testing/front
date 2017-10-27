@@ -25,8 +25,8 @@ import { ActivationsListWrapperComponent } from './pages/all-activations/activat
 import { ActivationItemComponent } from './pages/all-activations/activations-list-wrapper/activation-item/activation-item.component';
 import { PageInformationComponent } from './pages/all-activations/page-information/page-information.component';
 import { HorizontalLineComponent } from './shared/components/horizontal-line/horizontal-line.component';
-import {GetRespondentsService} from './shared/services/getRespondents.service';
-import { CreateNewTestMultiselectComponent } from './pages/create-new-test/create-new-test-multiselect/create-new-test-multiselect.component';
+import { GetRespondentsService} from './shared/services/getRespondents.service';
+import { MultiselectComponent } from './shared/components/multiselect/multiselect.component';
 import { QuestionListComponent } from './pages/create-new-test/question-list/question-list.component';
 import { QuestionComponent } from './pages/create-new-test/question-list/question/question.component';
 import { FileuploaderComponent } from './pages/create-new-test/question-list/fileuploader/fileuploader.component';
@@ -55,7 +55,7 @@ import { FileuploaderComponent } from './pages/create-new-test/question-list/fil
     PageInformationComponent,
     HorizontalLineComponent,
     CreateNewComponent,
-    CreateNewTestMultiselectComponent,
+    MultiselectComponent,
     QuestionListComponent,
     QuestionComponent,
     FileuploaderComponent

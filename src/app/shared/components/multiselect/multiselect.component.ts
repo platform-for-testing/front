@@ -3,17 +3,17 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/fo
 
 
 @Component({
-  selector: 'pt-create-new-test-multiselect',
-  templateUrl: './create-new-test-multiselect.component.html',
-  styleUrls: ['./create-new-test-multiselect.component.scss'],
+  selector: 'pt-multiselect',
+  templateUrl: './multiselect.component.html',
+  styleUrls: ['./multiselect.component.scss'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     multi: true,
-    useExisting: CreateNewTestMultiselectComponent
+    useExisting: MultiselectComponent
   }]
 })
 
-export class CreateNewTestMultiselectComponent implements ControlValueAccessor, OnInit {
+export class MultiselectComponent implements ControlValueAccessor, OnInit {
   @Input() selectContent: any;
   @Output() currentType: EventEmitter<any> = new EventEmitter();
   mulsel = true;
@@ -32,20 +32,20 @@ export class CreateNewTestMultiselectComponent implements ControlValueAccessor, 
   registerOnTouched(fn) {
   }
 
-  mulselOpen() {
+  openContent() {
     this.mulselContent = !this.mulselContent;
   }
 
-  click(value, icon, select, $event: Event) {
+  clickInside($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+  }
+
+  chooseItem(value, icon, select, $event: Event) {
     this.currentInner = value;
     this.currentClass = icon;
     this.currentType.emit(value);
-    this.mulselOpen();
-  }
-
-  clickedInside($event: Event) {
-    $event.preventDefault();
-    $event.stopPropagation();
+    this.openContent();
   }
 
   @HostListener('document:click', ['$event']) clickedOutside($event) {

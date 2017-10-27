@@ -12,9 +12,8 @@ import { Question } from './question/question';
 export class QuestionListComponent implements OnInit {
   questions: Question[] = []; yield;
   form: FormGroup;
-  editedQuestion: number;
   showPicture = false;
-
+  editedQuestion: number;
   constructor(private elementRef: ElementRef, private fb: FormBuilder) {
 
   }
@@ -30,7 +29,6 @@ export class QuestionListComponent implements OnInit {
 
   // ngAfterViewChecked() {
   // }
-
   createQuestion = (question: Question) => {
     return this.fb.control(question);
   }
