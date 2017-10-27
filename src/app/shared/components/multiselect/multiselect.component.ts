@@ -20,17 +20,22 @@ export class MultiselectComponent implements ControlValueAccessor, OnInit {
   mulselContent = false;
   currentInner: any;
   currentClass: string;
+  onChange;
 
   writeValue(value: any) {
-    this.currentInner = value;
+    if (value !== undefined) {
+      console.log(value);
+      this.currentInner = value;
+    }
   }
+
+  propagateChange = (value: any) => {};
 
   registerOnChange(fn) {
-    this.writeValue = fn;
+    this.propagateChange = fn;
   }
 
-  registerOnTouched(fn) {
-  }
+  registerOnTouched() {}
 
   openContent() {
     this.mulselContent = !this.mulselContent;
@@ -46,6 +51,7 @@ export class MultiselectComponent implements ControlValueAccessor, OnInit {
     this.currentClass = icon;
     this.currentType.emit(value);
     this.openContent();
+    this.propagateChange(this.currentInner);
   }
 
   @HostListener('document:click', ['$event']) clickedOutside($event) {
