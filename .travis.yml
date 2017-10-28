@@ -21,8 +21,8 @@ jobs:
   - stage: deploy
     script: skip
     before_deploy:
+    - echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
     - npm run build
-    # - cd /home/travis/build/platform-for-testing/front
     - mkdir build
     - cp -r dist build/dist
     - cp server.js build/server.js
