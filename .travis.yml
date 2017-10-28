@@ -35,14 +35,7 @@ jobs:
     - scp package.tgz $DEPLOY_USER@$DEPLOY_HOST:/home/deploy/front-dev
     deploy:
     - provider: script
-      script:
-      - ssh $DEPLOY_USER@$DEPLOY_HOST
-      - cd /home/deploy/front-dev
-      - rm -rf build
-      - rm server.js
-      - tar -xzf package.tgz
-      - rm package.tgz
-      - node server.js
+      script: scripts/deploy.sh
       on:
         branch: deploy
 env:
