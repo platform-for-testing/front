@@ -3,12 +3,12 @@ sudo: required
 language: node_js
 node_js:
 - 8.5.0
-# addons:
-#   apt:
-#     sources:
-#     - google-chrome
-#     packages:
-#     - google-chrome-stable
+addons:
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
 # jobs:
   # include:
   # - stage: test
