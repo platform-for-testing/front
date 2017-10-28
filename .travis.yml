@@ -11,18 +11,18 @@ addons:
     - google-chrome-stable
 jobs:
   include:
-  - stage: test
-    before_script:
-    - npm run build
-    - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start
-    script:
-    - npm run ci
+  # - stage: test
+  #   before_script:
+  #   - npm run build
+  #   - export DISPLAY=:99.0
+  #   - sh -e /etc/init.d/xvfb start
+  #   script:
+  #   - npm run ci
   - stage: deploy
-    script: skip
     before_deploy:
     - npm run build
     - mkdir build
+    - ls
     - cp dist build/dist
     - cp server.js build/server.js
     - tar -czf package.tgz build
