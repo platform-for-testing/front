@@ -22,10 +22,10 @@ jobs:
     script: skip
     before_deploy:
     - npm run build
-    - cd /home/travis/build/platform-for-testing/front
+    # - cd /home/travis/build/platform-for-testing/front
     - mkdir build
-    - scp dist build/dist
-    - scp server.js build/server.js
+    - cp -r dist build/dist
+    - cp server.js build/server.js
     - tar -czf package.tgz build
     - openssl aes-256-cbc -K $encrypted_a203ffbb8517_key -iv $encrypted_a203ffbb8517_iv
       -in id_rsa.enc -out id_rsa -d
