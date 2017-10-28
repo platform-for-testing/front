@@ -19,6 +19,7 @@ jobs:
   #   script:
   #   - npm run ci
   - stage: deploy
+    script: skip
     before_deploy:
     - npm run build
     - mkdir build
