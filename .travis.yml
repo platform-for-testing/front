@@ -18,6 +18,7 @@ addons:
   #   - sh -e /etc/init.d/xvfb start
   #   script:
   #   - npm run ci
+script: skip
 before_deploy:
 - echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - npm run build
