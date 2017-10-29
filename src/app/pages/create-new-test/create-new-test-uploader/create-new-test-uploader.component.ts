@@ -1,19 +1,29 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from "@angular/forms";
+
 
 @Component({
   selector: 'pt-create-new-test-uploader',
   templateUrl: './create-new-test-uploader.component.html',
   styleUrls: ['./create-new-test-uploader.component.scss']
 })
-export class CreateNewTestUploaderComponent {
-  imageSrc = 'https://upload.wikimedia.org/wikipedia/commons/c/cd/View_from_connors_hill_panorama.jpg'; // : string
+export class CreateNewTestUploaderComponent implements OnInit{
+  imageSrc: string = 'https://upload.wikimedia.org/wikipedia/commons/c/cd/View_from_connors_hill_panorama.jpg';
 
   dragging = false; // : boolean
   loaded = false; // : boolean
   imageLoaded = false; // : boolean
+  form: FormGroup;
 
-  handleDragEnter() {
-    this.dragging = true;
+  constructor(private fb: FormBuilder) {
+  }
+
+  ngOnInit() {
+    this.form = this.fb.group({
+      background: ''
+    });
+
+    this.form.valueChanges.subscribe(value => console.log(value));
   }
 
   handleDragLeave() {

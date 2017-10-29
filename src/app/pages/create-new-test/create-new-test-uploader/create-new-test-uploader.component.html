@@ -1,15 +1,21 @@
-<label class="uploader"
-       (dragover)="false;"
-       [class.loaded]="loaded"
-       (dragenter)="handleDragEnter()"
-       (dragleave)="handleDragLeave()"
-       (drop)="handleDrop($event)">
+<form [formGroup]="form">
+  <label class="uploader"
+         (dragover)="false;"
+         [class.loaded]="loaded"
+         (dragenter)="handleDragEnter()"
+         (dragleave)="handleDragLeave()"
+         (drop)="handleDrop($event)">
 
-<img
-    [src]="imageSrc"
-    (load)="handleImageLoad()"
-    [class.loaded]="imageLoaded"/>
 
-<input type="file" name="file" accept="image/*"
-    (change)="handleInputChange($event)">
-</label>
+    <div
+      class="background-block"
+      (load)="handleImageLoad()"
+      [class.loaded]="imageLoaded"
+      [ngStyle]="{'background-image': 'url(' + imageSrc + ')'}">
+
+    </div>
+    <input type="file" name="file" accept="image/*"
+           formControlName="background"
+           (change)="handleInputChange($event)">
+  </label>
+</form>
