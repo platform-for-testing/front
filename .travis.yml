@@ -15,7 +15,6 @@ jobs:
     - export DISPLAY=:99.0
     - sh -e /etc/init.d/xvfb start
     - npm run ci
-    script:
     - echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
     - mkdir build
     - cp -r dist build/dist
@@ -30,6 +29,7 @@ jobs:
     - chmod 600 id_rsa
     - ssh-add id_rsa
     - scp package.tgz $DEPLOY_USER@$DEPLOY_HOST:/home/deploy/front-dev
+    script:
     - ssh $DEPLOY_USER@$DEPLOY_HOST sh /home/deploy/front-dev/scripts/deploy.sh
     on:
       branch: deploy
