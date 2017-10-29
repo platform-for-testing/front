@@ -6,6 +6,7 @@ import {AllRespondentsComponent} from './pages/all-respondents/all-respondents.c
 import {CreateNewTestComponent} from './pages/create-new-test/create-new-test.component';
 
 const routes: Routes = [
+    {path: '', redirectTo: '/all-tests', pathMatch: 'full'},
     {path: 'all-tests', component: AllTestsComponent},
     {path: 'all-activations', component: AllActivationsComponent},
     {path: 'create-new-test', component: CreateNewTestComponent},

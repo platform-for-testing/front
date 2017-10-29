@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Output } from '@angular/core';
+import { Component, OnInit, ElementRef, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { QuestionComponent } from './question/question.component';
@@ -12,8 +12,8 @@ import { Question } from './question/question';
 export class QuestionListComponent implements OnInit {
   questions: Question[] = []; yield;
   form: FormGroup;
+  showPicture = false;
   editedQuestion: number;
-
   constructor(private elementRef: ElementRef, private fb: FormBuilder) {
 
   }
@@ -29,7 +29,6 @@ export class QuestionListComponent implements OnInit {
 
   // ngAfterViewChecked() {
   // }
-
   createQuestion = (question: Question) => {
     return this.fb.control(question);
   }
@@ -48,7 +47,7 @@ export class QuestionListComponent implements OnInit {
   }
 
   addPicture() {
-    alert('add picture');
+    this.showPicture = !this.showPicture;
   }
 
   addVideo() {
