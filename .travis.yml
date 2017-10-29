@@ -22,7 +22,10 @@ before_deploy:
 - npm run build
 - mkdir build
 - cp -r dist build/dist
-- cp server.js build/server.js
+- cd server
+- npm install
+- cd ../
+- cp -r server build/server
 - tar -czf package.tgz build
 - openssl aes-256-cbc -K $encrypted_a203ffbb8517_key -iv $encrypted_a203ffbb8517_iv
   -in id_rsa.enc -out id_rsa -d
