@@ -2,17 +2,19 @@ language: node_js
 node_js:
 - 8.5.0
 addons:
-  # apt:
-  #   sources:
-  #   - google-chrome
-  #   packages:
-  #   - google-chrome-stable
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
 jobs:
   include:
-    stage: deploy
+    stage: test & deploy
     before_script:
-    - echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
     - npm run build
+    - npm run ci
+    script:
+    - echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
     - mkdir build
     - cp -r dist build/dist
     - cd server
@@ -26,31 +28,9 @@ jobs:
     - chmod 600 id_rsa
     - ssh-add id_rsa
     - scp package.tgz $DEPLOY_USER@$DEPLOY_HOST:/home/deploy/front-dev
-    script:
-    - sh scripts/deploy.sh
+    - ssh $DEPLOY_USER@$DEPLOY_HOST sh /home/deploy/front-dev/scripts/deploy.sh
     on:
       branch: deploy
-# before_deploy:
-# - echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-# - npm run build
-# - mkdir build
-# - cp -r dist build/dist
-# - cd server
-# - npm install
-# - cd ../
-# - cp -r server build/server
-# - tar -czf package.tgz build
-# - openssl aes-256-cbc -K $encrypted_a203ffbb8517_key -iv $encrypted_a203ffbb8517_iv
-#   -in id_rsa.enc -out id_rsa -d
-# - eval "$(ssh-agent -s)"
-# - chmod 600 id_rsa
-# - ssh-add id_rsa
-# - scp package.tgz $DEPLOY_USER@$DEPLOY_HOST:/home/deploy/front-dev
-# deploy:
-# - provider: script
-#   script: scripts/deploy.sh
-#   on:
-#     branch: deploy
 env:
   global:
   - secure: gUsVk41xMgBzMIG4LK3Miu7N+zxM/lXdRcjC1LtvxTcyauEJS3CsO21ML7lN2JWcp1Vui9zWV8j9w6UOo6nhsYxRfRkqRTf+jEPmUcSONrY5AAE1MmbuMYOkm4rYQr1zpgguMc9vMMGDbL0J/9KYocQXLK2TU5NyEcN5e2wRl+u91Ntu2/vroUmElhRyDUUkLp/mLxU/HOPyjO7DcAGACM5G6E6f37/1n8cFmu/BJMx0uOzFuDnUfeDUiMqShWphgyzgEBUiRVPT/MZboqTd+0yK9QriYf7x0SWZuaWfwLHaZpUz1zZ9AlxFKvf3+uK4IBJw3yCgeIqKt7aoHgRLMVhChrONbHCcD2flUtieWd7odIc2sOmtf/ya0KolnnT6DATyBp7Wr6u1lyzgC8wwBfAQdQmyefnOh/Uv/tPD/pv0EvNGTmUPmLIgzg+Y2Lef2bDs/AYCRoJwHGcDomZTAxvhI6sb4t55K5zGobjKdirhczhsbKgdvR/kZ6oAcKeXIZcrTOVFbti/NJ6geyGBvH+kHYx7vz3XtAKIlCFZJffYODDPg4IpQTSKk+6wu3s1gByNuvKOvgORE0oSU7fSZ4FW1v9YuSgM3mJ2FypQW3bbk14Wqv3vA17rZpOz4YW/Vk97o1o2b7DyMKI4317Sg50kzDsWCfwK88H46Jne8PE=
