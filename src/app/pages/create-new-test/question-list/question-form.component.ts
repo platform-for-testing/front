@@ -1,18 +1,28 @@
-import { Component, OnInit, ElementRef, Output } from '@angular/core';
+import {Component, OnInit, ElementRef, Output, EventEmitter, Input} from '@angular/core';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { QuestionComponent } from './question/question.component';
-import { Question } from './question/question';
+import { Question } from '../../models/question';
+import {Test} from '../../models/test';
 
 @Component({
-  selector: 'pt-question-list',
-  templateUrl: './question-list.component.html',
-  styleUrls: ['./question-list.component.scss']
+  selector: 'pt-question-form',
+  templateUrl: './question-form.component.html',
+  styleUrls: ['./question-form.component.scss']
 })
-export class QuestionListComponent implements OnInit {
-  questions: Question[] = []; yield;
+export class QuestionFormComponent implements OnInit {
+  questions: Question[] = [];
   form: FormGroup;
   editedQuestion: number;
+
+  @Input()
+  set test(test: Test) {
+    if (this.form) {
+      this.form.setValue(test);
+    }
+  }
+
+  @Output() submit: EventEmitter<Test> = new EventEmitter();
 
   constructor(private elementRef: ElementRef, private fb: FormBuilder) {
 
@@ -20,8 +30,12 @@ export class QuestionListComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
+      id: '',
+      title: '',
+      description: '',
       questions: this.fb.array(this.questions.map(this.createQuestion))
     });
+
     this.form.valueChanges.subscribe(value => {
       this.questions = value.questions;
     });
@@ -39,8 +53,12 @@ export class QuestionListComponent implements OnInit {
     const questionsArray = this.form.get('questions') as FormArray;
 
     questionsArray.push(this.fb.control(newQuestion));
-    // this.form.updateValueAndValidity();
     this.editQuestion(questionsArray.length - 1);
+  }
+
+  onSubmit() {
+    console.log(this.form.value);
+    this.submit.emit(this.form.value);
   }
 
   addText() {

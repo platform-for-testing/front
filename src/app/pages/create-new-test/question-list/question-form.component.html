@@ -1,8 +1,19 @@
-<form [formGroup]="form" 
+<form [formGroup]="form"
+      (ngSubmit)="onSubmit()"
       class="pt-question-list">
+    <input class="create__header-input create__header-heading"
+           type="text"
+           formControlName="title"
+           placeholder="Test Title">
+
+    <input class="create__header-input"
+           type="text"
+           formControlName="description"
+           placeholder="Form description(optional)">
+
     <div formArrayName="questions">
         <pt-question *ngFor="let question of form.get('questions').controls; let i = index"
-                    [formControlName]="i" 
+                    [formControlName]="i"
                     (remove)="removeQuestion(i)"
                     (edit)="editQuestion(i)"
                     (clone)="cloneQuestion(i)"
@@ -15,21 +26,22 @@
         <div class="pt-question-list__button"
             (click)="addQuestion()">New
         </div>
-        
+
         <div class="pt-question-list__button"
             (click)="addText()">Text
         </div>
-        
+
         <div class="pt-question-list__button"
             (click)="addPicture()">Picture
         </div>
-        
+
         <div class="pt-question-list__button"
             (click)="addVideo()">Video
         </div>
-        
+
         <div class="pt-question-list__button"
             (click)="addSection()">Section
         </div>
     </div>
+  <button type="submit">Save form</button>
 </form>

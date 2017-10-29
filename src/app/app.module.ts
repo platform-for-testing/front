@@ -27,8 +27,10 @@ import { PageInformationComponent } from './pages/all-activations/page-informati
 import { HorizontalLineComponent } from './shared/components/horizontal-line/horizontal-line.component';
 import {GetRespondentsService} from './shared/services/getRespondents.service';
 import { CreateNewTestMultiselectComponent } from './pages/create-new-test/create-new-test-multiselect/create-new-test-multiselect.component';
-import { QuestionListComponent } from './pages/create-new-test/question-list/question-list.component';
+import { QuestionFormComponent } from './pages/create-new-test/question-list/question-form.component';
 import { QuestionComponent } from './pages/create-new-test/question-list/question/question.component';
+import {TestService} from './shared/services/test.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,7 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
     HorizontalLineComponent,
     CreateNewComponent,
     CreateNewTestMultiselectComponent,
-    QuestionListComponent,
+    QuestionFormComponent,
     QuestionComponent
   ],
   imports: [
@@ -63,9 +65,9 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpClientModule
   ],
-  providers: [GetRespondentsService],
+  providers: [GetRespondentsService, TestService],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

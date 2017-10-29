@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PostTestService} from '../../../shared/services/postTest.service';
+import {TestService} from '../../../shared/services/test.service';
 
 @Component({
   selector: 'pt-create-new-test-header',
@@ -15,7 +15,7 @@ export class CreateNewTestHeaderComponent implements OnInit {
   onUpdateFormDescription(event: Event) {
     this.formDescription = (<HTMLInputElement>event.target).value;
   }
-  constructor(private service: PostTestService) { }
+  constructor(private service: TestService) { }
 
   ngOnInit() {
   }

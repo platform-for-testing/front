@@ -2,14 +2,15 @@
 <pt-header></pt-header>
 
 <div class="create">
-	<div class="create__container create__container_full">
-		<p class="create__description">pagination's gonna be here...</p>
-	</div>
-	<div class="create__container create__container_full">
-		<pt-create-new-test-uploader></pt-create-new-test-uploader>
-	</div>
-	<div class="create__container reate__container_test">
-		<pt-create-new-test-header></pt-create-new-test-header>
-		<pt-question-list></pt-question-list>
-	</div>
+  <div class="create__container create__container_full">
+    <p class="create__description">pagination's gonna be here...</p>
+  </div>
+  <div class="create__container create__container_full">
+    <pt-create-new-test-uploader></pt-create-new-test-uploader>
+  </div>
+  <div class="create__container create__container_test">
+    <div class="create__header">
+        <pt-question-form [test]="test" (submit)="onTestSubmit($event)" ></pt-question-form>
+    </div>
+  </div>
 </div>

@@ -1,39 +1,39 @@
 <form [formGroup]="form"
-      *ngIf="isEditing" 
+      *ngIf="isEditing"
       class="pt-question pt-question--editable">
   <div class="pt-question__selects">
     <!-- <pt-create-new-test-multiselect [selectContent]="mulselItems"></pt-create-new-test-multiselect>
     <pt-create-new-test-multiselect [selectContent]="mulselNumbers" class="pt-multiselect_shift"></pt-create-new-test-multiselect> -->
     <select formControlName="type">
-      <option *ngFor="let type of types" 
-              value="type.value">{{ type.label }}</option>
+      <option *ngFor="let type of types"
+              [value]="+type.value">{{ type.label }}</option>
     </select>
     <input type="number"
            formControlName="points">
-  </div>  
+  </div>
   <div class="pt-question__input">
-    <input type="text" 
+    <input type="text"
            class="pt-question__title-input"
            formControlName="title">
   </div>
   <div *ngIf="!question.title"
        class="alert alert-danger">Title required
   </div>
-  <div class="pt-question__input">    
+  <div class="pt-question__input">
     <input type="text"
            class="pt-description-input"
           formControlName="description"
            placeholder="Description (optional)">
   </div>
   <div class="pt-question__controls">
-      <span class="pt-question__button pt-question__remove" 
+      <span class="pt-question__button pt-question__remove"
             (click)="removeQuestion(index)"><i class="fa fa-times" aria-hidden="true"></i>
       </span>
-      <span class="pt-question__button pt-question__clone" 
+      <span class="pt-question__button pt-question__clone"
             (click)="cloneQuestion(index)"><i class="fa fa-clone" aria-hidden="true"></i>
       </span>
       <label class="pt-question__required">Required
-          <input type="checkbox" 
+          <input type="checkbox"
                  name="question-required"
                  formControlName="required">
       </label>
