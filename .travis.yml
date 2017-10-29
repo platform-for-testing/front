@@ -33,7 +33,7 @@ jobs:
       - ssh-add id_rsa
       - scp package.tgz $DEPLOY_USER@$DEPLOY_HOST:/home/deploy/front-dev
       script:
-      - sh scripts/deploy.sh
+      - $DEPLOY_USER@$DEPLOY_HOST sh /home/deploy/front-dev/scripts/deploy.sh
       on:
         branch: deploy
 env:
