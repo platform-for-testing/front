@@ -34,8 +34,10 @@ jobs:
       - scp package.tgz $DEPLOY_USER@$DEPLOY_HOST:/home/deploy/front-dev
       script:
       - ssh $DEPLOY_USER@$DEPLOY_HOST sh /home/deploy/front-dev/scripts/deploy.sh
-      on:
-        branch: develop
+stages:
+  - test
+  - name: deploy
+    if: branch = develop
 env:
   global:
   - secure: gUsVk41xMgBzMIG4LK3Miu7N+zxM/lXdRcjC1LtvxTcyauEJS3CsO21ML7lN2JWcp1Vui9zWV8j9w6UOo6nhsYxRfRkqRTf+jEPmUcSONrY5AAE1MmbuMYOkm4rYQr1zpgguMc9vMMGDbL0J/9KYocQXLK2TU5NyEcN5e2wRl+u91Ntu2/vroUmElhRyDUUkLp/mLxU/HOPyjO7DcAGACM5G6E6f37/1n8cFmu/BJMx0uOzFuDnUfeDUiMqShWphgyzgEBUiRVPT/MZboqTd+0yK9QriYf7x0SWZuaWfwLHaZpUz1zZ9AlxFKvf3+uK4IBJw3yCgeIqKt7aoHgRLMVhChrONbHCcD2flUtieWd7odIc2sOmtf/ya0KolnnT6DATyBp7Wr6u1lyzgC8wwBfAQdQmyefnOh/Uv/tPD/pv0EvNGTmUPmLIgzg+Y2Lef2bDs/AYCRoJwHGcDomZTAxvhI6sb4t55K5zGobjKdirhczhsbKgdvR/kZ6oAcKeXIZcrTOVFbti/NJ6geyGBvH+kHYx7vz3XtAKIlCFZJffYODDPg4IpQTSKk+6wu3s1gByNuvKOvgORE0oSU7fSZ4FW1v9YuSgM3mJ2FypQW3bbk14Wqv3vA17rZpOz4YW/Vk97o1o2b7DyMKI4317Sg50kzDsWCfwK88H46Jne8PE=
