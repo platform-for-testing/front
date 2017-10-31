@@ -1,69 +1,187 @@
 .fileuploader {
   box-sizing: border-box;
-
-  position: absolute;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+
+  &:before {
+    content: '';
+      position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  }
+
+  &__info {
+    margin-top: 20px;
+  }
+
+  &__link {
+    color: #d9d9da;
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    padding: 0 34px;
+    text-decoration: none;
+
+    &_select {
+      background: #90e9a7;
+      color: #fff;
+      box-shadow: 0 3px 5px 0 rgba(156, 160, 213, 0.72);
+    }
+  }
+
+  & .uploader {
+    cursor: pointer;
+    width: 420px;
+    height: 420px;
+    border: 2px dashed #999;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    &_second {
+      border: none;
+    }
+
+    & h2 {
+      margin: 22px 0;
+      font-weight: 400;
+      font-size: 30px;
+      color: #a6a6a6;
+    }
+
+    & span {
+      font-weight: 600;
+      color: #a6a6a6;
+    }
+  }
 
   &__inner {
+    z-index: 999;
     box-shadow: 0 5px 26px 0 rgba(82,89,174,.23);
-    padding: 54px 58px;
+    padding: 55px 58px 160px;
     box-sizing: border-box;
-    max-width: 820px;
-    margin: 0 auto;
+    width: 820px;
+    margin: 40px auto;
     background: #fff;
+
+    &_second {
+          margin-top: 35px;
+    padding-bottom: 60px;
+    }
   }
 
-  &__header {
+  &__select {
+    height: 40px;
+    background: #eee;
+    padding: 0 25px;
+    font-size: 12px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    margin-top: 40px;
+  }
+
+  &__content {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    margin-top: 75px;
   }
 
-  &__heading {
-    margin: 0;
-    letter-spacing: .4px;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: #0f0f0f;
-  }
+  &__image {
+   width: 100%;
+   height: 100%;
+   object-fit: fill;
+   position: absolute;
 
-  &__closer {
-    cursor: pointer;
-    display: inline-block;
-    height: 26px;
-    width: 26px;
-    transform: rotate(45deg);
-    position: relative;
+   &_before {
+     width: auto;
+     height: auto;
+     position: relative;
+   }
+ }
 
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      background: #000;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      height: 2px;
-    }
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      background: #000;
-      height: 100%;
-      width: 2px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+ &__input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+&__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &_second {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 14px;
   }
+}
+
+&__heading {
+  margin: 0;
+  letter-spacing: .4px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #0f0f0f;
+}
+
+&__action {
+  margin-top: 120px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+&__closer {
+  cursor: pointer;
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  transform: rotate(45deg);
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #000;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 2px;
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #000;
+    height: 100%;
+    width: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+}
+
+.error {
+      background: #ff7f7f;
+    color: #fff;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
 }

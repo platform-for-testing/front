@@ -10,10 +10,11 @@ import { Question } from './question/question';
   styleUrls: ['./question-list.component.scss']
 })
 export class QuestionListComponent implements OnInit {
-  questions: Question[] = []; yield;
+  questions: Question[] = [];
   form: FormGroup;
-  showPicture = false;
+  showPicture:boolean = false;
   editedQuestion: number;
+
   constructor(private elementRef: ElementRef, private fb: FormBuilder) {
 
   }
@@ -46,8 +47,13 @@ export class QuestionListComponent implements OnInit {
     alert('add text');
   }
 
+
   addPicture() {
     this.showPicture = !this.showPicture;
+  }
+
+  receive(event) {
+    this.showPicture = event;
   }
 
   addVideo() {

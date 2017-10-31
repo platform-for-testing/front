@@ -10,7 +10,9 @@
                     [index]="i">
         </pt-question>
   </div>
-  <pt-fileuploader *ngIf="showPicture"></pt-fileuploader>
+  <pt-fileuploader 
+    *ngIf="showPicture" 
+    (propagateChange)=receive($event)></pt-fileuploader>
   <div class="pt-question-list__controls">
     <div class="pt-question-list__button"
       (click)="addQuestion()">
