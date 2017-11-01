@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, HostListener, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'pt-fileuploader',
@@ -15,6 +15,8 @@ export class FileuploaderComponent implements OnInit {
   dragging = false;
   loaded = false;
   imageLoaded = false;
+  x:number;
+  y:number;
 
   @Input() showPicture;
   @Output() propagateChange = new EventEmitter<boolean>();
@@ -70,6 +72,30 @@ export class FileuploaderComponent implements OnInit {
     this.imageSrc = reader.result;
     this.loaded = true;
   }
+
+  @HostListener('mousemove', ['$event'])
+  onMousemove(event: MouseEvent): void  { 
+    this.x = event.clientX;
+    this.y = event.clientY;
+  }
+
+  cropImage(cropper, area, content, cont) {
+    let size = 80;
+
+    let xFull  = area.offsetLeft + content.offsetLeft + cont.offsetLeft;
+    //let yFull  = area.offsetLeft + content.offsetLeft + cont.offsetLeft;
+
+    console.log(this.x, xFull)
+    
+    // cropper.style.left = `${this.x - cropper.offsetLeft + area.offsetLeft - size}px`;
+    // cropper.style.top = `${this.y - cropper.offsetTop + area.offsetTop - size}px`;
+  }
+
+  cropCanvas(element, imageToDraw) {
+    let ctx = element.getContext("2d");
+    ctx.drawImage(imageToDraw, 10, 10);
+  }
+  
 
   constructor() { }
 
