@@ -58,8 +58,7 @@ import { HttpClientModule } from '@angular/common/http';
     HorizontalLineComponent,
     CreateNewComponent,
     MultiselectComponent,
-    QuestionListComponent,
-    FileuploaderComponent
+    FileuploaderComponent,
     QuestionFormComponent,
     QuestionComponent
   ],
