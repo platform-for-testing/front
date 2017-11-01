@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateNewTestHeaderComponent } from './create-new-test-header/create-new-test-header.component';
 import { CreateNewTestUploaderComponent } from './create-new-test-uploader/create-new-test-uploader.component';
-import { CreateNewTestMultiselectComponent } from './create-new-test-multiselect/create-new-test-multiselect.component';
 import {TestService} from '../../shared/services/test.service';
 import {Test} from '../models/test';
 

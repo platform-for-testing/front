@@ -1,4 +1,4 @@
-import {Component, OnInit, ElementRef, Output, EventEmitter, Input} from '@angular/core';
+import { Component, OnInit, ElementRef, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { QuestionComponent } from './question/question.component';
@@ -13,6 +13,7 @@ import {Test} from '../../models/test';
 export class QuestionFormComponent implements OnInit {
   questions: Question[] = [];
   form: FormGroup;
+  showPicture = false;
   editedQuestion: number;
 
   @Input()
@@ -35,7 +36,6 @@ export class QuestionFormComponent implements OnInit {
       description: '',
       questions: this.fb.array(this.questions.map(this.createQuestion))
     });
-
     this.form.valueChanges.subscribe(value => {
       this.questions = value.questions;
     });
@@ -43,7 +43,6 @@ export class QuestionFormComponent implements OnInit {
 
   // ngAfterViewChecked() {
   // }
-
   createQuestion = (question: Question) => {
     return this.fb.control(question);
   }
@@ -66,7 +65,7 @@ export class QuestionFormComponent implements OnInit {
   }
 
   addPicture() {
-    alert('add picture');
+    this.showPicture = !this.showPicture;
   }
 
   addVideo() {

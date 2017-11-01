@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, forwardRef } from '@ang
 import { FormBuilder, FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { Question } from '../../../models/question';
 import { QuestionFormComponent } from '../question-form.component';
-import { CreateNewTestMultiselectComponent } from '../../create-new-test-multiselect/create-new-test-multiselect.component';
+import { MultiselectComponent } from '../../../../shared/components/multiselect/multiselect.component';
 
 enum Types {
   Checkboxes = 0,
@@ -22,7 +22,7 @@ enum Types {
 })
 export class QuestionComponent implements ControlValueAccessor, OnInit {
   form: FormGroup;
-
+  valueChange: any;
   types = [{ value: parseInt(Types.Radio.toString(), 10),
              icon: 'icon',
              label: 'One choice' },
@@ -70,7 +70,7 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
       title: ['Question', [Validators.required]],
       description: '',
       required: false,
-      type: Types.Radio,
+      type: '',
       points: [1, [Validators.min(1), Validators.max(10)]]
     });
 
@@ -78,6 +78,10 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
       this.propagateChange(value);
       this.question = value;
     });
+  }
+
+  currentType(value) {
+    this.valueChange = value;
   }
 
   propagateChange(value: Question) {
