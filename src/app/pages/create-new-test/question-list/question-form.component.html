@@ -1,4 +1,5 @@
 <form [formGroup]="form"
+      (ngSubmit)="onSubmit()"
   class="pt-question-list">
   <input class="create__header-input create__header-heading"
          type="text"
@@ -47,4 +48,5 @@
       <i class="pt-question-list__icon pt-question-list__icon_section"></i>Section
     </div>
   </div>
+  <button type="submit">Save form</button>
 </form>
