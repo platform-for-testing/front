@@ -12,8 +12,8 @@ import { Question } from './question/question';
 export class QuestionListComponent implements OnInit {
   questions: Question[] = [];
   form: FormGroup;
-  showPicture:boolean = false;
   editedQuestion: number;
+  pictureToAdd: boolean = false;
 
   constructor(private elementRef: ElementRef, private fb: FormBuilder) {
 
@@ -43,17 +43,12 @@ export class QuestionListComponent implements OnInit {
     this.editQuestion(questionsArray.length - 1);
   }
 
+  addPicture() {
+    alert('add image');
+  }
+
   addText() {
     alert('add text');
-  }
-
-
-  addPicture() {
-    this.showPicture = !this.showPicture;
-  }
-
-  receive(event) {
-    this.showPicture = event;
   }
 
   addVideo() {

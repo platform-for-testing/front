@@ -9,9 +9,9 @@ export class FileuploaderComponent implements OnInit {
 
   imageSrc = '../../assets/images/uploader.svg';
   fileName = 'default filename';
-
   defaultImage = true;
   stageOne = false;
+  isAdded = false;
   dragging = false;
   loaded = false;
   imageLoaded = false;
@@ -19,11 +19,11 @@ export class FileuploaderComponent implements OnInit {
   y:number;
 
   @Input() showPicture;
-  @Output() propagateChange = new EventEmitter<boolean>();
+  @Output() propagate = new EventEmitter<boolean>();
 
   closePopup(status:boolean) {
     this.showPicture = status;
-    this.propagateChange.emit(status);
+    this.propagate.emit(status);
   }
 
   handleDragEnter() {
@@ -79,23 +79,17 @@ export class FileuploaderComponent implements OnInit {
     this.y = event.clientY;
   }
 
-  cropImage(cropper, area, content, cont) {
-    let size = 80;
-
-    let xFull  = area.offsetLeft + content.offsetLeft + cont.offsetLeft;
-    //let yFull  = area.offsetLeft + content.offsetLeft + cont.offsetLeft;
-
-    console.log(this.x, xFull)
-    
-    // cropper.style.left = `${this.x - cropper.offsetLeft + area.offsetLeft - size}px`;
-    // cropper.style.top = `${this.y - cropper.offsetTop + area.offsetTop - size}px`;
+  cropImage() {
+    console.log('cropper')
   }
 
-  cropCanvas(element, imageToDraw) {
-    let ctx = element.getContext("2d");
-    ctx.drawImage(imageToDraw, 10, 10);
+  @Output() addition = new EventEmitter<boolean>();
+
+  addImage() {
+    this.closePopup(false);
+    this.isAdded = true;
+    this.addition.emit(this.isAdded)
   }
-  
 
   constructor() { }
 

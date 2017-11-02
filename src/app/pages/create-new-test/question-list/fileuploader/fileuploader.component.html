@@ -1,4 +1,4 @@
-<div class="fileuploader" #area>
+<div class="fileuploader">
 	<div class="fileuploader__inner">
 		<header class="fileuploader__header">
 			<h1 class="fileuploader__heading">Select picture</h1>
@@ -48,7 +48,7 @@
 		</div>
 
 		<div class="fileuploader__content">
-			<div class="area" #cont>
+			<div class="area">
 				<label class="uploader uploader_second">
 					<img 
 						#imageToDraw
@@ -59,18 +59,16 @@
 						[class.fileuploader__image_before] = "defaultImage"/>
 				</label>
 
-				<div id="cropper" class="cropper" #cropper 
-					(click) = "cropCanvas(element, imageToDraw)"
-					(mouseover) = "cropImage(cropper, area, content, cont)"
-					(mousemove) = "cropImage(cropper, area, content, cont)"></div>
+				<div id="cropper" class="cropper" 
+					(click) = "cropImage()"></div>
 
-				<canvas id="canvas" #element>canvas</canvas>
+				<!-- <canvas id="canvas" #element>canvas</canvas> -->
 			</div>
 		</div>
 
 		<div class="fileuploader__action">
 			<a href="javascript:void(0)" class="fileuploader__link fileuploader__link_cancel" (click)="closePopup(false)">Cancel</a>
-			<a href="javascript:void(0)" class="fileuploader__link fileuploader__link_select">Select</a>
+			<a href="javascript:void(0)" class="fileuploader__link fileuploader__link_select" (click)="addImage()">Select</a>
 		</div>
 	</div>
 </div>

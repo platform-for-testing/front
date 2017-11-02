@@ -22,6 +22,8 @@ enum Types {
 })
 export class QuestionComponent implements ControlValueAccessor, OnInit {
   form: FormGroup;
+  pictureAdded: boolean = false;
+  showPicture:boolean = false;
   valueChange: any;
   types = [{ value: Types.Radio,
              icon: 'icon',
@@ -54,6 +56,7 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
   }];
 
   @Input() isEditing: boolean;
+  @Input() ifPictureAdded: boolean;
   @Input() index: number;
   @Output() edit: EventEmitter<any> = new EventEmitter();
   @Output() remove: EventEmitter<any> = new EventEmitter();
@@ -63,6 +66,18 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
 
   constructor(private fb: FormBuilder) {
 
+  }
+
+  @Input() pictureToAdd;
+
+  receiveAdded(event: boolean) {
+    this.ifPictureAdded = event;
+    console.log(event);
+    this.isEditing == true ? this.changeAdditionValue() : false
+  }
+
+  receive(event) {
+    this.showPicture = event;
   }
 
   ngOnInit() {
@@ -80,8 +95,16 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
     });
   }
 
+  addPicture() {
+    this.showPicture = !this.showPicture;
+  }
+
   currentType(value) {
     this.valueChange = value;
+  }
+
+  changeAdditionValue() {
+    this.pictureAdded = this.ifPictureAdded;
   }
 
   propagateChange(value: Question) {

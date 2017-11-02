@@ -7,12 +7,12 @@
                     (edit)="editQuestion(i)"
                     (clone)="cloneQuestion(i)"
                     [isEditing]="editedQuestion === i"
-                    [index]="i">
+                    [index]="i"
+                    [ifPictureAdded]="ifPictureAdded"
+                    [pictureToAdd]="pictureToAdd"
+                    (addition)=receiveAdded($event)>
         </pt-question>
   </div>
-  <pt-fileuploader 
-    *ngIf="showPicture" 
-    (propagateChange)=receive($event)></pt-fileuploader>
   <div class="pt-question-list__controls">
     <div class="pt-question-list__button"
       (click)="addQuestion()">
