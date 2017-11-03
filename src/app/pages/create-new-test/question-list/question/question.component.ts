@@ -22,9 +22,9 @@ enum Types {
 })
 export class QuestionComponent implements ControlValueAccessor, OnInit {
   form: FormGroup;
-  pictureAdded: boolean = false;
-  showPicture:boolean = false;
-  imageLoaded:string;
+  pictureAdded = false;
+  showPicture = false;
+  imageLoaded: string;
   valueChange: any;
   types = [{ value: Types.Radio,
              icon: 'icon',
@@ -73,7 +73,9 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
 
   receiveAdded(event: boolean) {
     this.ifPictureAdded = event;
-    this.isEditing == true ? this.changeAdditionValue() : false
+    if (this.isEditing === true) {
+      this.changeAdditionValue();
+    }
   }
 
   pictureUpload(value) {

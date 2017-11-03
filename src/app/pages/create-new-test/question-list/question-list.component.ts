@@ -13,7 +13,7 @@ export class QuestionListComponent implements OnInit {
   questions: Question[] = [];
   form: FormGroup;
   editedQuestion: number;
-  pictureToAdd: boolean = false;
+  pictureToAdd = false;
 
   constructor(private elementRef: ElementRef, private fb: FormBuilder) {
 

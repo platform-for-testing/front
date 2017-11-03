@@ -24,6 +24,8 @@ export class FileuploaderComponent implements OnInit {
 
   @Input() showPicture;
   @Output() propagate = new EventEmitter<boolean>();
+  @Output() addition = new EventEmitter<boolean>();
+  @Output() imageUploading = new EventEmitter<any>();
 
   writeValue(value: any) {
     if (value !== undefined) {
@@ -39,7 +41,7 @@ export class FileuploaderComponent implements OnInit {
 
   registerOnTouched() {}
 
-  closePopup(status:boolean) {
+  closePopup(status: boolean) {
     this.showPicture = status;
     this.propagate.emit(status);
   }
@@ -91,11 +93,8 @@ export class FileuploaderComponent implements OnInit {
   }
 
   cropImage() {
-    console.log('cropper')
+    console.log('cropper');
   }
-
-  @Output() addition = new EventEmitter<boolean>();
-  @Output() imageUploading = new EventEmitter<any>();
 
   pictureUpload() {
     this.imageUploading.emit(this.imageSrc);
@@ -104,10 +103,9 @@ export class FileuploaderComponent implements OnInit {
   addImage() {
     this.closePopup(false);
     this.isAdded = true;
-    let loadImage = true;
     this.pictureUpload();
     this.propagateChange(this.imageSrc);
-    this.addition.emit(this.isAdded)
+    this.addition.emit(this.isAdded);
   }
 
   constructor() { }
