@@ -2,7 +2,6 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule} from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,7 +15,6 @@ import { WraperComponent } from './pages/all-tests/tests-list/tests-list.compone
 import { CreateNewBlockComponent } from './pages/all-tests/create-new-block/create-new-block.component';
 import { TestItemComponent } from './pages/all-tests/tests-list/test-item/test-item.component';
 import { CreateNewTestComponent } from './pages/create-new-test/create-new-test.component';
-import { CreateNewTestHeaderComponent } from './pages/create-new-test/create-new-test-header/create-new-test-header.component';
 import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-new-test-uploader/create-new-test-uploader.component';
 import { AllRespondentsListComponent } from './pages/all-respondents/all-respondents-list/all-respondents-list.component';
 import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
@@ -46,7 +44,6 @@ import { HttpClientModule } from '@angular/common/http';
     CreateNewBlockComponent,
     TestItemComponent,
     CreateNewTestComponent,
-    CreateNewTestHeaderComponent,
     CreateNewTestUploaderComponent,
     AllRespondentsListComponent,
     RespondentItemComponent,

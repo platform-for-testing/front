@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateNewTestHeaderComponent } from './create-new-test-header/create-new-test-header.component';
 import { CreateNewTestUploaderComponent } from './create-new-test-uploader/create-new-test-uploader.component';
 import {TestService} from '../../shared/services/test.service';
 import {Test} from '../models/test';
@@ -10,17 +9,7 @@ import {Test} from '../models/test';
   styleUrls: ['./create-new-test.component.scss']
 })
 export class CreateNewTestComponent implements OnInit {
-  testTitle = 'Test title';
-  formDescription = '';
   test: Test;
-
-  onUpdateTestTitle(event: Event) {
-    this.testTitle = (<HTMLInputElement>event.target).value;
-  }
-
-  onUpdateFormDescription(event: Event) {
-    this.formDescription = (<HTMLInputElement>event.target).value;
-  }
 
   constructor(private testService: TestService) { }
 
