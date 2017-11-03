@@ -24,6 +24,7 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
   form: FormGroup;
   pictureAdded: boolean = false;
   showPicture:boolean = false;
+  imageLoaded:string;
   valueChange: any;
   types = [{ value: Types.Radio,
              icon: 'icon',
@@ -72,8 +73,11 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
 
   receiveAdded(event: boolean) {
     this.ifPictureAdded = event;
-    console.log(event);
     this.isEditing == true ? this.changeAdditionValue() : false
+  }
+
+  pictureUpload(value) {
+    this.imageLoaded = value;
   }
 
   receive(event) {
@@ -86,6 +90,7 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
       description: '',
       required: false,
       type: '',
+      image: '',
       points: [1, [Validators.min(1), Validators.max(10)]]
     });
 

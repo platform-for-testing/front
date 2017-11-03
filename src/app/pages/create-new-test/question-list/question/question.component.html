@@ -3,7 +3,9 @@
     *ngIf="showPicture" 
     (propagate)=receive($event)
     (addition)=receiveAdded($event)
-    (isPictureToAdd)=receiveIfAdded($event)></pt-fileuploader>
+    (imageUploading)=pictureUpload($event)
+    (isPictureToAdd)=receiveIfAdded($event)
+    formControlName="image"></pt-fileuploader>
     <div class="pt-question__selects">
 
         <!-- <select formControlName="type" hidden>

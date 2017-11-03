@@ -1,9 +1,15 @@
 import { Component, OnInit, Input, Output, HostListener, EventEmitter } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 
 @Component({
   selector: 'pt-fileuploader',
   templateUrl: './fileuploader.component.html',
-  styleUrls: ['./fileuploader.component.scss']
+  styleUrls: ['./fileuploader.component.scss'],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    multi: true,
+    useExisting: FileuploaderComponent
+  }]
 })
 export class FileuploaderComponent implements OnInit {
 
@@ -15,11 +21,23 @@ export class FileuploaderComponent implements OnInit {
   dragging = false;
   loaded = false;
   imageLoaded = false;
-  x:number;
-  y:number;
 
   @Input() showPicture;
   @Output() propagate = new EventEmitter<boolean>();
+
+  writeValue(value: any) {
+    if (value !== undefined) {
+      this.imageSrc = value;
+    }
+  }
+
+  propagateChange = (value: any) => {};
+
+  registerOnChange(fn) {
+    this.propagateChange = fn;
+  }
+
+  registerOnTouched() {}
 
   closePopup(status:boolean) {
     this.showPicture = status;
@@ -43,7 +61,6 @@ export class FileuploaderComponent implements OnInit {
 
   handleImageLoad() {
     this.imageLoaded = true;
-
   }
 
   handleInputChange(e) {
@@ -73,21 +90,23 @@ export class FileuploaderComponent implements OnInit {
     this.loaded = true;
   }
 
-  @HostListener('mousemove', ['$event'])
-  onMousemove(event: MouseEvent): void  { 
-    this.x = event.clientX;
-    this.y = event.clientY;
-  }
-
   cropImage() {
     console.log('cropper')
   }
 
   @Output() addition = new EventEmitter<boolean>();
+  @Output() imageUploading = new EventEmitter<any>();
+
+  pictureUpload() {
+    this.imageUploading.emit(this.imageSrc);
+  }
 
   addImage() {
     this.closePopup(false);
     this.isAdded = true;
+    let loadImage = true;
+    this.pictureUpload();
+    this.propagateChange(this.imageSrc);
     this.addition.emit(this.isAdded)
   }
 

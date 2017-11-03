@@ -24,7 +24,6 @@ export class MultiselectComponent implements ControlValueAccessor, OnInit {
 
   writeValue(value: any) {
     if (value !== undefined) {
-      console.log(value);
       this.currentInner = value;
     }
   }
