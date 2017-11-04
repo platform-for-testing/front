@@ -30,6 +30,8 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
 import { FileuploaderComponent } from './pages/create-new-test/question-list/fileuploader/fileuploader.component';
 import { TestService } from './shared/services/test.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { AuthService } from './shared/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { HttpClientModule } from '@angular/common/http';
     MultiselectComponent,
     FileuploaderComponent,
     QuestionFormComponent,
-    QuestionComponent
+    QuestionComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -66,11 +69,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [GetRespondentsService, TestService],
-  bootstrap: [AppComponent],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA,
-    NO_ERRORS_SCHEMA
-  ]
+  providers: [GetRespondentsService, TestService, AuthService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
