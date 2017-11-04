@@ -20,7 +20,7 @@ describe('RespondentItemComponent', () => {
     fixture = TestBed.createComponent(RespondentItemComponent);
     component = fixture.componentInstance;
     component.respondent = new RespondentModel(new UserModel('userNameFirst', 'userDescriptionFirst', 'lastVisited', 'lastTested'),
-      new Test('Тест по HTML. Средний уровень', 5, 12), 1, 5, 'time');
+      new Test({_id : '123', title : 'title1', description : 'description1'}), 1, 5, 'time');
     fixture.detectChanges();
   });
 

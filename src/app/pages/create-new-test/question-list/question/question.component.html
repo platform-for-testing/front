@@ -5,8 +5,8 @@
             <option *ngFor="let type of types">{{ type.label }}</option>
         </select> -->
 
-        <pt-multiselect 
-        (currentType)="currentType($event)" 
+        <pt-multiselect
+        (currentType)="currentType($event)"
         [selectContent]="types"
         formControlName="type"></pt-multiselect>
 

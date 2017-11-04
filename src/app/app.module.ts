@@ -2,7 +2,6 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule} from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,7 +15,6 @@ import { WraperComponent } from './pages/all-tests/tests-list/tests-list.compone
 import { CreateNewBlockComponent } from './pages/all-tests/create-new-block/create-new-block.component';
 import { TestItemComponent } from './pages/all-tests/tests-list/test-item/test-item.component';
 import { CreateNewTestComponent } from './pages/create-new-test/create-new-test.component';
-import { CreateNewTestHeaderComponent } from './pages/create-new-test/create-new-test-header/create-new-test-header.component';
 import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-new-test-uploader/create-new-test-uploader.component';
 import { AllRespondentsListComponent } from './pages/all-respondents/all-respondents-list/all-respondents-list.component';
 import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
@@ -27,9 +25,11 @@ import { PageInformationComponent } from './pages/all-activations/page-informati
 import { HorizontalLineComponent } from './shared/components/horizontal-line/horizontal-line.component';
 import { GetRespondentsService} from './shared/services/getRespondents.service';
 import { MultiselectComponent } from './shared/components/multiselect/multiselect.component';
-import { QuestionListComponent } from './pages/create-new-test/question-list/question-list.component';
+import { QuestionFormComponent } from './pages/create-new-test/question-list/question-form.component';
 import { QuestionComponent } from './pages/create-new-test/question-list/question/question.component';
 import { FileuploaderComponent } from './pages/create-new-test/question-list/fileuploader/fileuploader.component';
+import { TestService } from './shared/services/test.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,6 @@ import { FileuploaderComponent } from './pages/create-new-test/question-list/fil
     CreateNewBlockComponent,
     TestItemComponent,
     CreateNewTestComponent,
-    CreateNewTestHeaderComponent,
     CreateNewTestUploaderComponent,
     AllRespondentsListComponent,
     RespondentItemComponent,
@@ -56,18 +55,18 @@ import { FileuploaderComponent } from './pages/create-new-test/question-list/fil
     HorizontalLineComponent,
     CreateNewComponent,
     MultiselectComponent,
-    QuestionListComponent,
-    QuestionComponent,
-    FileuploaderComponent
+    FileuploaderComponent,
+    QuestionFormComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpClientModule
   ],
-  providers: [GetRespondentsService],
+  providers: [GetRespondentsService, TestService],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

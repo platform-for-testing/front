@@ -1,11 +1,16 @@
-export class Test {
-    public name: string;
-    public lastEdited: number;
-    public numberOfQuestions: number;
+import {Question} from './question';
 
-    constructor(name: string, lastEdited: number, numberOfQuestions: number) {
-        this.name = name;
-        this.lastEdited = lastEdited;
-        this.numberOfQuestions = numberOfQuestions;
+export class Test {
+    public id?: string;
+    public title: string;
+    public description: string;
+    public questions: Question[];
+
+    constructor(quiz) {
+      const { _id, title, description, questions } = quiz;
+        this.id = _id;
+        this.title = title;
+        this.description = description;
+        this.questions = questions;
     }
 }

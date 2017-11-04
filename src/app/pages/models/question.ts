@@ -5,7 +5,7 @@ export class Question {
   public type: any;
   public points: any;
 
-  constructor(title: string = 'Question', description: string = '', required: boolean = false, type: any = '', points: any = '') {
+  constructor(title: string = 'Question', description: string = '', required: boolean = false, type: number = 0, points: any = 1) {
     this.title = title;
     this.description = description;
     this.required = required;
