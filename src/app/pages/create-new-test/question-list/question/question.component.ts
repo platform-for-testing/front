@@ -2,15 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter, forwardRef } from '@ang
 import { FormBuilder, FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { Question } from '../../../models/question';
 import { QuestionFormComponent } from '../question-form.component';
-import { MultiselectComponent } from '../../../../shared/components/multiselect/multiselect.component';
-
-enum Types {
-  Checkboxes = 0,
-  Radio = 1,
-  YesNo = 2,
-  Order = 3,
-  Open = 4
-}
+import { SelectComponent } from '../../../../shared/components/select/select.component';
+import { questionTypes } from '../../../../constants/questions-types';
 
 @Component({
   selector: 'pt-question',
@@ -23,21 +16,8 @@ enum Types {
 export class QuestionComponent implements ControlValueAccessor, OnInit {
   form: FormGroup;
   valueChange: any;
-  types = [{ value: parseInt(Types.Radio.toString(), 10),
-             icon: 'icon',
-             label: 'One choice' },
-           { value: parseInt(Types.Checkboxes.toString(), 10),
-             icon: 'icon icon_checkbox',
-             label: 'Multiple choices' },
-           { value: parseInt(Types.YesNo.toString(), 10),
-             icon: 'icon icon_truefalse',
-             label: 'Yes/No' },
-           { value: parseInt(Types.Order.toString(), 10),
-             icon: 'icon icon_ordering',
-             label: 'Ordering' },
-           { value: parseInt(Types.Open.toString(), 10),
-             icon: 'icon',
-             label: 'Open answer' }];
+
+  questionTypes = questionTypes;
 
   points = [{
     value: 1,
