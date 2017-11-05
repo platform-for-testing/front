@@ -7,10 +7,10 @@ export const environment = {
   production: false,
   api: {
     quiz: {
-      save: 'http://localhost:3000/tests'
+      save: 'http://localhost:3002/tests'
     },
     respondents: {
-      getAll: 'http://localhost:3000/respondents'
+      getAll: 'http://localhost:3002/respondents'
     }
   }
 };
