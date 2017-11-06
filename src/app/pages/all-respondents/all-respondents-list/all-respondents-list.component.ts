@@ -11,12 +11,11 @@ export class AllRespondentsListComponent implements OnInit {
 
   public respondentsList: RespondentModel[];
 
-  constructor(private request: RespondentService) {
-    this.request = request;
+  constructor(private respondentService: RespondentService) {
   }
 
   ngOnInit() {
-    this.request.getRespondent().subscribe(result => this.respondentsList = result);
+    this.respondentService.getRespondents().subscribe(result => this.respondentsList = result);
   }
 
 }

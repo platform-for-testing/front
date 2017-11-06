@@ -12,7 +12,7 @@ export class RespondentService {
   constructor(private http: HttpClient) {
   }
 
-  getRespondent(): Observable<RespondentModel[]> {
+  getRespondents(): Observable<RespondentModel[]> {
     return this.http.get(environment.api.respondents.get);
   }
 }

@@ -11,12 +11,11 @@ export class WraperComponent implements OnInit {
 
     tests: Test[] ;
 
-  constructor(private request: TestService) {
-    this.request = request;
+  constructor(private testService: TestService) {
   }
 
   ngOnInit() {
-    this.request.getTest().subscribe(result => this.tests = result);
+    this.testService.getTest().subscribe(result => this.tests = result);
   }
 
 }
