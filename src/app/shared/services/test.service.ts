@@ -15,7 +15,7 @@ export class TestService {
       .map(quiz => new Test(quiz));
   }
 
-  updateTest(test: Test): Observable<any> {
+  updateTest(test: Test): Observable<Test> {
     return this.http.put(`${environment.api.quiz.save}/${test.id}`, test);
   }
 
