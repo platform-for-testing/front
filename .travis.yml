@@ -18,7 +18,7 @@ jobs:
       - npm run ci
       before_deploy:
       - echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-      - npm run build
+      - npm run build:prod
       - mkdir build
       - cp -r dist build/dist
       - cd server
