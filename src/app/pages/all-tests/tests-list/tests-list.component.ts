@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Test} from '../../models/test';
+import {TestService} from '../../../shared/services/test.service';
 
 @Component({
   selector: 'pt-tests-list',
@@ -8,16 +9,14 @@ import {Test} from '../../models/test';
 })
 export class WraperComponent implements OnInit {
 
-    tests: Test[] = [
-        // new Test('Тест по Git. Начальный уровень', 4, 10),
-        // new Test('Тест по HTML. Средний уровень', 5, 12),
-        // new Test('Тест по JS на тему: "Основы. Часть 05', 6, 8),
-        // new Test('Тест по английскому на тему: "Основы.', 4, 4),
-    ];
+    tests: Test[] ;
 
-  constructor() { }
+  constructor(private request: TestService) {
+    this.request = request;
+  }
 
   ngOnInit() {
+    this.request.getTest().subscribe(result => this.tests = result);
   }
 
 }

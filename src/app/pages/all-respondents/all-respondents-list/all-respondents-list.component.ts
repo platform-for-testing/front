@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RespondentModel} from '../../models/respondent.model';
-import {GetRespondentsService} from '../../../shared/services/getRespondents.service';
+import {RespondentService} from '../../../shared/services/respondent.service';
 
 @Component({
   selector: 'pt-all-respondents-list',
@@ -10,18 +10,13 @@ import {GetRespondentsService} from '../../../shared/services/getRespondents.ser
 export class AllRespondentsListComponent implements OnInit {
 
   public respondentsList: RespondentModel[];
-  promiseRespondents: Promise<RespondentModel[]>;
-  errorMessage: String;
 
-  constructor(private request: GetRespondentsService) {
+  constructor(private request: RespondentService) {
     this.request = request;
   }
 
   ngOnInit() {
-    this.promiseRespondents = this.request.get();
-    this.promiseRespondents.then(
-      respondent => this.respondentsList = respondent,
-      error => this.errorMessage = <any>error);
+    this.request.getRespondent().subscribe(result => this.respondentsList = result);
   }
 
 }
