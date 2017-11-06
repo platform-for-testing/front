@@ -23,13 +23,14 @@ import { ActivationsListWrapperComponent } from './pages/all-activations/activat
 import { ActivationItemComponent } from './pages/all-activations/activations-list-wrapper/activation-item/activation-item.component';
 import { PageInformationComponent } from './pages/all-activations/page-information/page-information.component';
 import { HorizontalLineComponent } from './shared/components/horizontal-line/horizontal-line.component';
-import { GetRespondentsService} from './shared/services/getRespondents.service';
+import { RespondentService} from './shared/services/respondent.service';
 import { SelectComponent } from './shared/components/select/select.component';
 import { QuestionFormComponent } from './pages/create-new-test/question-list/question-form.component';
 import { QuestionComponent } from './pages/create-new-test/question-list/question/question.component';
 import { FileuploaderComponent } from './pages/create-new-test/question-list/fileuploader/fileuploader.component';
 import { TestService } from './shared/services/test.service';
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [GetRespondentsService, TestService],
+  providers: [RespondentService, TestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
