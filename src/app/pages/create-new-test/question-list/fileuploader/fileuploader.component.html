@@ -1,74 +1,38 @@
 <div class="fileuploader">
-	<div class="fileuploader__inner">
-		<header class="fileuploader__header">
-			<h1 class="fileuploader__heading">Select picture</h1>
-			<span class="fileuploader__closer" (click)="closePopup(false)"></span>
-		</header>
-
-		<div class="fileuploader__content" #content>
-			<label class="uploader"
-				(dragover)="false;"
-				[class.loaded]="loaded"
-				(dragenter)="handleDragEnter()"
-				(dragleave)="handleDragLeave()"
-				(drop)="handleDrop($event)">
-
-			<img
-				[src]="imageSrc"
-				(load)="handleImageLoad();"
-				class="fileuploader__image" 
-				[class.loaded]="imageLoaded"
-				[class.fileuploader__image_before] = "defaultImage"/>
-
-			<h2>Drag a photo here</h2>
-			<span>- or -</span>
-			<div class="fileuploader__select">Select a photo from your computer</div>
-
-			<input
-				type="file" 
-				name="file" 
-				class="fileuploader__input" 
-				accept="image/*"
-				(change)="handleInputChange($event)">
-		</label>
-		</div>
-	</div>
-
-	<div class="fileuploader__inner fileuploader__inner_second" *ngIf="stageOne">
-		<header class="fileuploader__header fileuploader__header_second">
-			<h1 class="fileuploader__heading">Select picture</h1>
-			<span class="fileuploader__closer" (click)="closePopup(false)"></span>
-		</header>
-
-		<p class="error">cut has to be here...</p>
-
-		<div class="fileuploader__info">
-			<span>Upload photos</span> > <strong>{{ fileName }}</strong>
-			<p>To crop this image, drag the region below and then click ’Select’</p>
-		</div>
-
-		<div class="fileuploader__content">
-			<div class="area">
-				<label class="uploader uploader_second">
-					<img 
-						#imageToDraw
-						[src]="imageSrc"
-						(load)="handleImageLoad();"
-						class="fileuploader__image" 
-						[class.loaded]="imageLoaded"
-						[class.fileuploader__image_before] = "defaultImage"/>
-				</label>
-
-				<div id="cropper" class="cropper" 
-					(click) = "cropImage()"></div>
-
-				<!-- <canvas id="canvas" #areaToShow>canvas</canvas> -->
-			</div>
-		</div>
-
-		<div class="fileuploader__action">
-			<a href="javascript:void(0)" class="fileuploader__link fileuploader__link_cancel" (click)="closePopup(false)">Cancel</a>
-			<a href="javascript:void(0)" class="fileuploader__link fileuploader__link_select" (click)="addImage()">Select</a>
-		</div>
-	</div>
+  <div class="fileuploader__inner">
+    <header class="fileuploader__header">
+      <h1 class="fileuploader__heading">Select picture</h1>
+      <i class="fileuploader__closer pt-times" (click)="closePopup(false)"></i>
+    </header>
+    <div class="fileuploader__info">
+      <span>Upload photos</span> > <strong>{{ fileName }}</strong>
+    </div>
+    <div class="fileuploader__content" #content>
+      <label class="uploader"
+        (dragover)="false;"
+        [class.loaded]="loaded"
+        (dragenter)="handleDragEnter()"
+        (dragleave)="handleDragLeave()"
+        (drop)="handleDrop($event)">
+      <img class="fileuploader__image" 
+        [src]="imageSrc"
+        (load)="handleImageLoad();"
+        [class.loaded]="imageLoaded"
+        [class.fileuploader__image_before]="defaultImage"/>
+      <h2>Drag a photo here</h2>
+      <span>- or -</span>
+      <div class="fileuploader__select">Select a photo from your computer</div>
+      <input 
+        type="file" 
+        name="file" 
+        class="fileuploader__input" 
+        accept="image/*"
+        (change)="handleInputChange($event)">
+      </label>
+    </div>
+    <div class="fileuploader__action">
+      <button class="fileuploader__link fileuploader__link_cancel" (click)="closePopup(false)">Cancel</button>
+      <button class="fileuploader__link fileuploader__link_select" (click)="addImage()">Select</button>
+    </div>
+  </div>
 </div>

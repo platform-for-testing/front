@@ -27,19 +27,19 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
   imageLoaded: string;
   valueChange: any;
   types = [{ value: Types.Radio,
-             icon: 'icon',
+             icon: 'select__icon pt-dot-circle-o',
              label: 'One choice' },
            { value: Types.Checkboxes,
-             icon: 'icon icon_checkbox',
+             icon: 'select__icon pt-check-square-o',
              label: 'Multiple choices' },
            { value: Types.YesNo,
-             icon: 'icon icon_truefalse',
+             icon: 'select__icon pt-thumbs-up',
              label: 'Yes/No' },
            { value: Types.Order,
-             icon: 'icon icon_ordering',
+             icon: 'select__icon pt-sort',
              label: 'Ordering' },
            { value: Types.Open,
-             icon: 'icon',
+             icon: 'select__icon pt-external-link-square',
              label: 'Open answer' }];
 
   points = [{
@@ -57,7 +57,7 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
   }];
 
   @Input() isEditing: boolean;
-  @Input() ifPictureAdded: boolean;
+  @Input() isPictureAdded: boolean;
   @Input() index: number;
   @Output() edit: EventEmitter<any> = new EventEmitter();
   @Output() remove: EventEmitter<any> = new EventEmitter();
@@ -71,8 +71,8 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
 
   @Input() pictureToAdd;
 
-  receiveAdded(event: boolean) {
-    this.ifPictureAdded = event;
+  receiveAdded(isAdded: boolean) {
+    this.isPictureAdded = isAdded;
     if (this.isEditing === true) {
       this.changeAdditionValue();
     }
@@ -111,7 +111,7 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
   }
 
   changeAdditionValue() {
-    this.pictureAdded = this.ifPictureAdded;
+    this.pictureAdded = this.isPictureAdded;
   }
 
   propagateChange(value: Question) {

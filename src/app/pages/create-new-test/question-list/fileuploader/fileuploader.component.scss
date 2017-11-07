@@ -25,6 +25,8 @@
   }
 
   &__link {
+    border: none;
+    background: transparent;
     color: #d9d9da;
     display: inline-block;
     height: 60px;
@@ -32,6 +34,10 @@
     font-size: 20px;
     padding: 0 34px;
     text-decoration: none;
+
+    &:focus {
+      outline: none;
+    }
 
     &_select {
       background: #90e9a7;
@@ -50,6 +56,10 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+
+    &:hover {
+          box-shadow: 0 0 20px 8px #eee;
+    }
 
     &_second {
       border: none;
@@ -71,7 +81,7 @@
   &__inner {
     z-index: 999;
     box-shadow: 0 5px 26px 0 rgba(82,89,174,.23);
-    padding: 55px 58px 160px;
+    padding: 55px 58px;
     box-sizing: border-box;
     width: 820px;
     margin: 40px auto;
@@ -142,38 +152,18 @@
 }
 
 &__action {
-  margin-top: 120px;
+  margin-top: 80px;
   display: flex;
   justify-content: flex-end;
 }
 
 &__closer {
+  color: #6c6c6c;
   cursor: pointer;
-  display: inline-block;
-  height: 26px;
-  width: 26px;
-  transform: rotate(45deg);
-  position: relative;
+  font-size: 30px;
 
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    background: #000;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    height: 2px;
-  }
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    background: #000;
-    height: 100%;
-    width: 2px;
-    left: 50%;
-    transform: translateX(-50%);
+  &:hover {
+    color: #444;
   }
 }
 }

@@ -14,7 +14,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/fo
 export class FileuploaderComponent implements OnInit {
 
   imageSrc = '../../assets/images/uploader.svg';
-  fileName = 'default filename';
+  fileName = '...';
   defaultImage = true;
   stageOne = false;
   isAdded = false;
@@ -29,7 +29,7 @@ export class FileuploaderComponent implements OnInit {
 
   writeValue(value: any) {
     if (value !== undefined) {
-      this.imageSrc = value;
+      this.imageSrc = this.imageSrc;
     }
   }
 

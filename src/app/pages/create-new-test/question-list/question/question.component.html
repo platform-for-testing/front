@@ -7,10 +7,6 @@
     formControlName="image"></pt-fileuploader>
     <div class="pt-question__selects">
 
-        <!-- <select formControlName="type" hidden>
-            <option *ngFor="let type of types">{{ type.label }}</option>
-        </select> -->
-
         <pt-multiselect 
         (currentType)="currentType($event)" 
         [selectContent]="types"
@@ -20,9 +16,7 @@
     </div>
     <div class="pt-question__input">
         <input type="text" class="pt-question__title-input" formControlName="title">
-        <i class="pt-question__icon pt-question__icon_picture" (click)="addPicture()">
-          <img src="../assets/images/picture.svg" alt="picture">
-        </i>
+        <i class="pt-question__icon pt-question__icon_picture pt-photo" (click)="addPicture()"></i>
     </div>
     <div *ngIf="!question.title" class="alert alert-danger">Title required
     </div>
@@ -31,12 +25,10 @@
     </div>
     <div class="pt-question__controls">
         <span class="pt-question__button pt-question__remove" (click)="removeQuestion(index)">
-            <i class="pt-question__icon pt-question__icon_delete"></i>
+            <i class="pt-question__icon pt-times"></i>
       </span>
         <span class="pt-question__button pt-question__clone" (click)="cloneQuestion(index)">
-            <i class="pt-question__icon pt-question__icon_dublicate">
-              <img src="../assets/images/dublicate.svg" alt="dublicate">
-            </i>
+            <i class="pt-question__icon pt-clipboard"></i>
       </span>
         <label class="pt-question__required">
             <span class="switcher__label">Required</span>
@@ -48,7 +40,10 @@
     </div>
     <p class="pt-question__picture" *ngIf='pictureAdded'>The picture is added</p>
 </form>
-<div *ngIf="!isEditing" (click)="editQuestion(question)" class="pt-question pt-question--static">
+<div *ngIf="!isEditing" 
+    (click)="editQuestion(question)" 
+    [class.pt-question_hidden]="false" 
+    class="pt-question pt-question--static">
     <h2 class="pt-question__title">{{index + 1}}. {{question.title}}</h2>
     <p class="pt-question__description" *ngIf="question.description">{{question.description}}</p>
 </div>
