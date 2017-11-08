@@ -1,8 +1,8 @@
 <form [formGroup]="form" *ngIf="isEditing" class="pt-question pt-question--editable">
   <pt-fileuploader 
     *ngIf="showPicture" 
-    (propagate)=receive($event)
-    (addition)=receiveAdded($event)
+    (propagatePopupClosing)=receive($event)
+    (propagateFileAddition)=receiveAdded($event)
     (imageUploading)=pictureUpload($event)
     formControlName="image"></pt-fileuploader>
     <div class="pt-question__selects">

@@ -11,7 +11,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/fo
     useExisting: FileuploaderComponent
   }]
 })
-export class FileuploaderComponent implements OnInit {
+export class FileuploaderComponent implements ControlValueAccessor, OnInit {
 
   imageSrc = '../../assets/images/uploader.svg';
   fileName = '...';
@@ -23,8 +23,8 @@ export class FileuploaderComponent implements OnInit {
   imageLoaded = false;
 
   @Input() showPicture;
-  @Output() propagate = new EventEmitter<boolean>();
-  @Output() addition = new EventEmitter<boolean>();
+  @Output() propagatePopupClosing = new EventEmitter<boolean>();
+  @Output() propagateFileAddition = new EventEmitter<boolean>();
   @Output() imageUploading = new EventEmitter<any>();
 
   writeValue(value: any) {
@@ -43,7 +43,7 @@ export class FileuploaderComponent implements OnInit {
 
   closePopup(status: boolean) {
     this.showPicture = status;
-    this.propagate.emit(status);
+    this.propagatePopupClosing.emit(status);
   }
 
   handleDragEnter() {
@@ -83,10 +83,10 @@ export class FileuploaderComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-  handleReaderLoaded(e) {
+  handleReaderLoaded = (event) => {
     this.defaultImage = !this.defaultImage;
     this.stageOne = !this.stageOne;
-    const reader = e.target;
+    const reader = event.target;
 
     this.imageSrc = reader.result;
     this.loaded = true;
@@ -105,7 +105,7 @@ export class FileuploaderComponent implements OnInit {
     this.isAdded = true;
     this.pictureUpload();
     this.propagateChange(this.imageSrc);
-    this.addition.emit(this.isAdded);
+    this.propagateFileAddition.emit(this.isAdded);
   }
 
   constructor() { }
