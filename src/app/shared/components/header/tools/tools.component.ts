@@ -21,4 +21,7 @@ export class ToolsComponent implements OnInit {
 
   ngOnInit() {}
 
+  threeDotsClicked() {
+        alert('three dots clicked!');
+  }
 }
