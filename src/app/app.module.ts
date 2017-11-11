@@ -30,6 +30,7 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
 import { FileuploaderComponent } from './pages/create-new-test/question-list/fileuploader/fileuploader.component';
 import { TestService } from './shared/services/test.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { HttpClientModule } from '@angular/common/http';
     SelectComponent,
     FileuploaderComponent,
     QuestionFormComponent,
-    QuestionComponent
+    QuestionComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
