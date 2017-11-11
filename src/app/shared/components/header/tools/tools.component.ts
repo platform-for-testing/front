@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 
@@ -11,10 +11,10 @@ export class ToolsComponent implements OnInit {
     imageGlassPath: string;
     imageHumanPath: string;
     route: string;
-    modalVariable = false;
+    public modalVariable = false;
 
 
-    constructor(private router: Router) {
+    constructor(private router: Router, public eref: ElementRef) {
         this.imageGlassPath = '/assets/images/search.svg';
         this.imageHumanPath = '/assets/images/profile.svg';
         this.route = router.url;
@@ -23,8 +23,9 @@ export class ToolsComponent implements OnInit {
     ngOnInit() {
     }
 
-    threeDotsClicked() {
-        // alert('three dots clicked!');
+    threeDotsClicked(event) {
+        event.stopPropagation();
         this.modalVariable = !this.modalVariable;
     }
+
 }

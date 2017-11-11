@@ -4,10 +4,10 @@
         <img class="img" [src]="imageGlassPath" alt="glass">
     </span>
     <span class="three-dots-wrapper">
-        <button type="button" class="three-dots" (click)="threeDotsClicked()">&#8942;</button>
+        <button type="button" class="three-dots" (click)="threeDotsClicked($event)">&#8942;</button>
     </span>
     <span class="human icon-wrap"><img class="img" [src]="imageHumanPath" alt="profile">
             <i class="fa fa-angle-down"></i>
     </span>
-    <pt-modal *ngIf="modalVariable"></pt-modal>
+    <pt-modal *ngIf="modalVariable" [(isOpened)]="modalVariable"></pt-modal>
 </div>
