@@ -1,8 +1,18 @@
-<form [formGroup]="form" 
+<form [formGroup]="form"
+      (ngSubmit)="onSubmit()"
   class="pt-question-list">
+  <input class="create__header-input create__header-heading"
+         type="text"
+         formControlName="title"
+         placeholder="Test Title">
+
+  <input class="create__header-input"
+         type="text"
+         formControlName="description"
+         placeholder="Form description(optional)">
   <div formArrayName="questions" class="questions">
-    <pt-question *ngFor="let question of form.get('questions').controls; let i = index"
-                    [formControlName]="i" 
+    <pt-question *ngFor="let question of questionsFormArray.controls; let i = index"
+                    [formControlName]="i"
                     (remove)="removeQuestion(i)"
                     (edit)="editQuestion(i)"
                     (clone)="cloneQuestion(i)"
@@ -32,4 +42,5 @@
       <i class="pt-question-list__icon pt-puzzle-piece"></i>Section
     </div>
   </div>
+  <button class="create__submit__button" type="submit">Save test</button>
 </form>

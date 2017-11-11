@@ -1,11 +1,11 @@
 <div class="test-item">
   <span class="test-image"><img [src]="testImagePath" alt="test image"></span>
-  <span class="edited">Edited in {{test.lastEdited}} days ago</span>
+  <span class="edited">Edited in {{test.description}} days ago</span>
   <div class="div">
-    <span class="test-title">{{test.name}}<br></span>
-    <span class="amount-of-questions">{{test.numberOfQuestions}} вопросов</span>
+    <span class="test-title">{{test.title}}<br></span>
+    <span class="amount-of-questions">{{test.questions.length}} questions</span>
   </div>
-  
+
   <div class="rectangles">
     <div class="rectangles__item"></div>
     <div class="rectangles__item"></div>
