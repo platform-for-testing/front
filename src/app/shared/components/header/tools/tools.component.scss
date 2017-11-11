@@ -12,21 +12,15 @@
 	align-items: center;
 	display: flex;
 	padding: 0 30px;
-
-	&_search {
-		&:after {
-			content: "";
-			display: block;
-			position: absolute;
-			right: 0px;
-			height: 80%;
-			width: 2px;
-			background: #eee;
-		}
-	}
 }
 
 .fa-angle-down {
 	font-size:24px;
 	margin-left: 4px;
 }
+.three-dots {
+	border: none;
+	font-size: 27px;
+	margin-top: 15px;
+}
+
