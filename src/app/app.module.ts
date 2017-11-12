@@ -2,9 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
-
 import { AllTestsComponent } from './pages/all-tests/all-tests.component';
 import { AllActivationsComponent } from './pages/all-activations/all-activations.component';
 import { AllRespondentsComponent } from './pages/all-respondents/all-respondents.component';
@@ -31,6 +29,9 @@ import { FileuploaderComponent } from './pages/create-new-test/question-list/fil
 import { TestService } from './shared/services/test.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalComponent } from './shared/components/modal/modal.component';
+import { TestComponent } from './pages/test/test.component';
+import { TestInfoComponent } from './pages/test/test-info/test-info.component';
+import { QuestionsWrapperComponent } from './pages/test/questions-wrapper/questions-wrapper.component';
 
 
 @NgModule({
@@ -60,7 +61,10 @@ import { ModalComponent } from './shared/components/modal/modal.component';
     FileuploaderComponent,
     QuestionFormComponent,
     QuestionComponent,
-    ModalComponent
+    ModalComponent,
+    TestComponent,
+    TestInfoComponent,
+    QuestionsWrapperComponent
   ],
   imports: [
     BrowserModule,

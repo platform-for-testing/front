@@ -1,0 +1,53 @@
+@import 'src/assets/styles/colors';
+
+.test-information {
+  background-color: $white;
+  width: 820px;
+  height: 270px;
+  z-index: 999;
+  position: absolute;
+  margin-top: 120px;
+  color: white;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 16px;
+  margin-left:auto;
+  margin-right:auto;
+  //height:auto;
+  //width:auto;
+}
+
+.test-information-amount-of-questions-and-points {
+  background-color: $greyish;
+  color: $grey-text;
+  width: 185px;
+  display: inline-block;
+  line-height: 32px;
+  padding-left: 10px;
+  margin-top: 30px;
+  margin-left: 35px;
+  position: relative;
+}
+
+.test-information-amount-of-questions-and-points span {
+  padding: 5px;
+}
+
+.test-information-test-title {
+  color: $black;
+  font-size: 30px;
+  position: relative;
+  margin-left: 35px;
+  margin-top: 30px;
+}
+
+.test-information-test-description {
+  color: $black;
+  font-size: 14px;
+  font-weight: 300;
+  margin-left: 35px;
+  margin-top: 35px;
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, forwardRef } from '@angular/core';
 import { FormBuilder, FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
-import { Question } from '../../../models/question';
+import { Question } from '../../../../models/question';
 import { QuestionFormComponent } from '../question-form.component';
 import { SelectComponent } from '../../../../shared/components/select/select.component';
 import { questionTypes } from '../../../../constants/questions-types';
