@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Activation} from '../../../models/activation';
+import {Activation} from '../../models/activation';
 
 @Component({
   selector: 'pt-activation-item',

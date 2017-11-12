@@ -1,3 +1,4 @@
 <pt-header></pt-header>
-<pt-page-information></pt-page-information>
-<pt-activations-list-wrapper></pt-activations-list-wrapper>
+<pt-list-page heading="All activations" listLength="{{activations.length}}">
+  <pt-activation-item *ngFor="let activation of activations" [activation]="activation"></pt-activation-item>
+</pt-list-page>
