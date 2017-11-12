@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./list-page.component.scss']
 })
 export class ListPageComponent implements OnInit {
-  @Input() heading: string = 'default heading';
-  @Input() listLength: string = '0';
+  @Input() heading = 'default heading';
+  @Input() listLength = '0';
   constructor() { }
 
   ngOnInit() {
