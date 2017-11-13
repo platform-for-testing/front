@@ -1,8 +1,5 @@
 <pt-header></pt-header>
-<div class="app">
-  <div class="app__container">
-    <pt-create-new-block></pt-create-new-block>
-    <pt-tests-list></pt-tests-list>
-  </div>
-</div>
-
+<!-- <pt-create-new-block></pt-create-new-block> -->
+<pt-list-page heading="my All Tests" [listLength]="tests?.length">
+  <pt-test-item *ngFor="let test of tests" [test]="test"></pt-test-item>
+</pt-list-page>
