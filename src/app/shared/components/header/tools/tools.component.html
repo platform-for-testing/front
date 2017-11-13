@@ -3,8 +3,11 @@
     <span class="icon-wrap icon-wrap_search">
         <i class="pt-search"></i>
     </span>
-    <span class="human icon-wrap">
-    	<i class="pt-torso"></i>
-        <i class="pt-down-open-mini"></i>
+    <span class="three-dots-wrapper">
+        <button type="button" class="three-dots" (click)="threeDotsClicked($event)">&#8942;</button>
     </span>
+    <span class="human icon-wrap"><img class="img" [src]="imageHumanPath" alt="profile">
+            <i class="fa fa-angle-down"></i>
+    </span>
+    <pt-modal *ngIf="modalVariable" [(isOpened)]="modalVariable"></pt-modal>
 </div>
