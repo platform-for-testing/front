@@ -1,4 +1,4 @@
 <pt-header></pt-header>
-<pt-list-page heading="All Respondents" listLength="{{respondentsList.length}}">
+<pt-list-page heading="All Respondents" listLength="{{respondentsList?.length}}">
 	<pt-respondent-item *ngFor="let respondent of respondentsList" [respondent]="respondent"></pt-respondent-item>
 </pt-list-page>
