@@ -18,7 +18,6 @@ import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-n
 import { RespondentItemComponent } from './pages/all-respondents/respondent-item/respondent-item.component';
 import { CreateNewComponent } from './shared/components/create-new/create-new.component';
 import { ActivationItemComponent } from './pages/all-activations/activation-item/activation-item.component';
-import { HorizontalLineComponent } from './shared/components/horizontal-line/horizontal-line.component';
 import { RespondentService} from './shared/services/respondent.service';
 import { SelectComponent } from './shared/components/select/select.component';
 import { QuestionFormComponent } from './pages/create-new-test/question-list/question-form.component';
@@ -47,14 +46,13 @@ import { ListPageComponent } from './pages/layout/list-page/list-page.component'
     TestItemComponent,
     CreateNewComponent,
     ActivationItemComponent,
-    HorizontalLineComponent,
     CreateNewComponent,
     SelectComponent,
     FileuploaderComponent,
     QuestionFormComponent,
     QuestionComponent,
     ModalComponent,
-    ListPageComponent
+    ListPageComponent 
   ],
   imports: [
     BrowserModule,
