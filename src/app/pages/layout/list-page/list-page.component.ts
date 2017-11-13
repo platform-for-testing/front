@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListPageComponent implements OnInit {
   @Input() heading = 'default heading';
-  @Input() listLength = '0';
+  @Input() listLength = 0;
   constructor() { }
 
   ngOnInit() {
