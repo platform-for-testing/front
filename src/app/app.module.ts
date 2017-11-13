@@ -52,7 +52,7 @@ import { ListPageComponent } from './pages/layout/list-page/list-page.component'
     QuestionFormComponent,
     QuestionComponent,
     ModalComponent,
-    ListPageComponent 
+    ListPageComponent
   ],
   imports: [
     BrowserModule,
