@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import { RespondentModel } from 'app/models/respondent.model';
+import { RespondentService } from '../../shared/services/respondent.service';
 
 @Component({
   selector: 'pt-all-responders',
@@ -6,13 +8,13 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./all-respondents.component.scss']
 })
 export class AllRespondentsComponent implements OnInit {
+  public respondentsList: RespondentModel[];
 
-  constructor() {
-
+  constructor(private respondentService: RespondentService) {
   }
 
-
   ngOnInit() {
+    this.respondentService.getRespondents().subscribe(result => this.respondentsList = result);
   }
 
 }
