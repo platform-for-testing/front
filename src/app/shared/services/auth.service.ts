@@ -63,7 +63,7 @@ export class AuthService {
 
         if (token) {
           this.saveToken(token);
-          this.router.navigate(['/all-tests']);
+          this.router.navigate(['/admin/all-tests']);
 
         } else {
           console.error('Server error'); // TODO: handle errors
