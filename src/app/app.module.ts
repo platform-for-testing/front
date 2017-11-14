@@ -1,10 +1,11 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { AppComponent } from './app.component';
 import { AllTestsComponent } from './pages/all-tests/all-tests.component';
 import { AllActivationsComponent } from './pages/all-activations/all-activations.component';
 import { AllRespondentsComponent } from './pages/all-respondents/all-respondents.component';
@@ -27,6 +28,7 @@ import { TestService } from './shared/services/test.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AuthService } from './shared/services/auth.service';
+import { AuthInterceptorService } from './shared/services/auth-interceptor.service';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { ListPageComponent } from './pages/layout/list-page/list-page.component';
 
@@ -64,7 +66,16 @@ import { ListPageComponent } from './pages/layout/list-page/list-page.component'
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [RespondentService, TestService, AuthService],
+  providers: [
+    RespondentService,
+    TestService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

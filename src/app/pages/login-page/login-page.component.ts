@@ -16,10 +16,7 @@ export class LoginPageComponent implements OnInit {
 
   facebookLogin() {
     this.authService.facebookLogin()
-      .subscribe(token => {
-        console.log(token);
-        this.authService.onSuccessLogin(token);
-      });
+      .subscribe(token => this.authService.onSuccessLogin(token));
   }
 
 }

@@ -22,9 +22,6 @@ export class TestService {
   }
 
   getTest(): Observable<Test[]> {
-    const token = this.authService.getToken();
-    const headers = new HttpHeaders({ 'Authorization': `Bearer ${token}` });
-
-    return this.http.get<Test[]>(environment.api.quiz.get, { headers });
+    return this.http.get<Test[]>(environment.api.quiz.get);
   }
 }
