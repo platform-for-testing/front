@@ -27,6 +27,7 @@ import { TestService } from './shared/services/test.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { ListPageComponent } from './pages/layout/list-page/list-page.component';
+import { BackButtonComponent } from './shared/components/back-button/back-button.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { ListPageComponent } from './pages/layout/list-page/list-page.component'
     QuestionFormComponent,
     QuestionComponent,
     ModalComponent,
-    ListPageComponent
+    ListPageComponent,
+    BackButtonComponent
   ],
   imports: [
     BrowserModule,
