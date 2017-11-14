@@ -11,6 +11,9 @@ export const environment = {
     },
     respondents: {
       getAll: 'http://localhost:3000/respondents'
+    },
+    auth: {
+      facebook: 'http://localhost:3000/auth/facebook'
     }
   },
   facebookAppId: '1933937986877300'

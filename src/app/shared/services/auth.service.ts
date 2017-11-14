@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 // import 'rxjs/observable/create';
@@ -11,7 +13,7 @@ declare const FB: any;
 @Injectable()
 export class AuthService {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private http: HttpClient) {
     FB.init({
       appId: environment.facebookAppId,
       status: false,
@@ -43,8 +45,13 @@ export class AuthService {
     return token;
   }
 
-  onSuccessLogin(token: string) {
-    this.router.navigate(['all-tests']);
+  onSuccessLogin(access_token: string) {
+    this.http.post(environment.api.auth.facebook, { access_token })
+      .subscribe((response: Response) => {
+        const token = response.headers.get('x-auth-token');
+        console.log(token);
+      });
+    // this.router.navigate(['all-tests']);
   }
 
 }
