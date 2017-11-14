@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, Output, EventEmitter, Input } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 
 import { QuestionComponent } from './question/question.component';
 import { Question } from '../../models/question';
@@ -15,6 +15,7 @@ export class QuestionFormComponent implements OnInit {
   form: FormGroup;
   showPicture = false;
   editedQuestion: number;
+  questionsFormArray: FormArray;
 
   @Input()
   set test(test: Test) {
@@ -36,6 +37,9 @@ export class QuestionFormComponent implements OnInit {
       description: '',
       questions: this.fb.array(this.questions.map(this.createQuestion))
     });
+
+    this.questionsFormArray = this.form.get('questions') as FormArray;
+
     this.form.valueChanges.subscribe(value => {
       this.questions = value.questions;
     });

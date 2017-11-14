@@ -11,20 +11,15 @@ import { AllRespondentsComponent } from './pages/all-respondents/all-respondents
 import { HeaderComponent } from './shared/components/header/header.component';
 import { NavigationButtonsComponent } from './shared/components/header/navigation-buttons/navigation-buttons.component';
 import { ToolsComponent } from './shared/components/header/tools/tools.component';
-import { WraperComponent } from './pages/all-tests/tests-list/tests-list.component';
 import { CreateNewBlockComponent } from './pages/all-tests/create-new-block/create-new-block.component';
-import { TestItemComponent } from './pages/all-tests/tests-list/test-item/test-item.component';
+import { TestItemComponent } from './pages/all-tests/test-item/test-item.component';
 import { CreateNewTestComponent } from './pages/create-new-test/create-new-test.component';
 import { CreateNewTestUploaderComponent } from './pages/create-new-test/create-new-test-uploader/create-new-test-uploader.component';
-import { AllRespondentsListComponent } from './pages/all-respondents/all-respondents-list/all-respondents-list.component';
-import { RespondentItemComponent } from './pages/all-respondents/all-respondents-list/respondent-item/respondent-item.component';
+import { RespondentItemComponent } from './pages/all-respondents/respondent-item/respondent-item.component';
 import { CreateNewComponent } from './shared/components/create-new/create-new.component';
-import { ActivationsListWrapperComponent } from './pages/all-activations/activations-list-wrapper/activations-list-wrapper.component';
-import { ActivationItemComponent } from './pages/all-activations/activations-list-wrapper/activation-item/activation-item.component';
-import { PageInformationComponent } from './pages/all-activations/page-information/page-information.component';
-import { HorizontalLineComponent } from './shared/components/horizontal-line/horizontal-line.component';
-import { GetRespondentsService} from './shared/services/getRespondents.service';
-import { MultiselectComponent } from './shared/components/multiselect/multiselect.component';
+import { ActivationItemComponent } from './pages/all-activations/activation-item/activation-item.component';
+import { RespondentService} from './shared/services/respondent.service';
+import { SelectComponent } from './shared/components/select/select.component';
 import { QuestionFormComponent } from './pages/create-new-test/question-list/question-form.component';
 import { QuestionComponent } from './pages/create-new-test/question-list/question/question.component';
 import { FileuploaderComponent } from './pages/create-new-test/question-list/fileuploader/fileuploader.component';
@@ -32,6 +27,9 @@ import { TestService } from './shared/services/test.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AuthService } from './shared/services/auth.service';
+import { ModalComponent } from './shared/components/modal/modal.component';
+import { ListPageComponent } from './pages/layout/list-page/list-page.component';
+
 
 @NgModule({
   declarations: [
@@ -42,25 +40,22 @@ import { AuthService } from './shared/services/auth.service';
     HeaderComponent,
     NavigationButtonsComponent,
     ToolsComponent,
-    WraperComponent,
     CreateNewBlockComponent,
     TestItemComponent,
     CreateNewTestComponent,
     CreateNewTestUploaderComponent,
-    AllRespondentsListComponent,
     RespondentItemComponent,
     TestItemComponent,
     CreateNewComponent,
-    ActivationsListWrapperComponent,
     ActivationItemComponent,
-    PageInformationComponent,
-    HorizontalLineComponent,
     CreateNewComponent,
-    MultiselectComponent,
+    SelectComponent,
     FileuploaderComponent,
     QuestionFormComponent,
     QuestionComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    ModalComponent,
+    ListPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +64,7 @@ import { AuthService } from './shared/services/auth.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [GetRespondentsService, TestService, AuthService],
+  providers: [RespondentService, TestService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
