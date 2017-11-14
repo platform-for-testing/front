@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 // import 'rxjs/observable/create';
 
 import { environment } from '../../../environments/environment';
+import { HttpResponse } from 'selenium-webdriver/http';
 
 declare const FB: any;
 
@@ -47,11 +48,21 @@ export class AuthService {
 
   onSuccessLogin(access_token: string) {
     this.http.post(environment.api.auth.facebook, { access_token })
-      .subscribe((response: Response) => {
-        const token = response.headers.get('x-auth-token');
-        console.log(token);
+      .subscribe((response: any) => {
+        // const token = response.headers.get('x-auth-token');
+        const token = response.token;
+        this.saveToken(token);
+        this.router.navigate(['/all-tests']);
+        console.log('JWT', token, 'JWT');
       });
     // this.router.navigate(['all-tests']);
   }
 
+  saveToken(token: string) {
+    localStorage.setItem('token', token);
+  }
+
+  getToken(): string {
+    return localStorage.getItem('token');
+  }
 }

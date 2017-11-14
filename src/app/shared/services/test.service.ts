@@ -3,11 +3,13 @@ import {environment} from '../../../environments/environment';
 import {Test} from '../../pages/models/test';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient} from '@angular/common/http';
+import { AuthService } from './auth.service';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class TestService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private authService: AuthService) {
   }
 
   createTest(test: Test): Observable<Test> {
@@ -16,10 +18,13 @@ export class TestService {
   }
 
   updateTest(test: Test): Observable<Test> {
-    return this.http.put(`${environment.api.quiz.save}/${test.id}`, test);
+    return this.http.put<Test>(`${environment.api.quiz.save}/${test.id}`, test);
   }
 
   getTest(): Observable<Test[]> {
-    return this.http.get(environment.api.quiz.get);
+    const token = this.authService.getToken();
+    const headers = new HttpHeaders({ 'Authorization': `Bearer ${token}` });
+
+    return this.http.get<Test[]>(environment.api.quiz.get, { headers });
   }
 }
