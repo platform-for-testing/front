@@ -1,13 +1,11 @@
 <div class="tools">
     <pt-create-new *ngIf="!(route==='/all-tests')"></pt-create-new>
     <span class="icon-wrap icon-wrap_search">
-        <img class="img" [src]="imageGlassPath" alt="glass">
+        <i class="pt-search"></i>
     </span>
-    <span class="three-dots-wrapper">
-        <button type="button" class="three-dots" (click)="threeDotsClicked($event)">&#8942;</button>
-    </span>
-    <span class="human icon-wrap"><img class="img" [src]="imageHumanPath" alt="profile">
-            <i class="fa fa-angle-down"></i>
+    <span class="human icon-wrap">
+    	<i class="pt-user"></i>
+        <i class="pt-down-open-mini"></i>
     </span>
     <pt-modal *ngIf="modalVariable" [(isOpened)]="modalVariable"></pt-modal>
 </div>

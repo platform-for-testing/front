@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, forwardRef } from '@angular/core';
 import { FormBuilder, FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { Question } from '../../../models/question';
-import { QuestionFormComponent } from '../question-form.component';
 import { SelectComponent } from '../../../../shared/components/select/select.component';
 import { questionTypes } from '../../../../constants/questions-types';
 
@@ -15,6 +14,10 @@ import { questionTypes } from '../../../../constants/questions-types';
 })
 export class QuestionComponent implements ControlValueAccessor, OnInit {
   form: FormGroup;
+  pictureAdded = false;
+  showPicture = false;
+  hideItems = false;
+  imageLoaded: string;
   valueChange: any;
 
   questionTypes = questionTypes;
@@ -34,6 +37,7 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
   }];
 
   @Input() isEditing: boolean;
+  @Input() isPictureAdded: boolean;
   @Input() index: number;
   @Output() edit: EventEmitter<any> = new EventEmitter();
   @Output() remove: EventEmitter<any> = new EventEmitter();
@@ -45,12 +49,30 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
 
   }
 
+  @Input() pictureToAdd;
+
+  receiveAdded(isAdded: boolean) {
+    this.isPictureAdded = isAdded;
+    if (this.isEditing === true) {
+      this.changeAdditionValue();
+    }
+  }
+
+  pictureUpload(value) {
+    this.imageLoaded = value;
+  }
+
+  receive(event) {
+    this.showPicture = event;
+  }
+
   ngOnInit() {
     this.form = this.fb.group({
       title: ['Question', [Validators.required]],
       description: '',
       required: false,
       type: '',
+      image: '',
       points: [1, [Validators.min(1), Validators.max(10)]]
     });
 
@@ -60,8 +82,17 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
     });
   }
 
+  addPicture() {
+    this.showPicture = !this.showPicture;
+    this.hideItems = true;
+  }
+
   currentType(value) {
     this.valueChange = value;
+  }
+
+  changeAdditionValue() {
+    this.pictureAdded = this.isPictureAdded;
   }
 
   propagateChange(value: Question) {
