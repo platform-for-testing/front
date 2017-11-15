@@ -1,0 +1,20 @@
+<div class="select" #select>
+
+  <div class="select__item select__item_main"
+      (click)="handleSelectToggle($event)">
+    <i class="{{ selectedOption?.iconClass }}"></i>
+    <div class='select__content'>
+      {{ selectedOption?.label }}
+    </div>
+    <i class="arrow down opener"></i>
+  </div>
+
+  <div class="select__items" *ngIf="isSelectOpened">
+    <div class="select__item inner"
+        *ngFor="let option of selectOptions"
+        (click)="chooseItem(option, $event)">
+      <i class="{{ option.iconClass }}"></i>
+      <div class='select__content'>{{ option.label }}</div>
+    </div>
+  </div>
+</div>

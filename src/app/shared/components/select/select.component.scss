@@ -1,0 +1,95 @@
+@import 'src/assets/styles/fonts';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.select {
+  font-family: $font-main;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 262px;
+
+  &__container {
+    z-index: 999;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 6px auto 0;
+    box-shadow: 0 29px 47px 0 rgba(156, 160, 213, 0.74);
+    padding: 20px 40px;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  &__content {
+    font-family: $font-main;
+    font-size: 16px;
+    padding-left: 12px;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    color: #444;
+    border: none;
+    flex: 1;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    text-align: left;
+    padding: 11px 16px;
+    cursor: pointer;
+    background: #fff;
+    align-items: center;
+
+    &:not(.select__item_main):hover {
+      background: #f6f6f6;
+
+      & input {
+        background: #f6f6f6;
+      }
+    }
+
+    &:first-child {
+      position: relative;
+      z-index: 0;
+    }
+
+    &_main {
+      border: 2px solid #eee;
+    }
+  }
+
+  &__items {
+    position: absolute;
+    z-index: 999;
+    top: -20px;
+    right: 2px;
+    display: block;
+    width: 100%;
+    animation-name: slidein;
+    animation-duration: .3s;
+    background: #fff;
+    box-shadow: 0 0 20px 11px #eee;
+  }
+
+  &__icon {
+    color: #6c6c6c;
+    font-size: 26px;
+    display: flex;
+  }
+}
+
+@keyframes slidein {
+  from {
+    top: -20%;
+    opacity: .1;
+  }
+  to {
+    top: -20px;
+  }
+}

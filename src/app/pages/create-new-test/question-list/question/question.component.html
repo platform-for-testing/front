@@ -1,4 +1,4 @@
-<form [formGroup]="form" *ngIf="isEditing" class="pt-question pt-question--editable">
+<form [formGroup]="form" *ngIf="isEditing" [class.pt-question_editing]="hideItems" class="pt-question pt-question--editable">
   <pt-fileuploader 
     *ngIf="showPicture" 
     (propagatePopupClosing)=receive($event)
@@ -6,11 +6,8 @@
     (imageUploading)=pictureUpload($event)
     formControlName="image"></pt-fileuploader>
     <div class="pt-question__selects">
-
-        <pt-multiselect 
-        (currentType)="currentType($event)" 
-        [selectContent]="types"
-        formControlName="type"></pt-multiselect>
+        <pt-select [selectOptions]="questionTypes"
+                   formControlName="type"></pt-select>
 
         <input type="number" placeholder="Number of points" formControlName="points" class="select__input">
     </div>
