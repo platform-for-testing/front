@@ -1,0 +1,9 @@
+%reset-browser-ui {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  appearance: none;
+  // outline: none; -> BAD FOR a11y
+}

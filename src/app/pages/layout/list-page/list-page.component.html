@@ -1,0 +1,21 @@
+<section class="list-page">
+  <div class="list-page__wrapper">
+    <header class="list-page__header">
+      <h1 class="list-page__heading">{{heading}}<span class="list-page__length">({{listLength}})</span></h1>
+      <div class="list-page__rpart">
+        <!-- TODO: change to our shared select UI element <pt-select> -->
+        <div class="pt-select">
+          <select class="list-page__select pt-select__item" name="filter-activations">
+            <option value="all">all activations</option>
+            <option value="date_asc">Date up</option>
+            <option value="date_desc">Date down</option>
+          </select>
+        </div>
+      </div>
+    </header>
+    <!-- TODO: change to <ul> and element in ng-content to <li> -->
+    <div class="list-page__list">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</section>

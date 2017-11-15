@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RespondentModel} from '../../../models/respondent.model';
+import {RespondentModel} from '../../models/respondent.model';
 
 @Component({
   selector: 'pt-respondent-item',
