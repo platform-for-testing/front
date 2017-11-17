@@ -2,9 +2,9 @@
 
   <div class="select__item select__item_main"
       (click)="handleSelectToggle($event)">
-    <i class="{{ selectedOption.iconClass }}"></i>
+    <i class="{{ selectedOption?.iconClass }}"></i>
     <div class='select__content'>
-      {{ selectedOption.label }}
+      {{ selectedOption?.label }}
     </div>
     <i class="arrow down opener"></i>
   </div>
