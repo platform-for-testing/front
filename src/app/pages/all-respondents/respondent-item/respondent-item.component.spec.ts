@@ -1,9 +1,9 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {RespondentItemComponent} from './respondent-item.component';
-import {RespondentModel} from '../../../../models/respondent.model';
-import {UserModel} from '../../../../models/user.model';
-import {Test} from '../../../../models/test';
+import {RespondentModel} from 'app/models/respondent.model';
+import {UserModel} from 'app/models/user.model';
+import {Test} from 'app/models/test';
 
 describe('RespondentItemComponent', () => {
   let component: RespondentItemComponent;

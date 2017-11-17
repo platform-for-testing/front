@@ -30,6 +30,7 @@ import { TestComponent } from './pages/test/test.component';
 import { TestInfoComponent } from './pages/test/test-info/test-info.component';
 import { ListPageComponent } from './pages/layout/list-page/list-page.component';
 import { QuestionForRespondentComponent } from './pages/test/question-for-respondent/question-for-respondent.component';
+import { AnswerComponent } from './pages/test/question-for-respondent/answer/answer.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { QuestionForRespondentComponent } from './pages/test/question-for-respon
     TestComponent,
     TestInfoComponent,
     ListPageComponent,
-    QuestionForRespondentComponent
+    QuestionForRespondentComponent,
+    AnswerComponent
   ],
   imports: [
     BrowserModule,
