@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {Question} from "app/models/question";
+import {Question} from 'app/models/question';
 
 @Component({
   selector: 'pt-question-for-respondent',

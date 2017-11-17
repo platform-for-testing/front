@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {Test} from "app/models/test";
+import {Test} from 'app/models/test';
 
 @Component({
     selector: 'pt-test-info',

@@ -4,7 +4,7 @@ import {AllTestsComponent} from './pages/all-tests/all-tests.component';
 import {AllActivationsComponent} from './pages/all-activations/all-activations.component';
 import {AllRespondentsComponent} from './pages/all-respondents/all-respondents.component';
 import {CreateNewTestComponent} from './pages/create-new-test/create-new-test.component';
-import {TestComponent} from "./pages/test/test.component";
+import {TestComponent} from './pages/test/test.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/all-tests', pathMatch: 'full'},

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from '../../shared/services/test.service';
-import {Test} from "app/models/test";
+import {Test} from 'app/models/test';
 
 @Component({
   selector: 'pt-all-tests',

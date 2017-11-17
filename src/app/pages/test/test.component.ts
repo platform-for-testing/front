@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {TestService} from 'app/shared/services/test.service';
-import {Test} from "app/models/test";
+import {Test} from 'app/models/test';
 
 @Component({
     selector: 'pt-test',
