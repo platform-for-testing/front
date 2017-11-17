@@ -28,8 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { TestComponent } from './pages/test/test.component';
 import { TestInfoComponent } from './pages/test/test-info/test-info.component';
-import { QuestionsWrapperComponent } from './pages/test/questions-wrapper/questions-wrapper.component';
 import { ListPageComponent } from './pages/layout/list-page/list-page.component';
+import { QuestionForRespondentComponent } from './pages/test/question-for-respondent/question-for-respondent.component';
 
 
 @NgModule({
@@ -57,8 +57,8 @@ import { ListPageComponent } from './pages/layout/list-page/list-page.component'
     ModalComponent,
     TestComponent,
     TestInfoComponent,
-    QuestionsWrapperComponent,
-    ListPageComponent
+    ListPageComponent,
+    QuestionForRespondentComponent
   ],
   imports: [
     BrowserModule,
