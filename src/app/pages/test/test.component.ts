@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {TestService} from 'app/shared/services/test.service';
 import {Test} from 'app/models/test';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
     selector: 'pt-test',
@@ -11,12 +12,13 @@ import {Test} from 'app/models/test';
 export class TestComponent implements OnInit {
     headerImage = '/assets/images/header-background-image.png';
     test: Test;
+    testId: string;
 
-    constructor(private testService: TestService) {
+    constructor(private testService: TestService, private route: ActivatedRoute) {
     }
-    // TODO add receiving id from URL
-    idStr = '5a0eeff3873fca9c8b5cdb18';
+
     ngOnInit() {
-        this.testService.getTest(this.idStr).subscribe(result => this.test = result);
+        this.route.params.subscribe(({ testId }) => this.testId = testId);
+        this.testService.getTest(this.testId).subscribe(result => this.test = result);
     }
 }
