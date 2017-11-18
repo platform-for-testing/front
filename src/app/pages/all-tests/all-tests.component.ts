@@ -15,7 +15,7 @@ export class AllTestsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.testService.getTest().subscribe(result => this.tests = result);
+    this.testService.getTests().subscribe(result => this.tests = result);
   }
 
 }

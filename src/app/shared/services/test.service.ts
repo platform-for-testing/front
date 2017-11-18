@@ -19,11 +19,11 @@ export class TestService {
         return this.http.put(`${environment.api.quiz.save}/${test.id}`, test);
     }
 
-    getTest(): Observable<Test[]> {
+    getTests(): Observable<Test[]> {
         return this.http.get(environment.api.quiz.get);
     }
 
-    getOneTest(id): Observable<Test> {
+    getTest(id): Observable<Test> {
         return this.http.get(`${environment.api.quiz.get}/${id}`);
     }
 }

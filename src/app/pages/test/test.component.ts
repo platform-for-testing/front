@@ -19,6 +19,6 @@ export class TestComponent implements OnInit {
     idStr = '5a0eeff3873fca9c8b5cdb18';
 
     ngOnInit() {
-        this.testService.getOneTest(this.idStr).subscribe(result => this.test = result);
+        this.testService.getTest(this.idStr).subscribe(result => this.test = result);
     }
 }
