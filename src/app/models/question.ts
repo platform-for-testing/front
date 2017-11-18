@@ -5,6 +5,7 @@ export class Question {
   public type: any;
   public image: string;
   public points: any;
+  public answers: any[];
 
   constructor(title: string = 'Question', description: string = '', required: boolean = false, type: any = '', image: string = '', points: any = '') {
     this.title = title;
