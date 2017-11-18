@@ -3,7 +3,7 @@ export const environment = {
   api: {
     quiz: {
       save: 'http://95.85.54.211:3002/admin/tests',
-      get: 'http://95.85.54.211:3002/tests'
+      get: 'http://95.85.54.211:3002/admin/tests'
     },
     respondents: {
       get: 'http://95.85.54.211:3002/admin/respondents',
@@ -12,5 +12,6 @@ export const environment = {
     auth: {
       facebook: 'http://95.85.54.211:3002/auth/facebook'
     }
-  }
+  },
+  facebookAppId: '1933937986877300'
 };
