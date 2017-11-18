@@ -26,7 +26,11 @@ import { FileuploaderComponent } from './pages/create-new-test/question-list/fil
 import { TestService } from './shared/services/test.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalComponent } from './shared/components/modal/modal.component';
+import { TestComponent } from './pages/test/test.component';
+import { TestInfoComponent } from './pages/test/test-info/test-info.component';
 import { ListPageComponent } from './pages/layout/list-page/list-page.component';
+import { QuestionForRespondentComponent } from './pages/test/question-for-respondent/question-for-respondent.component';
+import { AnswerComponent } from './pages/test/question-for-respondent/answer/answer.component';
 
 
 @NgModule({
@@ -52,7 +56,11 @@ import { ListPageComponent } from './pages/layout/list-page/list-page.component'
     QuestionFormComponent,
     QuestionComponent,
     ModalComponent,
-    ListPageComponent
+    TestComponent,
+    TestInfoComponent,
+    ListPageComponent,
+    QuestionForRespondentComponent,
+    AnswerComponent
   ],
   imports: [
     BrowserModule,
