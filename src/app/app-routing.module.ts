@@ -12,7 +12,7 @@ const routes: Routes = [
     {path: 'all-activations', component: AllActivationsComponent},
     {path: 'create-new-test', component: CreateNewTestComponent},
     {path: 'all-respondents', component: AllRespondentsComponent},
-    {path: 'test', component: TestComponent}
+    {path: 'test/:testId', component: TestComponent}
 ];
 
 @NgModule({
