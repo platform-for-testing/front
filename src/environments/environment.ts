@@ -7,12 +7,17 @@ export const environment = {
   production: false,
   api: {
     quiz: {
-      save: 'http://localhost:3000/tests',
-      get: 'http://localhost:3000/tests'
+      save: 'http://localhost:3000/admin/tests',
+      get: 'http://localhost:3000/admin/tests',
+      getOne: 'http://localhost:3000/tests'
     },
     respondents: {
-      get: 'http://localhost:3000/respondents',
-      save: 'http://localhost:3000/respondents',
+      get: 'http://localhost:3000/admin/respondents',
+      save: 'http://localhost:3000/admin/respondents',
+    },
+    auth: {
+      facebook: 'http://localhost:3000/auth/facebook'
     }
-  }
+  },
+  facebookAppId: '1933937986877300'
 };

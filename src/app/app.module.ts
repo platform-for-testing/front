@@ -1,10 +1,11 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { AppComponent } from './app.component';
 import { AllTestsComponent } from './pages/all-tests/all-tests.component';
 import { AllActivationsComponent } from './pages/all-activations/all-activations.component';
 import { AllRespondentsComponent } from './pages/all-respondents/all-respondents.component';
@@ -25,6 +26,9 @@ import { QuestionComponent } from './pages/create-new-test/question-list/questio
 import { FileuploaderComponent } from './pages/create-new-test/question-list/fileuploader/fileuploader.component';
 import { TestService } from './shared/services/test.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { AuthService } from './shared/services/auth.service';
+import { AuthInterceptorService } from './shared/services/auth-interceptor.service';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { TestComponent } from './pages/test/test.component';
 import { TestInfoComponent } from './pages/test/test-info/test-info.component';
@@ -55,6 +59,7 @@ import { AnswerComponent } from './pages/test/question-for-respondent/answer/ans
     FileuploaderComponent,
     QuestionFormComponent,
     QuestionComponent,
+    LoginPageComponent,
     ModalComponent,
     TestComponent,
     TestInfoComponent,
@@ -69,7 +74,16 @@ import { AnswerComponent } from './pages/test/question-for-respondent/answer/ans
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [RespondentService, TestService],
+  providers: [
+    RespondentService,
+    TestService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

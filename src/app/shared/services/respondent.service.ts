@@ -13,6 +13,6 @@ export class RespondentService {
   }
 
   getRespondents(): Observable<RespondentModel[]> {
-    return this.http.get(environment.api.respondents.get);
+    return this.http.get<RespondentModel[]>(environment.api.respondents.get);
   }
 }
