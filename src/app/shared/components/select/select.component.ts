@@ -31,6 +31,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
     console.log(this.selectOptions);
     if (!this.selectedOption) {
       this.selectedOption = this.selectOptions[0];
+      console.log(this.selectedOption);
     }
   }
 
@@ -66,7 +67,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   }
 
   writeValue(value: string | number) {
-    if (value !== undefined) {
+    if (!!value && value === 0) {
       this.selectedOption = this.selectOptions.find(option => option.value === value);
     }
   }

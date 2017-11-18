@@ -5,11 +5,12 @@
        (dragleave)="handleDragLeave()"
        (drop)="handleDrop($event)">
 
-<img
-    [src]="imageSrc"
-    (load)="handleImageLoad()"
-    [class.loaded]="imageLoaded"/>
+	<img
+	    [src]="imageSrc"
+	    (load)="handleImageLoad()"
+	    [class.loaded]="imageLoaded"/>
 
-<input type="file" name="file" accept="image/*"
-    (change)="handleInputChange($event)">
+	<input type="file" name="file" accept="image/*" (change)="handleInputChange($event)">
+	<i class="uploader__item pt-pencil"></i>
+
 </label>

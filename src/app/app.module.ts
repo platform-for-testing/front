@@ -30,7 +30,11 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AuthService } from './shared/services/auth.service';
 import { AuthInterceptorService } from './shared/services/auth-interceptor.service';
 import { ModalComponent } from './shared/components/modal/modal.component';
+import { TestComponent } from './pages/test/test.component';
+import { TestInfoComponent } from './pages/test/test-info/test-info.component';
 import { ListPageComponent } from './pages/layout/list-page/list-page.component';
+import { QuestionForRespondentComponent } from './pages/test/question-for-respondent/question-for-respondent.component';
+import { AnswerComponent } from './pages/test/question-for-respondent/answer/answer.component';
 
 
 @NgModule({
@@ -57,7 +61,11 @@ import { ListPageComponent } from './pages/layout/list-page/list-page.component'
     QuestionComponent,
     LoginPageComponent,
     ModalComponent,
+    TestComponent,
+    TestInfoComponent,
     ListPageComponent,
+    QuestionForRespondentComponent,
+    AnswerComponent
   ],
   imports: [
     BrowserModule,

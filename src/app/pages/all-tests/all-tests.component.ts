@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Test } from '../models/test';
 import { TestService } from '../../shared/services/test.service';
+import {Test} from 'app/models/test';
 
 @Component({
   selector: 'pt-all-tests',
@@ -15,7 +15,7 @@ export class AllTestsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.testService.getTest().subscribe(result => this.tests = result);
+    this.testService.getTests().subscribe(result => this.tests = result);
   }
 
 }
