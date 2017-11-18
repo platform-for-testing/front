@@ -8,7 +8,8 @@ export const environment = {
   api: {
     quiz: {
       save: 'http://localhost:3000/admin/tests',
-      get: 'http://localhost:3000/admin/tests'
+      get: 'http://localhost:3000/admin/tests',
+      getOne: 'http://localhost:3000/tests'
     },
     respondents: {
       get: 'http://localhost:3000/admin/respondents',

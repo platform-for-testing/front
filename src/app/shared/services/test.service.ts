@@ -26,6 +26,6 @@ export class TestService {
   }
 
   getTest(id): Observable<Test> {
-    return this.http.get<Test>(`${environment.api.quiz.get}/${id}`);
+    return this.http.get<Test>(`${environment.api.quiz.getOne}/${id}`);
   }
 }

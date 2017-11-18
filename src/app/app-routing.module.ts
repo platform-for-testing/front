@@ -10,6 +10,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
 import { TestComponent } from './pages/test/test.component';
 
 const routes: Routes = [
+<<<<<<< HEAD
     { path: '', component: LoginPageComponent },
     {
         path: 'admin',
@@ -24,6 +25,14 @@ const routes: Routes = [
         ]
     },
     { path: 'test', component: TestComponent }
+=======
+    {path: '', redirectTo: '/all-tests', pathMatch: 'full'},
+    {path: 'all-tests', component: AllTestsComponent},
+    {path: 'all-activations', component: AllActivationsComponent},
+    {path: 'create-new-test', component: CreateNewTestComponent},
+    {path: 'all-respondents', component: AllRespondentsComponent},
+    {path: 'test/:testId', component: TestComponent}
+>>>>>>> develop
 ];
 
 @NgModule({
