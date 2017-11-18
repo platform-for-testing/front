@@ -14,10 +14,8 @@ export class TestComponent implements OnInit {
 
     constructor(private testService: TestService) {
     }
-
     // TODO add receiving id from URL
     idStr = '5a0eeff3873fca9c8b5cdb18';
-
     ngOnInit() {
         this.testService.getTest(this.idStr).subscribe(result => this.test = result);
     }
