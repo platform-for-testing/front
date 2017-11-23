@@ -12,3 +12,10 @@
   margin-left: -20em;
   border: 1px solid #ccc;
 }
+.modal-body {
+  padding: 10px;
+  background: #fff;
+
+  /* margin exposes part of the modal background */
+  margin-left: 570px;
+}
