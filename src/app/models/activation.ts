@@ -1,3 +1,5 @@
+import {Test} from "./test";
+
 export class Activation {
     public name: string;
     public created: number;
@@ -5,7 +7,7 @@ export class Activation {
     public numberOfParticipants: number;
     public imagePath: string;
     public isActive: boolean;
-    public quiz: Object;
+    public quiz: Test;
 
     constructor(name: string, created: number, endIn: number, numberOfParticipants: number, imagePath: string, isActive, quiz) {
         this.name = name;
