@@ -1,7 +1,6 @@
 <span class="answer">
   <!--TODO define first type of answer-->
-  <!--<input type="radio" *ngIf="answerType==1">-->
-  <input type="radio" name='radio' *ngIf="answerType==2">
-  <input type="checkbox" *ngIf="answerType==3">
-  {{answer}}
+  <input type="checkbox" *ngIf="answerType === 0">
+  <input type="radio" name='radio' *ngIf="answerType === 2">
+  {{ answer.title }}
 </span>

@@ -1,6 +1,9 @@
 <div>
     <img class="header-background-image" [src]="headerImage" alt="header background">
 </div>
-<pt-test-info [test]="test"></pt-test-info>
+<pt-test-info *ngIf="test" [test]="test"></pt-test-info>
 <!--<pt-question *ngFor="let question of test.questions" [question]="question"></pt-question>-->
-<pt-question-for-respondent *ngFor="let question of test.questions" [question]="question"></pt-question-for-respondent>
+<ng-container *ngIf="test">
+    <pt-question-for-respondent *ngFor="let question of test?.questions" [question]="question"></pt-question-for-respondent>
+</ng-container>
+
