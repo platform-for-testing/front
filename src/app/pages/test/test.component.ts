@@ -4,7 +4,7 @@ import {Test} from 'app/models/test';
 import {ActivatedRoute} from '@angular/router';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/do';
-import {Activation} from "app/models/activation";
+import {Activation} from 'app/models/activation';
 
 
 @Component({
@@ -17,7 +17,7 @@ import {Activation} from "app/models/activation";
 export class TestComponent implements OnInit {
     headerImage = '/assets/images/header-background-image.png';
     test: Test;
-    activation: any;
+    activation: Activation;
     activationId: string;
 
     constructor(private activationService: ActivationService, private route: ActivatedRoute) {
