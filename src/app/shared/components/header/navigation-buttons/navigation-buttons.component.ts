@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'pt-navigation-buttons',
   templateUrl: './navigation-buttons.component.html',
