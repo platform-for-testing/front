@@ -11,6 +11,9 @@ export const environment = {
       get: 'http://localhost:3000/admin/tests',
       getOne: 'http://localhost:3000/tests'
     },
+    activation: {
+      getOne: 'http://localhost:3000/activation'
+    },
     respondents: {
       get: 'http://localhost:3000/admin/respondents',
       save: 'http://localhost:3000/admin/respondents',
