@@ -1,0 +1,22 @@
+<div class="item" [class.item--has-menu]="hasMenu">
+  <ng-content></ng-content>
+  <div class="item__right">
+    <button class="item__btn-menu" type="button" (click)="triggerMenu();" *ngIf="hasMenu">
+      <span class="rect">
+        <i class="rect__item"></i>
+        <i class="rect__item"></i>
+        <i class="rect__item"></i>
+      </span>
+    </button>
+  </div>
+  <div class="item__menu" [class.opened]="isMenuOpen" *ngIf="hasMenu">
+    <div class="item__right">
+      <button class="item__btn-menu" type="button" (click)="triggerMenu();">
+        <span class="close">
+          <i class="close__item"></i>
+          <i class="close__item"></i>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,80 +1,44 @@
 @import 'src/assets/styles/colors';
 
-
-span {
-  font-family: "Roboto", sans-serif;
+.w200 {
+  flex: 0 0 200px;
+  max-width: 200px;
 }
 
-.test-item {
-  width: 100%;
+.item {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 20px 0 rgba(156, 160, 213, 0.34);
-  background-color: #ffffff;
-  margin: 25px 0;
-  max-height: 140px;
-
-  & .div {
-    flex: 2;
-  }
-}
-
-.rectangles {
-  flex: 1;
-  padding-right: 40px;
-  height: 40px;
-  justify-content: space-between;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  &__item {
-    font-size: 10px;
-  }
-}
-
-.test-image {
-  display: inline-block;
-  height: 140px;
-  width: 100px;
-}
-
-img {
   height: 100%;
-  width: auto;
-}
-
-.edited {
-  font-size: 15px;
-  font-weight: 300;
-  text-align: left;
-  padding-left: 30px;
-  flex: 1;
-  color: rgba(15, 15, 15, 0.41);
-}
-
-.test-title {
- font-size: 22px;
- text-transform: uppercase;
- color: #0f0f0f;
-}
-
-.amount-of-questions {
-  font-size: 16px;
-  font-weight: 300;
-  text-align: left;
-  color: $black;
-}
-
-.test-options {
-  display: none;
-  background-color: $black;
-}
-
-.test-options span{
-  font-size: 16px;
-  text-align: left;
-  color: $white;
-  opacity: 0.5;
+  align-items: center;
+  &__image-box {
+    flex: 0 0 100px;
+    max-width: 100px;
+    height: 100%;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__col {
+    padding-left: 30px;
+  }
+  &__edited {
+    font-size: 15px;
+    font-weight: 300;
+    text-align: left;
+    color: rgba(15, 15, 15, 0.41);
+  }
+  &__title {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #0f0f0f;
+    word-break: break-all;
+  }
+  &__amount {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+    color: $black;
+    text-transform: capitalize;
+  }
 }
