@@ -27,8 +27,6 @@ export class TestComponent implements OnInit {
         this.route.params
             .map(({ activationId }) => activationId)
             .flatMap(this.activationService.getActivation)
-            // .map(({ quiz }) => quiz)
             .subscribe((result: Activation)  => this.test = result.quiz);
-        // this.test = this.activation.quiz;
     }
 }

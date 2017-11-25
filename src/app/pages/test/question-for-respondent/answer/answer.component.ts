@@ -13,7 +13,6 @@ export class AnswerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.answerType);
   }
 
 }
