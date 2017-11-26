@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateNewTestUploaderComponent } from './create-new-test-uploader/create-new-test-uploader.component';
 import {TestService} from '../../shared/services/test.service';
-import {Test} from '../models/test';
+import {Test} from '../../models/test';
 
 @Component({
   selector: 'pt-create-new-test',

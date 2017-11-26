@@ -2,8 +2,8 @@ import { Component, OnInit, ElementRef, Output, EventEmitter, Input } from '@ang
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 
 import { QuestionComponent } from './question/question.component';
-import { Question } from '../../models/question';
-import {Test} from '../../models/test';
+import { Question } from '../../../models/question';
+import {Test} from '../../../models/test';
 
 @Component({
   selector: 'pt-question-form',

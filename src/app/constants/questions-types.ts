@@ -9,26 +9,26 @@ export enum Types {
 export const questionTypes = [
     {
         value: parseInt(Types.Radio.toString(), 10),
-        iconClass: 'icon',
+        iconClass: 'select__icon pt-dot-circle-o',
         label: 'One choice'
     },
     {
         value: parseInt(Types.Checkboxes.toString(), 10),
-        iconClass: 'icon icon_checkbox',
+        iconClass: 'select__icon pt-check-square-o',
         label: 'Multiple choices'
     },
     {
         value: parseInt(Types.YesNo.toString(), 10),
-        iconClass: 'icon icon_truefalse',
+        iconClass: 'select__icon pt-thumbs-up',
         label: 'Yes/No'
     },
     {
         value: parseInt(Types.Order.toString(), 10),
-        iconClass: 'icon icon_ordering',
+        iconClass: 'select__icon pt-sort',
         label: 'Ordering'
     },
     { value: parseInt(Types.Open.toString(), 10),
-        iconClass: 'icon',
+        iconClass: 'select__icon pt-external-link-square',
         label: 'Open answer'
     }
 ];

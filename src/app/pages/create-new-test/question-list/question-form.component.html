@@ -20,32 +20,26 @@
                     [index]="i">
         </pt-question>
   </div>
-  <pt-fileuploader *ngIf="showPicture"></pt-fileuploader>
   <div class="pt-question-list__controls">
     <div class="pt-question-list__button"
       (click)="addQuestion()">
-      <i class="pt-question-list__icon pt-question-list__icon_new"></i>New
+      <i class="pt-question-list__icon pt-plus-circle"></i>New
     </div>
     <div class="pt-question-list__button"
       (click)="addText()">
-      <i class="pt-question-list__icon pt-question-list__icon_text"></i>Text
+      <i class="pt-question-list__icon pt-background-color"></i>Text
     </div>
     <div class="pt-question-list__button"
       (click)="addPicture()">
-      <i class="pt-question-list__icon pt-question-list__icon_picture">
-        <img src="../assets/images/picture.svg" alt="picture">
-      </i>
-      Picture
+      <i class="pt-question-list__icon pt-photo"></i>Picture
     </div>
     <div class="pt-question-list__button"
       (click)="addVideo()">
-      <i class="pt-question-list__icon pt-question-list__icon_video">
-          <img src="../assets/images/video.svg" alt="video">
-      </i>Video
+      <i class="pt-question-list__icon pt-play-video"></i>Video
     </div>
     <div class="pt-question-list__button"
       (click)="addSection()">
-      <i class="pt-question-list__icon pt-question-list__icon_section"></i>Section
+      <i class="pt-question-list__icon pt-puzzle-piece"></i>Section
     </div>
   </div>
   <button class="create__submit__button" type="submit">Save test</button>
