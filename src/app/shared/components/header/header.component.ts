@@ -9,9 +9,9 @@ import {Location} from '@angular/common';
 export class HeaderComponent implements OnInit {
 
   constructor(private _location: Location) {}
-backClicked() {
-    this._location.back();
-}
+  backClicked() {
+      this._location.back();
+  }
   ngOnInit() {
   }
 

@@ -37,7 +37,9 @@ export class ModalComponent implements OnInit {
             this.isOpened = false;
         }
     }
-
+  @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(evt: KeyboardEvent) {
+    this.isOpened = false;
+  }
 
     ngOnInit() {
     }

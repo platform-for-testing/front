@@ -1,2 +1,14 @@
-<!--<a class="back-button">Back+</a>-->
-<a class="back-button menu__item" routerLinkActive="active" routerLink="/all-tests">Back</a>
+<button *ngIf="shoudShowSelf" class="back-button menu__item" (click)="handleClick($event)" >Back</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
