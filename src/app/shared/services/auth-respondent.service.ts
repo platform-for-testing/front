@@ -62,7 +62,6 @@ export class AuthRespondentService {
 
         if (token) {
           this.saveToken(token);
-          console.log(this.respondentService.activationId);
           this.router.navigate(['/test/' + this.respondentService.activationId]);
 
         } else {
