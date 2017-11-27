@@ -56,9 +56,11 @@ export class AuthService {
     this.isLoggedIn$.next(false);
   }
 
-  onSuccessLogin(access_token: string) {
-    this.http.post(environment.api.auth.facebook, { access_token })
+  onSuccessLogin = (access_token: string) => {
+    console.log(access_token);
+    this.http.post(environment.api.auth.facebook.user, { access_token })
       .subscribe((response: any) => {
+      console.log(response);
         const token = response.token;
 
         if (token) {
@@ -72,14 +74,14 @@ export class AuthService {
   }
 
   saveToken(token: string) {
-    localStorage.setItem('token', `Bearer ${token}`);
+    localStorage.setItem('user-token', `Bearer ${token}`);
   }
 
   getToken(): string {
-    return localStorage.getItem('token');
+    return localStorage.getItem('user-token');
   }
 
   removeToken() {
-    localStorage.removeItem('logout');
+    localStorage.removeItem('user-logout');
   }
 }

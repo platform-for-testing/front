@@ -1,6 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { AuthService } from './auth.service';
+import { AuthRespondentService } from './auth-respondent.service';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -10,7 +11,16 @@ export class AuthInterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const authService = this.injector.get(AuthService);
-    const token = authService.getToken();
+    const authRespondentsService = this.injector.get(AuthRespondentService);
+
+    let token;
+    if (req.url.includes('admin')) {
+      token = authService.getToken();
+    } else if (req.url.includes('respondent')) {
+      token = authRespondentsService.getToken();
+    } else {
+      return next.handle(req);
+    }
 
     const headers = {
       'Authorization': token || ''
@@ -22,5 +32,4 @@ export class AuthInterceptorService implements HttpInterceptor {
 
     return next.handle(clonedRequest);
   }
-
 }
