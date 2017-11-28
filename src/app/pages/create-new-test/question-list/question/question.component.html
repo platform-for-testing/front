@@ -20,6 +20,37 @@
     <div class="pt-question__input">
         <input type="text" class="pt-description-input" formControlName="description" placeholder="Description (optional)">
     </div>
+
+    <div class="pt-question__options" formArrayName="answers">
+      <div class="pt-question__outer" 
+          *ngFor="let control of form.get('answers').controls; let i = index" 
+          (keydown)="optionNew($event)">
+
+        <div class="pt-question__inner" [formGroupName]="i">
+
+          <label class="pt-question__label">
+            <input type="checkbox" formControlName="isCorrect">
+            <span class="pt-question__circle"></span>
+          </label>
+          
+          <input type="text" class="pt-question__option" formControlName="title" placeholder="Add option or Add other">
+          <i class="pt-question__action pt-photo" (click)="addOptionImage()"></i>
+          <i class="pt-question__action pt-times" (click)="delete()"></i>
+        </div>
+
+      </div>
+      <div class="pt-question__more">
+        
+        <div class="pt-question__label">
+          <span class="pt-question__circle pt-question__circle_grey"></span>
+        </div>
+
+        <p class="pt-question__option pt-question__option_static">Add option or
+          <span (click)="addOption()">"Add other"</span>
+        </p>
+      </div>
+    </div>
+
     <div class="pt-question__controls">
         <span class="pt-question__button pt-question__remove" (click)="removeQuestion(index)">
             <i class="pt-question__icon pt-times"></i>

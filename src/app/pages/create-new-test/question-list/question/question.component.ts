@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, forwardRef } from '@angular/core';
-import { FormBuilder, FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
-import { Question } from 'app/models/question';
+import { FormBuilder, FormGroup, FormArray, ControlValueAccessor, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
+import { Question } from '../../../../models/question';
 import { SelectComponent } from '../../../../shared/components/select/select.component';
 import { questionTypes } from '../../../../constants/questions-types';
 
@@ -19,6 +19,7 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
   hideItems = false;
   imageLoaded: string;
   valueChange: any;
+  options: any[] = [];
 
   questionTypes = questionTypes;
 
@@ -66,11 +67,32 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
     this.showPicture = event;
   }
 
+  addOption() {
+    const answersArray = this.form.get('answers') as FormArray;
+    answersArray.push(this.createOption());
+  }
+  
+  optionNew(ev) {
+    if(ev.keyCode == 13) {
+      this.addOption()
+    }
+  }
+
+  createOption() : FormGroup {
+    return this.fb.group({
+      title: '',
+      isCorrect: false
+    });
+  }
+
   ngOnInit() {
     this.form = this.fb.group({
       title: ['Question', [Validators.required]],
       description: '',
       required: false,
+      answers: this.fb.array([
+        this.createOption()
+      ]),
       type: '',
       image: '',
       points: [1, [Validators.min(1), Validators.max(10)]]
@@ -81,10 +103,22 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
       this.question = value;
     });
   }
+  
+  optionDubl(): void {
+    this.options.push(this.createOption());
+  }
 
   addPicture() {
     this.showPicture = !this.showPicture;
     this.hideItems = true;
+  }
+
+  delete() {
+    console.log('function to delete the option...')
+  }
+
+  addOptionImage() {
+    console.log('function to add an image to the option...')
   }
 
   currentType(value) {
@@ -100,7 +134,7 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
 
   writeValue(value: Question) {
     if (value !== void(0)) {
-      this.form.setValue(value);
+      this.form.patchValue(value);
     }
   }
 
