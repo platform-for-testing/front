@@ -7,7 +7,13 @@ export class Question {
   public image: string;
   public points: any;
 
-  constructor(title: string = 'Question', description: string = '', required: boolean = false, options: any = [], type: any = '', image: string = '', points: any = '') {
+  constructor( title: string = 'Question',
+               description: string = '',
+               required: boolean = false,
+               options: any = [],
+               type: any = '',
+               image: string = '',
+               points: any = '' ) {
     this.title = title;
     this.description = description;
     this.required = required;

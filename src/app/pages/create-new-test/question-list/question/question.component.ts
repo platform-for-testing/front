@@ -71,14 +71,14 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
     const answersArray = this.form.get('answers') as FormArray;
     answersArray.push(this.createOption());
   }
-  
+
   optionNew(ev) {
-    if(ev.keyCode == 13) {
-      this.addOption()
+    if (ev.keyCode === 13) {
+      this.addOption();
     }
   }
 
-  createOption() : FormGroup {
+  createOption(): FormGroup {
     return this.fb.group({
       title: '',
       isCorrect: false
@@ -103,7 +103,7 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
       this.question = value;
     });
   }
-  
+
   optionDubl(): void {
     this.options.push(this.createOption());
   }
@@ -114,11 +114,11 @@ export class QuestionComponent implements ControlValueAccessor, OnInit {
   }
 
   delete() {
-    console.log('function to delete the option...')
+    console.log('function to delete the option...');
   }
 
   addOptionImage() {
-    console.log('function to add an image to the option...')
+    console.log('function to add an image to the option...');
   }
 
   currentType(value) {
