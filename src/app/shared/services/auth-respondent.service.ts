@@ -79,6 +79,6 @@ export class AuthRespondentService {
   }
 
   removeToken() {
-    localStorage.removeItem('respondent-logout');
+    localStorage.removeItem('respondent-token');
   }
 }
