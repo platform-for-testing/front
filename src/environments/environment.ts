@@ -20,8 +20,8 @@ export const environment = {
     },
     auth: {
       facebook: {
-        user: 'http://localhost:3000/auth/facebook',
-        respondent: 'http://localhost:3000/respondent/auth/facebook',
+        user: 'http://localhost:3000/auth/facebook/user',
+        respondent: 'http://localhost:3000/auth/facebook/respondent',
       }
     }
   },
