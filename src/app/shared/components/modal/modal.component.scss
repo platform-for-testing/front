@@ -1,14 +1,18 @@
 @import 'src/assets/styles/colors';
 
 .modal {
-  display: block;
-  background-color: $white;
-  top: 50%;
-  left: 50%;
-  position:fixed;
-  width:40em;
-  height:30em;
-  margin-top: -15em;
-  margin-left: -20em;
-  border: 1px solid #ccc;
+    display: block;
+    background-color: $white;
+    top: 50%;
+    left: 50%;
+    position:fixed;
+    width:40em;
+    height:30em;
+    margin-top: -15em;
+    margin-left: -20em;
+    border: 1px solid #ccc;
+  }
+.modal-body {
+  margin-left: 37em;
+
 }
