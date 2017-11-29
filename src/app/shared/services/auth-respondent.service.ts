@@ -8,8 +8,6 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { environment } from '../../../environments/environment';
 import { RespondentService } from './respondent.service';
 
-declare const FB: any;
-
 @Injectable()
 export class AuthRespondentService {
 
@@ -25,29 +23,6 @@ export class AuthRespondentService {
   }
 
   constructor(private router: Router, private http: HttpClient, private respondentService: RespondentService) {
-    FB.init({
-      appId: environment.facebookAppId,
-      status: false,
-      cookie: false,
-      xfbml: false,
-      version: 'v2.10'
-    });
-  }
-
-  facebookLogin() {
-    return Observable.create((observer) => {
-      FB.login(response => {
-        const { authResponse } = response;
-
-        if (authResponse) {
-          observer.next(authResponse.accessToken);
-          observer.complete();
-
-        } else {
-          observer.error('Can`t login to Facebook');
-        }
-      });
-    });
   }
 
   logout() {
