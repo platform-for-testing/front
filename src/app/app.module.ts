@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpRequest} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +28,7 @@ import { TestService } from './shared/services/test.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AuthService } from './shared/services/auth.service';
+import { AuthRespondentService } from './shared/services/auth-respondent.service';
 import { AuthInterceptorService } from './shared/services/auth-interceptor.service';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { TestComponent } from './pages/test/test.component';
@@ -35,6 +36,7 @@ import { TestInfoComponent } from './pages/test/test-info/test-info.component';
 import { ListPageComponent } from './pages/layout/list-page/list-page.component';
 import { QuestionForRespondentComponent } from './pages/test/question-for-respondent/question-for-respondent.component';
 import { AnswerComponent } from './pages/test/question-for-respondent/answer/answer.component';
+import { LoginPageRespondentComponent } from './pages/login-page-respondent/login-page-respondent.component';
 
 
 @NgModule({
@@ -60,6 +62,7 @@ import { AnswerComponent } from './pages/test/question-for-respondent/answer/ans
     QuestionFormComponent,
     QuestionComponent,
     LoginPageComponent,
+    LoginPageRespondentComponent,
     ModalComponent,
     TestComponent,
     TestInfoComponent,
@@ -78,6 +81,7 @@ import { AnswerComponent } from './pages/test/question-for-respondent/answer/ans
     RespondentService,
     TestService,
     AuthService,
+    AuthRespondentService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
