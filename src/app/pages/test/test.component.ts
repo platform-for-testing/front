@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {ActivationService} from 'app/shared/services/activation.service';
 import {AuthRespondentService} from '../../shared/services/auth-respondent.service';
 import {Test} from 'app/models/test';
@@ -7,6 +7,7 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/do';
 import { Activation } from 'app/models/activation';
 import {RespondentService} from '../../shared/services/respondent.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 
 @Component({
@@ -21,12 +22,16 @@ export class TestComponent implements OnInit {
     test: Test;
     activation: Activation;
     activationId: string;
+    form: FormGroup;
+
+  @Output() submit: EventEmitter<Test> = new EventEmitter();
 
     constructor(private activationService: ActivationService,
                 private route: ActivatedRoute,
                 private respondentAuthService: AuthRespondentService,
                 private router: Router,
-                private respondentService: RespondentService) {
+                private respondentService: RespondentService,
+                private fb: FormBuilder) {
     }
 
     ngOnInit() {
@@ -41,11 +46,26 @@ export class TestComponent implements OnInit {
 
     loadQuiz(activationId: string) {
         this.activationService.getActivation(activationId)
-          .subscribe((result: Activation)  => this.test = result.quiz);
+          .subscribe((result: Activation)  => {
+            this.test = result.quiz;
+            this.initForm();
+          });
     }
 
     redirect(activationId: string) {
       this.respondentService.activationId = activationId;
       this.router.navigate(['/login']);
+    }
+
+  onSubmit() {
+    console.log(this.form.value);
+    this.submit.emit(this.form.value);
+  }
+
+    initForm() {
+      this.form = this.fb.group({
+        id: '',
+        questions: this.fb.array(this.test.questions)
+      });
     }
 }

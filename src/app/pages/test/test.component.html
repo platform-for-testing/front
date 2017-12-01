@@ -3,7 +3,10 @@
 </div>
 <pt-test-info *ngIf="test" [test]="test"></pt-test-info>
 <!--<pt-question *ngFor="let question of test.questions" [question]="question"></pt-question>-->
+<form [formGroup]="form"
+      (ngSubmit)="onSubmit()">
 <ng-container *ngIf="test">
-    <pt-question-for-respondent *ngFor="let question of test?.questions" [question]="question"></pt-question-for-respondent>
+    <pt-question-for-respondent class="question" *ngFor="let question of test?.questions" [question]="question"></pt-question-for-respondent>
 </ng-container>
-
+<button class="submit-button" type="submit">Submit quiz</button>
+</form>
