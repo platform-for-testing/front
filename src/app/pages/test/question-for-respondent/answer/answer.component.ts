@@ -1,4 +1,5 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {ControlValueAccessor} from '@angular/forms';
 
 @Component({
   selector: 'pt-answer',
@@ -6,9 +7,19 @@ import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
   styleUrls: ['./answer.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AnswerComponent implements OnInit {
+export class AnswerComponent implements OnInit, ControlValueAccessor {
+
   @Input() answerType;
   @Input() answer;
+
+  writeValue(obj: any): void {
+  }
+
+  registerOnChange(fn: any): void {
+  }
+
+  registerOnTouched(fn: any): void {
+  }
 
   constructor() { }
 

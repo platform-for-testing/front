@@ -4,9 +4,13 @@
 <pt-test-info *ngIf="test" [test]="test"></pt-test-info>
 <!--<pt-question *ngFor="let question of test.questions" [question]="question"></pt-question>-->
 <form [formGroup]="form"
+      *ngIf="form"
       (ngSubmit)="onSubmit()">
-<ng-container *ngIf="test">
-    <pt-question-for-respondent class="question" *ngFor="let question of test?.questions" [question]="question"></pt-question-for-respondent>
-</ng-container>
-<button class="submit-button" type="submit">Submit quiz</button>
+  <ng-container [formArrayName]="'questions'">
+    <pt-question-for-respondent *ngFor="let question of test.questions; let i = index"
+                                [formControlName]="i"
+                                class="question"
+                                [question]="question"></pt-question-for-respondent>
+  </ng-container>
+  <button class="submit-button" type="submit">Submit quiz</button>
 </form>

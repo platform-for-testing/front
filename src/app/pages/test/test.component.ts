@@ -65,22 +65,11 @@ export class TestComponent implements OnInit {
 
   initForm(): FormGroup {
     return this.form = this.fb.group({
-      id: this.test.id,
       questions: this.fb.array(this.test.questions.map(this.createQuestion))
     });
   }
 
   createQuestion = (question) => {
-    return this.fb.group({
-      id: question.id,
-      answers: this.fb.array(question.answers.map(this.createAnswer))
-    });
-  }
-
-  createAnswer = (answer) => {
-    return this.fb.group({
-      id: answer.id,
-      checked: false
-    });
+    return this.fb.control([{}]);
   }
 }

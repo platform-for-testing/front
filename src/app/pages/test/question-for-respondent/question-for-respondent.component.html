@@ -1,8 +1,24 @@
 <div class="question-for-respondent">
   <!--TODO show actual number of question-->
-  <span class="question-title">1 {{question.title}}</span>
-  <span class="question-description">{{question.description}}</span>
+  <span class="question-title">{{ question.title }}</span>
+  <span class="question-description">{{ question.description }}</span>
 
-  <pt-answer *ngFor="let answer of question.answers" [answer]="answer" [answerType]="question.type" ></pt-answer>
+  <!--<pt-answer [formControlName]="'answers'"-->
+             <!--*ngFor="let answer of question.answers"-->
+             <!--[answer]="answer"-->
+             <!--[answerType]="question.type"></pt-answer>-->
+  <ng-container [formArrayName]="'answers'">
+    <!--<pt-question-for-respondent *ngFor="let answer of question.answers; let i = index"-->
+                                <!--[formControlName]="i"-->
+                                <!--[answer]="answer"></pt-question-for-respondent>-->
+    <ng-container *ngFor="let answer of question.answers; let i = index">
+      <ng-container [formGroupName]="i">
+        <label class="answer">
+          <input [formControlName]="'checked'" type="checkbox">
+          {{ answer.title }}
+        </label>
+      </ng-container>
+    </ng-container>
+  </ng-container>
 
 </div>
