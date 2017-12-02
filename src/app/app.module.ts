@@ -37,6 +37,7 @@ import { ListPageComponent } from './pages/layout/list-page/list-page.component'
 import { QuestionForRespondentComponent } from './pages/test/question-for-respondent/question-for-respondent.component';
 import { AnswerComponent } from './pages/test/question-for-respondent/answer/answer.component';
 import { BackButtonComponent } from './shared/components/back-button/back-button.component';
+import { LoginPageRespondentComponent } from './pages/login-page-respondent/login-page-respondent.component';
 
 
 
