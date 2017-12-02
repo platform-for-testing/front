@@ -8,11 +8,20 @@ import {RespondentModel} from '../../models/respondent.model';
 
 @Injectable()
 export class RespondentService {
+  private _activationId: string;
 
   constructor(private http: HttpClient) {
   }
 
   getRespondents(): Observable<RespondentModel[]> {
     return this.http.get<RespondentModel[]>(environment.api.respondents.get);
+  }
+
+  get activationId(): string {
+    return this._activationId;
+  }
+
+  set activationId(value: string) {
+    this._activationId = value;
   }
 }
