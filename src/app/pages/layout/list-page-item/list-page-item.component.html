@@ -1,5 +1,5 @@
 <div class="item" [class.item--has-menu]="hasMenu">
-  <ng-content></ng-content>
+  <ng-content select=".pt-list-item-body"></ng-content>
   <div class="item__right">
     <button class="item__btn-menu" type="button" (click)="triggerMenu();" *ngIf="hasMenu">
       <span class="rect">
@@ -10,6 +10,7 @@
     </button>
   </div>
   <div class="item__menu" [class.opened]="isMenuOpen" *ngIf="hasMenu">
+    <ng-content select=".pt-list-item-menu"></ng-content>
     <div class="item__right">
       <button class="item__btn-menu" type="button" (click)="triggerMenu();">
         <span class="close">

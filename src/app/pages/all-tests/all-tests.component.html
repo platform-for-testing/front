@@ -2,6 +2,11 @@
 <!-- <pt-create-new-block></pt-create-new-block> -->
 <pt-list-page heading="my All Tests" [listLength]="tests?.length">
   <pt-list-page-item *ngFor="let test of tests" [hasMenu]="true">
-    <pt-test-item [test]="test"></pt-test-item>
+    <div class="pt-list-item-body">
+      <pt-test-item [test]="test"></pt-test-item>
+    </div>
+    <ng-container class="pt-list-item-menu">
+      <pt-test-menu [test]="test"></pt-test-menu>
+    </ng-container>
   </pt-list-page-item>
 </pt-list-page>

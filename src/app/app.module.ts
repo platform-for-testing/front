@@ -36,6 +36,7 @@ import { ListPageComponent } from './pages/layout/list-page/list-page.component'
 import { QuestionForRespondentComponent } from './pages/test/question-for-respondent/question-for-respondent.component';
 import { AnswerComponent } from './pages/test/question-for-respondent/answer/answer.component';
 import { ListPageItemComponent } from './pages/layout/list-page-item/list-page-item.component';
+import { TestMenuComponent } from './pages/all-tests/test-menu/test-menu.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ListPageItemComponent } from './pages/layout/list-page-item/list-page-i
     ListPageComponent,
     QuestionForRespondentComponent,
     AnswerComponent,
-    ListPageItemComponent
+    ListPageItemComponent,
+    TestMenuComponent
   ],
   imports: [
     BrowserModule,

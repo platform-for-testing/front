@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./list-page-item.component.scss']
 })
 export class ListPageItemComponent implements OnInit {
-  @Input() hasMenu: boolean = false 
-  isMenuOpen:Boolean = false
+  @Input() hasMenu: Boolean = false;
+  isMenuOpen: Boolean = false;
 
   constructor() { }
 
