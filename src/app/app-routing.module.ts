@@ -6,11 +6,13 @@ import { AllActivationsComponent } from './pages/all-activations/all-activations
 import { AllRespondentsComponent } from './pages/all-respondents/all-respondents.component';
 import { CreateNewTestComponent } from './pages/create-new-test/create-new-test.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginPageRespondentComponent } from './pages/login-page-respondent/login-page-respondent.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { TestComponent } from './pages/test/test.component';
 
 const routes: Routes = [
     { path: '', component: LoginPageComponent },
+    { path: 'login', component: LoginPageRespondentComponent },
     {
         path: 'admin',
         canActivate: [AuthGuard],
@@ -23,8 +25,8 @@ const routes: Routes = [
             { path: 'all-respondents', component: AllRespondentsComponent },
         ]
     },
-    { path: 'test', component: TestComponent },
-    { path: 'test/:testId', component: TestComponent }
+    { path: 'test/:activationId', component: TestComponent },
+    { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({

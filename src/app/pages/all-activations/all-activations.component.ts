@@ -8,8 +8,8 @@ import { Activation } from 'app/models/activation';
 })
 export class AllActivationsComponent implements OnInit {
   activations: Activation[] = [
-    new Activation('ACTIVATION NAME', 2, 1, 3, '/assets/images/image.jpeg', true),
-    new Activation('ANOTHER ACTIVATOIN', 4, 5, 6, '/assets/images/image.jpeg', false),
+    new Activation('ACTIVATION NAME', 2, 1, 3, '/assets/images/image.jpeg', true, 'quiz'),
+    new Activation('ANOTHER ACTIVATOIN', 4, 5, 6, '/assets/images/image.jpeg', false, 'quiz'),
   ];
 
   constructor() { }
