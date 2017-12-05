@@ -5,7 +5,6 @@ import {Test} from 'app/models/test';
 import {ActivatedRoute, Router} from '@angular/router';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/do';
-import { Activation } from 'app/models/activation';
 import {RespondentService} from '../../shared/services/respondent.service';
 
 
@@ -13,14 +12,11 @@ import {RespondentService} from '../../shared/services/respondent.service';
     selector: 'pt-test',
     templateUrl: './test.component.html',
     styleUrls: ['./test.component.scss'],
-    // encapsulation: ViewEncapsulation.None,
     providers: [ActivationService]
 })
 export class TestComponent implements OnInit {
     headerImage = '/assets/images/header-background-image.png';
     test: Test;
-    activation: Activation;
-    activationId: string;
 
     constructor(private activationService: ActivationService,
                 private route: ActivatedRoute,
@@ -41,7 +37,7 @@ export class TestComponent implements OnInit {
 
     loadQuiz(activationId: string) {
         this.activationService.getActivation(activationId)
-          .subscribe((result: Activation)  => this.test = result.quiz);
+          .subscribe((result: any)  => this.test = result);
     }
 
     redirect(activationId: string) {
