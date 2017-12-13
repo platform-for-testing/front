@@ -36,9 +36,11 @@ import { TestInfoComponent } from './pages/test/test-info/test-info.component';
 import { ListPageComponent } from './pages/layout/list-page/list-page.component';
 import { QuestionForRespondentComponent } from './pages/test/question-for-respondent/question-for-respondent.component';
 import { AnswerComponent } from './pages/test/question-for-respondent/answer/answer.component';
+import { BackButtonComponent } from './shared/components/back-button/back-button.component';
 import { ListPageItemComponent } from './pages/layout/list-page-item/list-page-item.component';
 import { TestMenuComponent } from './pages/all-tests/test-menu/test-menu.component';
 import { LoginPageRespondentComponent } from './pages/login-page-respondent/login-page-respondent.component';
+
 
 @NgModule({
   declarations: [
@@ -70,9 +72,10 @@ import { LoginPageRespondentComponent } from './pages/login-page-respondent/logi
     ListPageComponent,
     QuestionForRespondentComponent,
     AnswerComponent,
+    BackButtonComponent,
     ListPageItemComponent,
     TestMenuComponent
-  ],
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
