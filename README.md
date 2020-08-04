@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/platform-for-testing/front.svg?branch=develop)](https://travis-ci.org/platform-for-testing/front)
 
-# PlatformForTesting
+# PlatformForTesting change
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
 
